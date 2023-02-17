@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ScriptDB\lendasclassic.sql" />
+    <Content Include="ScriptDB\lendasclassic01.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
