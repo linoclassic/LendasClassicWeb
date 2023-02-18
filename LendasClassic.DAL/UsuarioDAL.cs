@@ -11,7 +11,9 @@ namespace LendasClassic.DAL
 {
     public class UsuarioDAL:Conexao
     {
-        //inserir
+        //CRUD
+
+        //CREATE
         public void Cadastrar(UsuarioDTO objCad)
         {
             try
@@ -44,7 +46,7 @@ namespace LendasClassic.DAL
             }
         }
 
-        //listar
+        //READ
         public List<UsuarioDTO> Listar()
         {
             try
@@ -87,7 +89,7 @@ namespace LendasClassic.DAL
             }
         }
 
-        //update
+        //UPDATE
         public void Editar(UsuarioDTO objEdita)
         {
             try
@@ -120,7 +122,7 @@ namespace LendasClassic.DAL
             }
         }
 
-        //Delete
+        //DELETE
         public void Excluir(int objExclui)
         {
             try
@@ -140,10 +142,6 @@ namespace LendasClassic.DAL
                 Desconectar();
             }
         }
-
-
-       
-
 
     }
 }
