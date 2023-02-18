@@ -125,6 +125,14 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="Images\AddUser60.png" />
+    <Content Include="Images\Atualizar60.png" />
+    <Content Include="Images\Cancelar60.png" />
+    <Content Include="Images\Delete60.png" />
+    <Content Include="Images\DeleteUser60.png" />
+    <Content Include="Images\Editar36.png" />
+    <Content Include="Images\Editar60.png" />
+    <Content Include="Images\Salvar60.png" />
     <Content Include="Pages\ConsultaUser.aspx" />
     <Content Include="Pages\ManagerUsuarioADM.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -203,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LendasClassic.BLL\LendasClassic.BLL.csproj">

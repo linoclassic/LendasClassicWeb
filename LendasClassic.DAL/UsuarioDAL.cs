@@ -60,6 +60,7 @@ namespace LendasClassic.DAL
                 {
                     UsuarioDTO obj = new UsuarioDTO();
                     obj.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                    obj.NomeCliente = dr["NomeCliente"].ToString();
                     obj.EmailCliente = dr["EmailCliente"].ToString();
                     obj.SenhaCliente = dr["SenhaCliente"].ToString();
                     obj.TelefoneCliente = dr["TelefoneCliente"].ToString();

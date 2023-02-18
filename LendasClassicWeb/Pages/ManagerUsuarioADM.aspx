@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false">
+   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="Idcliente">
 
        <Columns>
 
@@ -25,6 +25,30 @@
 
            </asp:TemplateField>
 
+              <%--radiobutton--%>
+          <asp:TemplateField HeaderText="Tipo Usuario">
+
+               <ItemTemplate>
+                  <asp:Label runat="server" Text='<%#Eval("FkTpUsuario") %>' />
+               </ItemTemplate>
+              
+               <EditItemTemplate>
+                   <asp:RadioButtonList ID="rbl1" runat="server">
+                       <asp:ListItem Value="1" Text="Administrador" />
+                       <asp:ListItem Value="2" Text="Outros" />
+                   </asp:RadioButtonList>
+               </EditItemTemplate>
+
+               <FooterTemplate>
+                      <asp:RadioButtonList ID="rbl1" runat="server">
+                       <asp:ListItem Value="1" Text="Administrador" />
+                       <asp:ListItem Value="2" Text="Outros" />
+                   </asp:RadioButtonList>
+               </FooterTemplate>
+
+
+           </asp:TemplateField> 
+
           <asp:TemplateField HeaderText="Email">
 
                <ItemTemplate>
@@ -41,7 +65,7 @@
 
 
            </asp:TemplateField>
-
+        
           <asp:TemplateField HeaderText="Senha">
 
                <ItemTemplate>
@@ -58,6 +82,40 @@
 
 
            </asp:TemplateField>
+
+          <asp:TemplateField HeaderText="Status">
+
+               <ItemTemplate>
+                  <asp:Label runat="server" Text='<%#Eval("StatusCliente") %>' />
+               </ItemTemplate>
+              
+               <EditItemTemplate>
+                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="50" Text='<%#Eval("StatusCliente") %>' />
+               </EditItemTemplate>
+
+               <FooterTemplate>
+                      <asp:TextBox ID="txtStatusfUsuarioFooter" runat="server" />
+               </FooterTemplate>
+
+
+           </asp:TemplateField>   
+           
+          <asp:TemplateField HeaderText="Cpf">
+
+               <ItemTemplate>
+                  <asp:Label runat="server" Text='<%#Eval("CpfCliente") %>' />
+               </ItemTemplate>
+              
+               <EditItemTemplate>
+                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="50" Text='<%#Eval("CpfCliente") %>' />
+               </EditItemTemplate>
+
+               <FooterTemplate>
+                      <asp:TextBox ID="txtCpfUsuarioFooter" runat="server" />
+               </FooterTemplate>
+
+
+           </asp:TemplateField>  
 
           <asp:TemplateField HeaderText="Telefone">
 
@@ -76,7 +134,7 @@
 
            </asp:TemplateField>  
 
-          <asp:TemplateField HeaderText="Endereco">
+          <asp:TemplateField HeaderText="Endereço">
 
                <ItemTemplate>
                   <asp:Label runat="server" Text='<%#Eval("EnderecoCliente") %>' />
@@ -144,7 +202,7 @@
 
            </asp:TemplateField>
 
-          <asp:TemplateField HeaderText="Numero">
+          <asp:TemplateField HeaderText="Número">
 
                <ItemTemplate>
                   <asp:Label runat="server" Text='<%#Eval("NumeroCliente") %>' />
@@ -161,65 +219,8 @@
 
            </asp:TemplateField>
 
-          <asp:TemplateField HeaderText="Cpf">
-
-               <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("CpfCliente") %>' />
-               </ItemTemplate>
-              
-               <EditItemTemplate>
-                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="50" Text='<%#Eval("CpfCliente") %>' />
-               </EditItemTemplate>
-
-               <FooterTemplate>
-                      <asp:TextBox ID="txtCpfUsuarioFooter" runat="server" />
-               </FooterTemplate>
-
-
-           </asp:TemplateField>  
-
-          <asp:TemplateField HeaderText="Status">
-
-               <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("StatusCliente") %>' />
-               </ItemTemplate>
-              
-               <EditItemTemplate>
-                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="50" Text='<%#Eval("StatusCliente") %>' />
-               </EditItemTemplate>
-
-               <FooterTemplate>
-                      <asp:TextBox ID="txtStatusfUsuarioFooter" runat="server" />
-               </FooterTemplate>
-
-
-           </asp:TemplateField> 
-
-          <asp:TemplateField HeaderText="Tipo Usuario">
-
-               <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("FkTpUsuario") %>' />
-               </ItemTemplate>
-              
-               <EditItemTemplate>
-                   <asp:RadioButtonList ID="rbl1" runat="server">
-                       <asp:ListItem Value="1" Text="Administrador" />
-                       <asp:ListItem Value="2" Text="Outros" />
-                   </asp:RadioButtonList>
-               </EditItemTemplate>
-
-               <FooterTemplate>
-                      <asp:RadioButtonList ID="rbl1" runat="server">
-                       <asp:ListItem Value="1" Text="Administrador" />
-                       <asp:ListItem Value="2" Text="Outros" />
-                   </asp:RadioButtonList>
-               </FooterTemplate>
-
-
-           </asp:TemplateField> 
-
-           <%--radiobutton--%>
-          <asp:TemplateField HeaderText="DataCad">
+      
+          <asp:TemplateField HeaderText="Data de Cadastro">
 
                <ItemTemplate>
                   <asp:Label runat="server" Text='<%#Eval("DataCadCliente") %>' />
@@ -236,8 +237,28 @@
 
            </asp:TemplateField> 
 
+          <asp:TemplateField HeaderText="Opções">
+
+               <ItemTemplate>
+                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/>
+                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteUser60.png" ToolTip="Excluir" Width="40" Height="40" CommandName="Delete"/>
+               </ItemTemplate>
+              
+               <EditItemTemplate>
+                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/Salvar60.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Save"/>
+                      <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/Cancelar60.png" ToolTip="Cancelar" Width="40" Height="40" CommandName="Cancel"/>
+               </EditItemTemplate>
+
+               <FooterTemplate>
+                     <asp:ImageButton ID="btnAdicionar" runat="server" ImageUrl="~/Images/AddUser60.png" ToolTip="Adicionar" Width="40" Height="40" CommandName="Add"/>
+               </FooterTemplate>
+
+
+           </asp:TemplateField> 
+
        </Columns>
 
    </asp:GridView>
-
+    <br />
+    <asp:Label ID="lblMessage" runat="server" Text="Label" />
 </asp:Content>
