@@ -52,7 +52,7 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT idCliente, nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, descricaoTpUsuario FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
+                cmd = new MySqlCommand("SELECT idCliente, nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, dataCadCliente, descricaoTpUsuario FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
                 dr= cmd.ExecuteReader();
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>(); // criando lista vazia
 
@@ -71,7 +71,7 @@ namespace LendasClassic.DAL
                     obj.CpfCliente = dr["CpfCliente"].ToString();
                     obj.StatusCliente = dr["StatusCliente"].ToString();
                     obj.DataCadCliente = Convert.ToDateTime(dr["DataCadCliente"]);
-                    obj.FkTpUsuario = dr["FkTpUsuario"].ToString();
+                    obj.FkTpUsuario = dr["descricaoTpUsuario"].ToString();
                     Lista.Add(obj);
                 }
                 return Lista;
