@@ -4,8 +4,19 @@
 
 <html>
 <head runat="server">
+
+    <%-- metas --%>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <%--links--%>
+    <link href="Content/Style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+
+    <title>Adm</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -16,5 +27,11 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+    <%--scripts--%>
+    <script src="Scripts/Script.js"></script>
+    <script src="Scripts/jquery-3.6.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>
