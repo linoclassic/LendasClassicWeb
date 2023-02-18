@@ -19,7 +19,7 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO clienteWeb (nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, dataCadCliente, fkTpUsuario) VALUES (@idCliente, @nomeCliente, @emailCliente, @senhaCliente,@telefoneCliente, @enderecoCliente, @bairroCliente, @cidadeCliente, @estadoCliente, @numeroCliente, @cpfCliente, @statusCliente, @dataCadCliente, @fkTpUsuario)", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
+                cmd = new MySqlCommand("INSERT INTO clienteWeb (nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, fkTpUsuario) VALUES (@nomeCliente, @emailCliente, @senhaCliente, @telefoneCliente, @enderecoCliente, @bairroCliente, @cidadeCliente, @estadoCliente, @numeroCliente, @cpfCliente, @statusCliente, @fkTpUsuario)", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
                 cmd.Parameters.AddWithValue("@nomeCliente", objCad.NomeCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", objCad.EmailCliente);
                 cmd.Parameters.AddWithValue("@senhaCliente", objCad.SenhaCliente);
@@ -31,8 +31,10 @@ namespace LendasClassic.DAL
                 cmd.Parameters.AddWithValue("@numeroCliente", objCad.NumeroCliente);
                 cmd.Parameters.AddWithValue("@cpfCliente", objCad.CpfCliente);
                 cmd.Parameters.AddWithValue("@statusCliente", objCad.StatusCliente);
-                cmd.Parameters.AddWithValue("@dataCadCliente", objCad.DataCadCliente);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objCad.FkTpUsuario);
+
+
+
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -52,7 +54,7 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT idCliente, nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, dataCadCliente, descricaoTpUsuario FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
+                cmd = new MySqlCommand("SELECT idCliente, nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, descricaoTpUsuario FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
                 dr= cmd.ExecuteReader();
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>(); // criando lista vazia
 
@@ -71,7 +73,6 @@ namespace LendasClassic.DAL
                     obj.NumeroCliente = dr["NumeroCliente"].ToString();
                     obj.CpfCliente = dr["CpfCliente"].ToString();
                     obj.StatusCliente = dr["StatusCliente"].ToString();
-                    obj.DataCadCliente = Convert.ToDateTime(dr["DataCadCliente"]);
                     obj.FkTpUsuario = dr["descricaoTpUsuario"].ToString();
                     Lista.Add(obj);
                 }
@@ -95,7 +96,7 @@ namespace LendasClassic.DAL
         {
             try
             {
-                cmd = new MySqlCommand(" UPDATE clienteweb SET nomeCliente = @nomeCliente, emailCliente = @emailCliente, senhaCliente = @senhaCliente, telefoneCliente = @telefoneCliente, enderecoCliente = @enderecoCliente, bairroCliente = @bairroCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, numeroCliente = @numeroCliente, cpfCliente = @cpfCliente, statusCliente = @statusCliente, dataCadCliente = @dataCadCliente, fkTpUsuario = @fkTpUsuario WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
+                cmd = new MySqlCommand(" UPDATE clienteweb SET nomeCliente = @nomeCliente, emailCliente = @emailCliente, senhaCliente = @senhaCliente, telefoneCliente = @telefoneCliente, enderecoCliente = @enderecoCliente, bairroCliente = @bairroCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, numeroCliente = @numeroCliente, cpfCliente = @cpfCliente, statusCliente = @statusCliente, fkTpUsuario = @fkTpUsuario WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
                 cmd.Parameters.AddWithValue("@nomeCliente", objEdita.NomeCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", objEdita.EmailCliente);
                 cmd.Parameters.AddWithValue("@senhaCliente", objEdita.SenhaCliente);
@@ -107,7 +108,6 @@ namespace LendasClassic.DAL
                 cmd.Parameters.AddWithValue("@numeroCliente", objEdita.NumeroCliente);
                 cmd.Parameters.AddWithValue("@cpfCliente", objEdita.CpfCliente);
                 cmd.Parameters.AddWithValue("@statusCliente", objEdita.StatusCliente);
-                cmd.Parameters.AddWithValue("@dataCadCliente", objEdita.DataCadCliente);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objEdita.FkTpUsuario);
                 cmd.Parameters.AddWithValue("@idCliente", objEdita.IdCliente);
                 cmd.ExecuteNonQuery();

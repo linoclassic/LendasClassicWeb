@@ -38,8 +38,6 @@ namespace LendasClassic.DTO
 
         public string StatusCliente { get; set; }
 
-        public DateTime DataCadCliente { get; set; }
-
         //Relacionamento
         public string FkTpUsuario { get; set; }
     }
