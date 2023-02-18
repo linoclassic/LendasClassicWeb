@@ -126,6 +126,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Style.css" />
     <Content Include="Pages\ConsultaUser.aspx" />
+    <Content Include="Pages\ManagerUsuarioADM.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="Pages\ConsultaUser.aspx.designer.cs">
       <DependentUpon>ConsultaUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ManagerUsuarioADM.aspx.cs">
+      <DependentUpon>ManagerUsuarioADM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ManagerUsuarioADM.aspx.designer.cs">
+      <DependentUpon>ManagerUsuarioADM.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
