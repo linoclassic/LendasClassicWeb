@@ -63,3 +63,8 @@ VALUES ('(11)95882-3482', '2022-10-05', '12:00:00', 'ATIVA', 2);
 
 
 SELECT * FROM clienteweb;
+
+
+SELECT idCliente, nomeCliente, emailCliente, senhaCliente, telefoneCliente, enderecoCliente, bairroCliente, cidadeCliente, estadoCliente, numeroCliente, cpfCliente, statusCliente, descricaoTpUsuario FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;
+
+UPDATE clienteweb SET nomeCliente ='Victor Lino', emailCliente = 'victor@gmail.com', senhaCliente = 'victor123', telefoneCliente = '(11)98761-9876', enderecoCliente = 'Rua Matarás', bairroCliente = 'Crepioca', cidadeCliente = 'São Paulo', estadoCliente = 'SP', numeroCliente = '34', cpfCliente = '455.456.752-04', statusCliente = 'ATIVO', dataCadCliente = '2022-02-17', fkTpUsuario = 1 WHERE idCliente= 2;
