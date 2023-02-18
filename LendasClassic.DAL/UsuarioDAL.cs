@@ -19,13 +19,13 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO clienteWeb (nomeCliente, fkTpUsuario, statusCliente, emailCliente, cpfCliente, senhaCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente)\r\nVALUES (@nomeCliente, @fkTpUsuario, @statusCliente, @emailCliente,\r\n@cpfCliente, @senhaCliente, @telefoneCliente, @cidadeCliente,\r\n@estadoCliente, @bairroCliente, @enderecoCliente, @numeroCliente)", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
+                cmd = new MySqlCommand("INSERT INTO clienteWeb (nomeCliente, fkTpUsuario, statusCliente, emailCliente, senhaCliente, cpfCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente) VALUES (@nomeCliente, @fkTpUsuario, @statusCliente, @emailCliente, @senhaCliente,  @cpfCliente, @telefoneCliente, @cidadeCliente, @estadoCliente, @bairroCliente, @enderecoCliente, @numeroCliente)", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
                 cmd.Parameters.AddWithValue("@nomeCliente", objCad.NomeCliente);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objCad.FkTpUsuario);
                 cmd.Parameters.AddWithValue("@statusCliente", objCad.StatusCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", objCad.EmailCliente);
-                cmd.Parameters.AddWithValue("@cpfCliente", objCad.CpfCliente);
                 cmd.Parameters.AddWithValue("@senhaCliente", objCad.SenhaCliente);
+                cmd.Parameters.AddWithValue("@cpfCliente", objCad.CpfCliente);
                 cmd.Parameters.AddWithValue("@telefoneCliente", objCad.TelefoneCliente);
                 cmd.Parameters.AddWithValue("@cidadeCliente", objCad.CidadeCliente);
                 cmd.Parameters.AddWithValue("@estadoCliente", objCad.EstadoCliente);
@@ -52,20 +52,20 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT nomeCliente, fkTpUsuario, statusCliente, emailCliente, cpfCliente, senhaCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente FROM clienteweb JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
+                cmd = new MySqlCommand("SELECT nomeCliente, descricaoTpUsuario, statusCliente, emailCliente, senhaCliente, cpfCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente FROM clienteweb JOIN tpUsuario ON FkTpUsuario=idTpUsuario;", conn);
                 dr= cmd.ExecuteReader();
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>(); // criando lista vazia
 
                 while (dr.Read())
                 {
                     UsuarioDTO obj = new UsuarioDTO();
-                    obj.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+               //     obj.IdCliente = Convert.ToInt32(dr["IdCliente"]);
                     obj.NomeCliente = dr["NomeCliente"].ToString();
                     obj.FkTpUsuario = dr["descricaoTpUsuario"].ToString();
                     obj.StatusCliente = dr["StatusCliente"].ToString();
                     obj.EmailCliente = dr["EmailCliente"].ToString();
-                    obj.CpfCliente = dr["CpfCliente"].ToString();
                     obj.SenhaCliente = dr["SenhaCliente"].ToString();
+                    obj.CpfCliente = dr["CpfCliente"].ToString();
                     obj.TelefoneCliente = dr["TelefoneCliente"].ToString();
                     obj.CidadeCliente = dr["CidadeCliente"].ToString();
                     obj.EstadoCliente = dr["EstadoCliente"].ToString();
@@ -96,13 +96,13 @@ namespace LendasClassic.DAL
         {
             try
             {
-                cmd = new MySqlCommand(" UPDATE clienteweb SET nomeCliente = @nomeCliente, fkTpUsuario = @fkTpUsuario, statusCliente = @statusCliente, emailCliente = @emailCliente, cpfCliente = @cpfCliente, senhaCliente = @senhaCliente, telefoneCliente = @telefoneCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, bairroCliente = @bairroCliente, enderecoCliente = @enderecoCliente, numeroCliente = @numeroCliente WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
+                cmd = new MySqlCommand(" UPDATE clienteweb SET nomeCliente = @nomeCliente, fkTpUsuario = @fkTpUsuario, statusCliente = @statusCliente, emailCliente = @emailCliente, senhaCliente = @senhaCliente, cpfCliente = @cpfCliente, telefoneCliente = @telefoneCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, bairroCliente = @bairroCliente, enderecoCliente = @enderecoCliente, numeroCliente = @numeroCliente WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
                 cmd.Parameters.AddWithValue("@nomeCliente", objEdita.NomeCliente);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objEdita.FkTpUsuario);
                 cmd.Parameters.AddWithValue("@statusCliente", objEdita.StatusCliente);
                 cmd.Parameters.AddWithValue("@emailCliente", objEdita.EmailCliente);
-                cmd.Parameters.AddWithValue("@cpfCliente", objEdita.CpfCliente);
                 cmd.Parameters.AddWithValue("@senhaCliente", objEdita.SenhaCliente);
+                cmd.Parameters.AddWithValue("@cpfCliente", objEdita.CpfCliente);
                 cmd.Parameters.AddWithValue("@telefoneCliente", objEdita.TelefoneCliente);
                 cmd.Parameters.AddWithValue("@cidadeCliente", objEdita.CidadeCliente);
                 cmd.Parameters.AddWithValue("@estadoCliente", objEdita.EstadoCliente);
