@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="Idcliente" OnRowCommand="gv1_RowCommand">
+   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="IdCliente" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit">
 
        <Columns>
 
@@ -25,7 +25,6 @@
 
            </asp:TemplateField>
 
-           
                          <%--radiobutton--%>
           <asp:TemplateField HeaderText="Tipo Usuario">
 
@@ -220,34 +219,16 @@
 
            </asp:TemplateField>
 
-       
-
-        
-
-
-         
-
-     
-        
-     
-
-                     
-       
-
-        
-
-          
-
-        
+                 <%--Opções--%>        
           <asp:TemplateField HeaderText="Opções">
 
                <ItemTemplate>
                    <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/>
-                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteUser60.png" ToolTip="Excluir" Width="40" Height="40" CommandName="Delete"/>
+                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteUser60.png" ToolTip="Excluir" Width="40" Height="40" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro?'))return false"/>
                </ItemTemplate>
               
                <EditItemTemplate>
-                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/Salvar60.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Save"/>
+                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/Salvar60.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Update"/>
                       <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/Cancelar60.png" ToolTip="Cancelar" Width="40" Height="40" CommandName="Cancel"/>
                </EditItemTemplate>
 

@@ -96,7 +96,8 @@ namespace LendasClassic.DAL
         {
             try
             {
-                cmd = new MySqlCommand(" UPDATE clienteweb SET nomeCliente = @nomeCliente, fkTpUsuario = @fkTpUsuario, statusCliente = @statusCliente, emailCliente = @emailCliente, senhaCliente = @senhaCliente, cpfCliente = @cpfCliente, telefoneCliente = @telefoneCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, bairroCliente = @bairroCliente, enderecoCliente = @enderecoCliente, numeroCliente = @numeroCliente WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
+                Conectar();
+                cmd = new MySqlCommand("UPDATE clienteweb SET nomeCliente = @nomeCliente, fkTpUsuario = @fkTpUsuario, statusCliente = @statusCliente, emailCliente = @emailCliente, senhaCliente = @senhaCliente, cpfCliente = @cpfCliente, telefoneCliente = @telefoneCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente, bairroCliente = @bairroCliente, enderecoCliente = @enderecoCliente, numeroCliente = @numeroCliente WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
                 cmd.Parameters.AddWithValue("@nomeCliente", objEdita.NomeCliente);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objEdita.FkTpUsuario);
                 cmd.Parameters.AddWithValue("@statusCliente", objEdita.StatusCliente);
