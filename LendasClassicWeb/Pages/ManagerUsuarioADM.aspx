@@ -4,18 +4,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="IdCliente" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit">
+   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idCliente" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit">
 
        <Columns>
 
           <asp:TemplateField HeaderText="Nome">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("NomeCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("nomeCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("NomeCliente") %>' />
+                    <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("nomeCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -29,7 +29,7 @@
           <asp:TemplateField HeaderText="Tipo Usuario">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("FkTpUsuario") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("fkTpUsuario") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
@@ -49,31 +49,38 @@
 
            </asp:TemplateField> 
 
-          <asp:TemplateField HeaderText="Status">
+             <asp:TemplateField HeaderText="Status">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("StatusCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("fkTpStatus") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="50" Text='<%#Eval("StatusCliente") %>' />
+                   <asp:RadioButtonList ID="rbl2" runat="server">
+                       <asp:ListItem Value="1" Text="Ativo" />
+                       <asp:ListItem Value="2" Text="Inativo" />
+                   </asp:RadioButtonList>
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtStatusfUsuarioFooter" runat="server" />
+                      <asp:RadioButtonList ID="rbl2" runat="server">
+                       <asp:ListItem Value="1" Text="Ativo" />
+                       <asp:ListItem Value="2" Text="Inativo" />
+                   </asp:RadioButtonList>
                </FooterTemplate>
 
 
-           </asp:TemplateField>   
+           </asp:TemplateField> 
+
 
           <asp:TemplateField HeaderText="Email">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("EmailCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("emailCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtEmailUsuario" runat="server" MaxLength="50" Text='<%#Eval("EmailCliente") %>' />
+                    <asp:TextBox ID="txtEmailUsuario" runat="server" MaxLength="50" Text='<%#Eval("emailCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -86,11 +93,11 @@
           <asp:TemplateField HeaderText="Senha">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("SenhaCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("senhaCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtSenhaUsuario" runat="server" MaxLength="50" Text='<%#Eval("SenhaCliente") %>' />
+                    <asp:TextBox ID="txtSenhaUsuario" runat="server" MaxLength="50" Text='<%#Eval("senhaCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -103,11 +110,11 @@
           <asp:TemplateField HeaderText="Cpf">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("CpfCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("cpfCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="50" Text='<%#Eval("CpfCliente") %>' />
+                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="50" Text='<%#Eval("cpfCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -120,11 +127,11 @@
           <asp:TemplateField HeaderText="Telefone">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("TelefoneCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("telefoneCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("TelefoneCliente") %>' />
+                    <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -137,11 +144,11 @@
           <asp:TemplateField HeaderText="Cidade">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("CidadeCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("cidadeCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtCidadeUsuario" runat="server" MaxLength="50" Text='<%#Eval("CidadeCliente") %>' />
+                    <asp:TextBox ID="txtCidadeUsuario" runat="server" MaxLength="50" Text='<%#Eval("cidadeCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -154,11 +161,11 @@
           <asp:TemplateField HeaderText="Estado">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("EstadoCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("estadoCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtEstadoUsuario" runat="server" MaxLength="50" Text='<%#Eval("EstadoCliente") %>' />
+                    <asp:TextBox ID="txtEstadoUsuario" runat="server" MaxLength="50" Text='<%#Eval("estadoCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -171,11 +178,11 @@
           <asp:TemplateField HeaderText="Bairro">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("BairroCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("bairroCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtBairroUsuario" runat="server" MaxLength="50" Text='<%#Eval("BairroCliente") %>' />
+                    <asp:TextBox ID="txtBairroUsuario" runat="server" MaxLength="50" Text='<%#Eval("bairroCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -188,11 +195,11 @@
           <asp:TemplateField HeaderText="Endereço">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("EnderecoCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("enderecoCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtEnderecoUsuario" runat="server" MaxLength="50" Text='<%#Eval("EnderecoCliente") %>' />
+                    <asp:TextBox ID="txtEnderecoUsuario" runat="server" MaxLength="50" Text='<%#Eval("enderecoCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -205,11 +212,11 @@
           <asp:TemplateField HeaderText="Número">
 
                <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("NumeroCliente") %>' />
+                  <asp:Label runat="server" Text='<%#Eval("numeroCliente") %>' />
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtNumeroUsuario" runat="server" MaxLength="50" Text='<%#Eval("NumeroCliente") %>' />
+                    <asp:TextBox ID="txtNumeroUsuario" runat="server" MaxLength="50" Text='<%#Eval("numeroCliente") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>

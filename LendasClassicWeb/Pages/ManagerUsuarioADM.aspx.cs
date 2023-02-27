@@ -32,34 +32,34 @@ namespace LendasClassicWeb.Pages
         {
             if (e.CommandName.Equals("Add"))
             {
-                objModelo.NomeCliente = (gv1.FooterRow.FindControl("txtNomeUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.nomeCliente = (gv1.FooterRow.FindControl("txtNomeUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.FkTpUsuario = (gv1.FooterRow.FindControl("rbl1") as RadioButtonList).Text.Trim();
+                objModelo.fkTpUsuario = (gv1.FooterRow.FindControl("rbl1") as RadioButtonList).Text.Trim();
 
-                objModelo.StatusCliente = (gv1.FooterRow.FindControl("txtStatusfUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.fkTpStatus = (gv1.FooterRow.FindControl("rbl2") as RadioButtonList).Text.Trim();
 
-                objModelo.EmailCliente = (gv1.FooterRow.FindControl("txtEmailUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.emailCliente = (gv1.FooterRow.FindControl("txtEmailUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.SenhaCliente = (gv1.FooterRow.FindControl("txtSenhaUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.senhaCliente = (gv1.FooterRow.FindControl("txtSenhaUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.CpfCliente = (gv1.FooterRow.FindControl("txtCpfUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.cpfCliente = (gv1.FooterRow.FindControl("txtCpfUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.TelefoneCliente = (gv1.FooterRow.FindControl("txtTelefoneUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.telefoneCliente = (gv1.FooterRow.FindControl("txtTelefoneUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.CidadeCliente = (gv1.FooterRow.FindControl("txtCidadeUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.cidadeCliente = (gv1.FooterRow.FindControl("txtCidadeUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.EstadoCliente = (gv1.FooterRow.FindControl("txtEstadoUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.estadoCliente = (gv1.FooterRow.FindControl("txtEstadoUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.BairroCliente = (gv1.FooterRow.FindControl("txtBairroUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.bairroCliente = (gv1.FooterRow.FindControl("txtBairroUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.EnderecoCliente = (gv1.FooterRow.FindControl("txtEnderecoUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.enderecoCliente = (gv1.FooterRow.FindControl("txtEnderecoUsuarioFooter") as TextBox).Text.Trim();
 
-                objModelo.NumeroCliente = (gv1.FooterRow.FindControl("txtNumeroUsuarioFooter") as TextBox).Text.Trim();
+                objModelo.numeroCliente = (gv1.FooterRow.FindControl("txtNumeroUsuarioFooter") as TextBox).Text.Trim();
 
                 objBLL.CadastraUsuario(objModelo);
                 PopularGV();
                 (gv1.FooterRow.FindControl("txtNomeUsuarioFooter") as TextBox).Focus();
-                lblMessage.Text = "Usuário " + objModelo.NomeCliente + " cadastrado com sucesso !!!";
+                lblMessage.Text = "Usuário " + objModelo.nomeCliente + " cadastrado com sucesso !!!";
 
 
 
@@ -68,47 +68,48 @@ namespace LendasClassicWeb.Pages
 
         protected void gv1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            objModelo.NomeCliente = (gv1.Rows[e.RowIndex].FindControl("txtNomeUsuario") as TextBox).Text.Trim();
 
-            objModelo.FkTpUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl1") as RadioButtonList).Text.Trim();
+            objModelo.nomeCliente = (gv1.Rows[e.RowIndex].FindControl("txtNomeUsuario") as TextBox).Text.Trim();
 
-            objModelo.StatusCliente = (gv1.Rows[e.RowIndex].FindControl("txtStatusUsuario") as TextBox).Text.Trim();
+            objModelo.fkTpUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl1") as RadioButtonList).Text.Trim();
 
-            objModelo.EmailCliente = (gv1.Rows[e.RowIndex].FindControl("txtEmailUsuario") as TextBox).Text.Trim();
+            objModelo.fkTpStatus = (gv1.Rows[e.RowIndex].FindControl("rbl2") as RadioButtonList).Text.Trim();
 
-            objModelo.SenhaCliente = (gv1.Rows[e.RowIndex].FindControl("txtSenhaUsuario") as TextBox).Text.Trim();
+            objModelo.emailCliente = (gv1.Rows[e.RowIndex].FindControl("txtEmailUsuario") as TextBox).Text.Trim();
 
-            objModelo.CpfCliente = (gv1.Rows[e.RowIndex].FindControl("txtCpfUsuario") as TextBox).Text.Trim();
+            objModelo.senhaCliente = (gv1.Rows[e.RowIndex].FindControl("txtSenhaUsuario") as TextBox).Text.Trim();
 
-            objModelo.TelefoneCliente = (gv1.Rows[e.RowIndex].FindControl("txtTelefoneUsuario") as TextBox).Text.Trim();
+            objModelo.cpfCliente = (gv1.Rows[e.RowIndex].FindControl("txtCpfUsuario") as TextBox).Text.Trim();
 
-            objModelo.CidadeCliente = (gv1.Rows[e.RowIndex].FindControl("txtCidadeUsuario") as TextBox).Text.Trim();
+            objModelo.telefoneCliente = (gv1.Rows[e.RowIndex].FindControl("txtTelefoneUsuario") as TextBox).Text.Trim();
 
-            objModelo.EstadoCliente = (gv1.Rows[e.RowIndex].FindControl("txtEstadoUsuario") as TextBox).Text.Trim();
+            objModelo.cidadeCliente = (gv1.Rows[e.RowIndex].FindControl("txtCidadeUsuario") as TextBox).Text.Trim();
 
-            objModelo.BairroCliente = (gv1.Rows[e.RowIndex].FindControl("txtBairroUsuario") as TextBox).Text.Trim();
+            objModelo.estadoCliente = (gv1.Rows[e.RowIndex].FindControl("txtEstadoUsuario") as TextBox).Text.Trim();
 
-            objModelo.EnderecoCliente = (gv1.Rows[e.RowIndex].FindControl("txtEnderecoUsuario") as TextBox).Text.Trim();
+            objModelo.bairroCliente = (gv1.Rows[e.RowIndex].FindControl("txtBairroUsuario") as TextBox).Text.Trim();
 
-            objModelo.NumeroCliente = (gv1.Rows[e.RowIndex].FindControl("txtNumeroUsuario") as TextBox).Text.Trim();
+            objModelo.enderecoCliente = (gv1.Rows[e.RowIndex].FindControl("txtEnderecoUsuario") as TextBox).Text.Trim();
 
-            objModelo.IdCliente = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
+            objModelo.numeroCliente = (gv1.Rows[e.RowIndex].FindControl("txtNumeroUsuario") as TextBox).Text.Trim();
+
+            objModelo.idCliente = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
 
             objBLL.EditarUsuario(objModelo);
             gv1.EditIndex = -1;
             PopularGV();
-            lblMessage.Text = "Usuário " + objModelo.NomeCliente + " editado com sucesso !!!";
+            lblMessage.Text = "Usuário " + objModelo.nomeCliente + " editado com sucesso !!!";
 
         }
 
         protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
-            objModelo.IdCliente = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
+            objModelo.idCliente = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
 
-            objBLL.ExcluirUsuario(objModelo.IdCliente);
+            objBLL.ExcluirUsuario(objModelo.idCliente);
             PopularGV();
-            lblMessage.Text = "Usuário " + objModelo.NomeCliente + " eliminado com sucesso !!!";
+            lblMessage.Text = "Usuário " + objModelo.nomeCliente + " eliminado com sucesso !!!" + objModelo.idCliente;
         }
 
         protected void gv1_RowEditing(object sender, GridViewEditEventArgs e)

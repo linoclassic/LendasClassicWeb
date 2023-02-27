@@ -19,7 +19,7 @@ namespace LendasClassic.DAL
         {
             try
             {
-                conn = new MySqlConnection("Data Source=localhost; Initial Catalog= lendasclassic; Uid=root; Pwd= ;");
+                conn = new MySqlConnection("Data Source=localhost; Initial Catalog= lendasclassic01; Uid=root; Pwd= ;");
                 conn.Open();    
             }
             catch (Exception ex)

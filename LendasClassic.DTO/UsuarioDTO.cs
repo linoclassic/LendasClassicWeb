@@ -14,31 +14,33 @@ namespace LendasClassic.DTO
         //Obs 2: Não será possivel mudar o nome pois no banco de dados está deste jeito, poderia dar algum conflito e bugar o projeto
 
 
-        public int IdCliente { get; set; }
+        public int idCliente { get; set; }
 
-        public string NomeCliente { get; set; }
+        public string nomeCliente { get; set; }
 
-        public string EmailCliente { get; set; }
+        public string emailCliente { get; set; }
 
-        public string SenhaCliente { get; set; }
+        public string senhaCliente { get; set; }
 
-        public string TelefoneCliente { get; set; }
+        public string telefoneCliente { get; set; }
 
-        public string EnderecoCliente { get; set; }
+        public string enderecoCliente { get; set; }
 
-        public string BairroCliente { get; set; }
+        public string bairroCliente { get; set; }
 
-        public string CidadeCliente { get; set; }
+        public string cidadeCliente { get; set; }
 
-        public string EstadoCliente { get; set; }
+        public string estadoCliente { get; set; }
 
-        public string NumeroCliente { get; set; }
+        public string numeroCliente { get; set; }
 
-        public string CpfCliente { get; set; }
+        public string cpfCliente { get; set; }
 
-        public string StatusCliente { get; set; }
+     //   public string StatusCliente { get; set; }
 
         //Relacionamento
-        public string FkTpUsuario { get; set; }
+        public string fkTpUsuario { get; set; }
+
+        public string fkTpStatus { get; set; }
     }
 }
