@@ -19,21 +19,16 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("INSERT INTO clienteWeb (nomeCliente, fkTpUsuario, fkTpStatus, emailCliente, senhaCliente, cpfCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente) VALUES (@nomeCliente, @fkTpUsuario, @fkTpStatus, @emailCliente, @senhaCliente,  @cpfCliente, @telefoneCliente, @cidadeCliente, @estadoCliente, @bairroCliente, @enderecoCliente, @numeroCliente)", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
-                cmd.Parameters.AddWithValue("@nomeCliente", objCad.nomeCliente);
+                cmd = new MySqlCommand("INSERT INTO usuario (nomeUsuario, fkTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario) VALUES (@nomeUsuario, @fkTpUsuario, @statusUsuario, @emailUsuario, @senhaUsuario,  @cpfUsuario, @telefoneUsuario)", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", objCad.nomeUsuario);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objCad.fkTpUsuario);
-                cmd.Parameters.AddWithValue("@fkTpStatus", objCad.fkTpStatus);
-                cmd.Parameters.AddWithValue("@emailCliente", objCad.emailCliente);
-                cmd.Parameters.AddWithValue("@senhaCliente", objCad.senhaCliente);
-                cmd.Parameters.AddWithValue("@cpfCliente", objCad.cpfCliente);
-                cmd.Parameters.AddWithValue("@telefoneCliente", objCad.telefoneCliente);
-                cmd.Parameters.AddWithValue("@cidadeCliente", objCad.cidadeCliente);
-                cmd.Parameters.AddWithValue("@estadoCliente", objCad.estadoCliente);
-                cmd.Parameters.AddWithValue("@bairroCliente", objCad.bairroCliente);
-                cmd.Parameters.AddWithValue("@enderecoCliente", objCad.enderecoCliente);
-                cmd.Parameters.AddWithValue("@numeroCliente", objCad.numeroCliente);
-
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@statusUsuario", objCad.statusUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", objCad.emailUsuario);
+                cmd.Parameters.AddWithValue("@senhaUsuario", objCad.senhaUsuario);
+                cmd.Parameters.AddWithValue("@cpfUsuario", objCad.cpfUsuario);
+                cmd.Parameters.AddWithValue("@telefoneUsuario", objCad.telefoneUsuario);
+               
+           
             }
             catch (Exception ex)
             {
@@ -52,28 +47,21 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT  idCliente, nomeCliente, descricaoTpUsuario, descricaoStatus, emailCliente, senhaCliente, cpfCliente, telefoneCliente, cidadeCliente, estadoCliente, bairroCliente, enderecoCliente, numeroCliente FROM clienteweb JOIN tpUsuario ON FkTpUsuario=idTpUsuario JOIN tpStatus ON fkTpStatus=idStatus;", conn);
+                cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, descricaoTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
                 dr= cmd.ExecuteReader();
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>(); // criando lista vazia
 
                 while (dr.Read())
                 {
                     UsuarioDTO obj = new UsuarioDTO();
-                    obj.idCliente = Convert.ToInt32(dr["idCliente"]);
-                    obj.nomeCliente = dr["NomeCliente"].ToString();
+                    obj.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.fkTpUsuario = dr["descricaoTpUsuario"].ToString();
-                    obj.fkTpStatus = dr["descricaoStatus"].ToString();
-                    obj.emailCliente = dr["EmailCliente"].ToString();
-                    obj.senhaCliente = dr["SenhaCliente"].ToString();
-                    obj.cpfCliente = dr["CpfCliente"].ToString();
-                    obj.telefoneCliente = dr["TelefoneCliente"].ToString();
-                    obj.cidadeCliente = dr["CidadeCliente"].ToString();
-                    obj.estadoCliente = dr["EstadoCliente"].ToString();
-                    obj.bairroCliente = dr["BairroCliente"].ToString();
-                    obj.enderecoCliente = dr["EnderecoCliente"].ToString();
-                    obj.numeroCliente = dr["NumeroCliente"].ToString();
-                  
-                    
+                    obj.statusUsuario = dr["statusUsuario"].ToString();
+                    obj.emailUsuario = dr["emailUsuario"].ToString();
+                    obj.senhaUsuario = dr["senhaUsuario"].ToString();
+                    obj.cpfUsuario = dr["cpfUsuario"].ToString();
+                    obj.telefoneUsuario = dr["telefoneUsuario"].ToString();
                     Lista.Add(obj);
                 }
                 return Lista;
@@ -102,20 +90,16 @@ namespace LendasClassic.DAL
 
 
                 Conectar();
-                cmd = new MySqlCommand("UPDATE clienteweb SET nomeCliente=@nomeCliente, fkTpUsuario=@fkTpUsuario, fkTpStatus=@fkTpStatus, emailCliente=@emailCliente, senhaCliente=@senhaCliente, cpfCliente=@cpfCliente, telefoneCliente=@telefoneCliente, cidadeCliente=@cidadeCliente, estadoCliente=@estadoCliente, bairroCliente=@bairroCliente, enderecoCliente=@enderecoCliente, numeroCliente=@numeroCliente WHERE idCliente=@idCliente", conn); //clienteWeb pois o nome no db esta assim, mas segue o padrão que seria para "Usuario" (Admin/Outros)
-                cmd.Parameters.AddWithValue("@nomeCliente", objEdita.nomeCliente);
+                cmd = new MySqlCommand("UPDATE usuario SET nomeUsuario=@nomeUsuario, fkTpUsuario=@fkTpUsuario, statusUsuario=@statusUsuario, emailUsuario=@emailUsuario, senhaUsuario=@senhaUsuario, cpfUsuario=@cpfUsuario, telefoneUsuario=@telefoneUsuario WHERE idUsuario=@idUsuario", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", objEdita.nomeUsuario);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objEdita.fkTpUsuario);
-                cmd.Parameters.AddWithValue("@fkTpStatus", objEdita.fkTpStatus);
-                cmd.Parameters.AddWithValue("@emailCliente", objEdita.emailCliente);
-                cmd.Parameters.AddWithValue("@senhaCliente", objEdita.senhaCliente);
-                cmd.Parameters.AddWithValue("@cpfCliente", objEdita.cpfCliente);
-                cmd.Parameters.AddWithValue("@telefoneCliente", objEdita.telefoneCliente);
-                cmd.Parameters.AddWithValue("@cidadeCliente", objEdita.cidadeCliente);
-                cmd.Parameters.AddWithValue("@estadoCliente", objEdita.estadoCliente);
-                cmd.Parameters.AddWithValue("@bairroCliente", objEdita.bairroCliente);
-                cmd.Parameters.AddWithValue("@enderecoCliente", objEdita.enderecoCliente);
-                cmd.Parameters.AddWithValue("@numeroCliente", objEdita.numeroCliente);
-                cmd.Parameters.AddWithValue("@idCliente", objEdita.idCliente);
+                cmd.Parameters.AddWithValue("@statusUsuario", objEdita.statusUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", objEdita.emailUsuario);
+                cmd.Parameters.AddWithValue("@senhaUsuario", objEdita.senhaUsuario);
+                cmd.Parameters.AddWithValue("@cpfUsuario", objEdita.cpfUsuario);
+                cmd.Parameters.AddWithValue("@telefoneUsuario", objEdita.telefoneUsuario);
+                cmd.Parameters.AddWithValue("@idUsuario", objEdita.idUsuario);
+
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -135,8 +119,8 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("DELETE FROM clienteweb WHERE idCliente=@idCliente", conn);
-                cmd.Parameters.AddWithValue("@idCliente", objExclui);
+                cmd = new MySqlCommand("DELETE FROM usuario WHERE idUsuario=@idUsuario", conn);
+                cmd.Parameters.AddWithValue("@idUsuario", objExclui);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
