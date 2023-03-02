@@ -1,2 +1,19 @@
-﻿body {
+﻿/*reset para os elementos*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fefefe;
+    color: #010101;
+}
+
+a {
+    text-decoration: none;
+}
+
+i{
+    font-size: 30px;
 }

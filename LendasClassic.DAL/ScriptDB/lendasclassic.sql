@@ -1,7 +1,7 @@
 
-Create Database lendasclassic;
+Create Database lendasclassic03;
 
-USE lendasclassic;
+USE lendasclassic03;
 
 CREATE TABLE [dbo].[tpusuario]
 (

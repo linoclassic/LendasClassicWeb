@@ -8,14 +8,14 @@
 
         <Columns>
 
-            <asp:BoundField DataField="NomeCliente" HeaderText="Nome"/>
-            <asp:BoundField DataField="EmailCliente" HeaderText="Email"/>
-            <asp:BoundField DataField="FkTpUsuario" HeaderText="Tipo Usuário"/>
-            <asp:BoundField DataField="EnderecoCliente" HeaderText="Endereço"/>
-            <asp:BoundField DataField="NumeroCliente" HeaderText="Número Endereço"/>
-            <asp:BoundField DataField="BairroCliente" HeaderText="Bairro"/>
-            <asp:BoundField DataField="CidadeCliente" HeaderText="Cidade"/>
-            <asp:BoundField DataField="EstadoCliente" HeaderText="Estado"/>
+            <asp:BoundField DataField="nomeUsuario" HeaderText="Nome"/>
+            <asp:BoundField DataField="fkTpUsuario" HeaderText="Tipo Usuário"/>
+            <asp:BoundField DataField="statusUsuario" HeaderText="Tipo Usuário"/>
+            <asp:BoundField DataField="emailUsuario" HeaderText="Email"/>
+            <asp:BoundField DataField="senhaUsuario" HeaderText="Senha"/>
+            <asp:BoundField DataField="cpfUsuario" HeaderText="Cpf"/>
+            <asp:BoundField DataField="telefoneUsuario" HeaderText="Cidade"/>
+          
 
         </Columns>
 
