@@ -134,6 +134,7 @@
     <Content Include="Images\Editar60.png" />
     <Content Include="Images\Salvar60.png" />
     <Content Include="Pages\ConsultaUser.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\ManagerUsuarioADM.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="Pages\ConsultaUser.aspx.designer.cs">
       <DependentUpon>ConsultaUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ManagerUsuarioADM.aspx.cs">
       <DependentUpon>ManagerUsuarioADM.aspx</DependentUpon>

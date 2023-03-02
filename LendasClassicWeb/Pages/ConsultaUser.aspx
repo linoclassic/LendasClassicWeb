@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false">
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" CssClass="table table-responsive table-striped">
 
         <Columns>
 

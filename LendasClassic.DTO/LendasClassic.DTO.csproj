@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutenticaUserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaDTO.cs" />
     <Compile Include="TpUsuarioDTO.cs" />

@@ -17,7 +17,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Users</title>
+    <title>Usuários Check</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -25,7 +25,7 @@
     <form id="form1" runat="server">
 
               <%--      navbar--%>
-            <nav class="navbar  bg-dark navbar-expand-lg bg-body-tertiary mb-4" data-bs-theme="dark">
+            <nav class="navbar  bg-dark navbar-expand-lg bg-body-tertiary mb-4 mr-3" data-bs-theme="dark">
   <div class="container-fluid px-3">
     <a class="navbar-brand" href="#">LENDAS CLASSIC</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>
+<%--        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
         <a class="nav-link px-3" href="#">Usuários</a>
         <a class="nav-link" href="#">Reserva</a>
   
