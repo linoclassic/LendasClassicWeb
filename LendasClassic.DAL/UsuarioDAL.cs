@@ -134,5 +134,40 @@ namespace LendasClassic.DAL
             }
         }
 
+
+        //Autentica User
+
+        public AutenticaUserDTO Autenticar(string objNome, string objSenha)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT nomeUsuario, senhaUsuario, fkTpUsuario FROM usuario WHERE nomeUsuario=@v1 AND senhaUsuario=@v2", conn);
+                cmd.Parameters.AddWithValue("@v1", objNome);
+                cmd.Parameters.AddWithValue("@v2", objSenha);
+                dr = cmd.ExecuteReader();
+
+                AutenticaUserDTO obj = null;
+                if (dr.Read())
+                {
+                    
+                    obj = new AutenticaUserDTO();
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
+                    obj.senhaUsuario = dr["senhaUsuario"].ToString();
+                    obj.fkTpUsuario = dr["fkTpUsuario"].ToString();
+
+                }
+                return obj; 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Usuário não cadastrado !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
     }
 }
