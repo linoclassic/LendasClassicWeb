@@ -36,5 +36,12 @@ namespace LendasClassic.BLL
             objBLL.Excluir(objExclui);
         }
 
+        //AUNTENTICACAO
+
+        public AutenticaUserDTO AutenticarUser(string objNome, string objSenha)
+        {
+            return objBLL.Autenticar(objNome, objSenha);
+        }
+
     }
 }

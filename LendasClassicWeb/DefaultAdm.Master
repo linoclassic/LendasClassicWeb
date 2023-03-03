@@ -81,16 +81,6 @@
    <div class="fake-footer text-center pt-4 pb-3 h6"><small>© 2023 Lendas Classic. Todos os direitos reservados.</small></div>
 </footer>
 
-   
-
-
-
-
-
-
-
-    
-
     <%--scripts--%>
     <script src="Scripts/Script.js"></script>
     <script src="Scripts/jquery-3.6.3.min.js"></script>
