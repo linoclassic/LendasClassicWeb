@@ -124,6 +124,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\jquery-3.6.3.min.js" />
     <Content Include="Content\Style.css" />
     <Content Include="Images\AddUser60.png" />
     <Content Include="Images\Atualizar60.png" />
