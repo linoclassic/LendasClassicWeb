@@ -14,6 +14,7 @@ namespace LendasClassic.DTO
 
         public string fkTpUsuario { get; set; }
 
+        public string statusUsuario { get; set; }
 
     }
 }
