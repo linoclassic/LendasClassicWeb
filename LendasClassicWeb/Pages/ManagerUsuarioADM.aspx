@@ -4,6 +4,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+
+
    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" CssClass="table table-responsive table-striped">
 
        <Columns>
@@ -83,7 +85,7 @@
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtStatusUsuarioFooter" runat="server" />
+                      <asp:TextBox ID="txtStatusUsuarioFooter" runat="server" MaxLength="7" AutoPostBack="True" OnTextChanged="txtStatusUsuarioFooter_TextChanged" />
                </FooterTemplate>
 
 
@@ -101,7 +103,7 @@
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtEmailUsuarioFooter" runat="server" />
+                      <asp:TextBox ID="txtEmailUsuarioFooter"  runat="server" />
                </FooterTemplate>
 
 
@@ -118,7 +120,7 @@
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtSenhaUsuarioFooter" runat="server" />
+                      <asp:TextBox ID="txtSenhaUsuarioFooter" runat="server" MaxLength="4" />
                </FooterTemplate>
 
 
@@ -131,11 +133,11 @@
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="50" Text='<%#Eval("cpfUsuario") %>' />
+                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtCpfUsuarioFooter" runat="server" />
+                      <asp:TextBox ID="txtCpfUsuarioFooter" runat="server"  MaxLength="14"/>
                </FooterTemplate>
 
 
@@ -152,7 +154,7 @@
                </EditItemTemplate>
 
                <FooterTemplate>
-                      <asp:TextBox ID="txtTelefoneUsuarioFooter" runat="server" />
+                      <asp:TextBox ID="txtTelefoneUsuarioFooter" runat="server" MaxLength="14"/>
                </FooterTemplate>
 
 

@@ -170,7 +170,7 @@ namespace LendasClassicWeb.Pages
             objBLL.EditarUsuario(objModelo);
             gv1.EditIndex = -1;
             PopularGV();
-            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!" + objModelo.idUsuario;
+            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!";
         }
 
 
@@ -199,6 +199,13 @@ namespace LendasClassicWeb.Pages
 
         protected void txtStatusUsuario_TextChanged(object sender, EventArgs e)
         {
+            // Código para converter para maiúsculo
+            TextBox txtStatusUsuario = (TextBox)sender;
+            txtStatusUsuario.Text = txtStatusUsuario.Text.ToUpper();
+        }
+
+        protected void txtStatusUsuarioFooter_TextChanged(object sender, EventArgs e)
+        { 
             // Código para converter para maiúsculo
             TextBox txtStatusUsuario = (TextBox)sender;
             txtStatusUsuario.Text = txtStatusUsuario.Text.ToUpper();
