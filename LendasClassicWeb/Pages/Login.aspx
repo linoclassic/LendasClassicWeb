@@ -21,7 +21,7 @@
         </asp:RequiredFieldValidator>
         <br />
         <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-secondary rounded " OnClick="btnEntrar_Click"/>
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded"  type="reset" value="Reset" OnClick="btnCancelar_Click" />
         <br />
         <asp:Label ID="lblErro" runat="server"  CssClass="lead" ForeColor="Red"></asp:Label>
         <asp:Label ID="lblMensagem" runat="server"  CssClass="lead" ForeColor="Red"></asp:Label>

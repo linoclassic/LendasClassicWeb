@@ -114,6 +114,13 @@ namespace LendasClassicWeb.Pages
             {
                 PopularGV();
             }
+
+            //iniciando session
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            lblSessionMsg.Text = "Seja bem vindo " + Session["Usuario"] + " ao Lendas Classic";
         }
 
         protected void gv1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -209,6 +216,11 @@ namespace LendasClassicWeb.Pages
             // Código para converter para maiúsculo
             TextBox txtStatusUsuario = (TextBox)sender;
             txtStatusUsuario.Text = txtStatusUsuario.Text.ToUpper();
+        }
+
+        protected void gv1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+           f
         }
     }
 

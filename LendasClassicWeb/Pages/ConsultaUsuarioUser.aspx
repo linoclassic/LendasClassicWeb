@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultUser.Master" AutoEventWireup="true" CodeBehind="ConsultaUser.aspx.cs" Inherits="LendasClassicWeb.Pages.ConsultaUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultUser.Master" AutoEventWireup="true" CodeBehind="ConsultaUsuarioUser.aspx.cs" Inherits="LendasClassicWeb.Pages.ConsultaUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" CssClass="table table-responsive table-striped">
+    <asp:Label ID="lblSessionMsg" runat="server" Text="Label" CssClass="h4"/>
+
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" CssClass="table table-responsive table-striped mt-5">
 
         <Columns>
 

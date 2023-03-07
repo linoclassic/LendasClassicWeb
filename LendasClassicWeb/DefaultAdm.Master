@@ -36,10 +36,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>
+ <%--       <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
         <a class="nav-link px-3" href="#">Usuários</a>
         <a class="nav-link" href="#">Reserva</a>
-  
       </div>
     </div>
   </div>
@@ -50,7 +49,10 @@
 
    
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     
             </asp:ContentPlaceHolder>
+
+      
 
         </div>
     </form>

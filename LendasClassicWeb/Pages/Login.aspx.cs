@@ -11,8 +11,16 @@ namespace LendasClassicWeb.Pages
 {
     public partial class Login : System.Web.UI.Page
     {
+        public void Limpar()
+        {
+            txtUsuario.Text = txtSenha.Text = string.Empty;
+            txtUsuario.Focus();
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtUsuario.Focus();
 
         }
 
@@ -42,14 +50,14 @@ namespace LendasClassicWeb.Pages
             }
             else
             {
-               
+                Limpar();
                 lblErro.Text = "Usuário ou senha incorretos. Por favor, tente novamente.";
             }
         }
 
-            protected void btnCancelar_Click(object sender, EventArgs e)
-                {
-
-                }
-            }
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpar();
         }
+    }
+}

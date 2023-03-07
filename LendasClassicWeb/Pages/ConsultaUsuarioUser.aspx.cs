@@ -14,10 +14,17 @@ namespace LendasClassicWeb.Pages
         {
             UsuarioBLL objBLL = new UsuarioBLL();
             gv1.DataSource = objBLL.ListarUsuario();
-            gv1.DataBind();    
-            
+            gv1.DataBind();
 
+            //iniciando session
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            lblSessionMsg.Text = "Seja bem vindo " + Session["Usuario"] + " ao Lendas Classic";
 
         }
+
+ 
     }
 }
