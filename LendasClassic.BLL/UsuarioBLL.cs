@@ -35,6 +35,11 @@ namespace LendasClassic.BLL
             objBLL.Editar(objEdita);
         }
 
+        public void EditarUsLogado(UsuarioDTO objEdita)
+        {
+            objBLL.EditarUserLogado(objEdita);
+        }
+
         //DELETE
         public void ExcluirUsuario(int objExclui)
         {

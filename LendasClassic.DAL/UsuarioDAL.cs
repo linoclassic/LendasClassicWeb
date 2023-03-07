@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using LendasClassic.DTO;
 using Org.BouncyCastle.Utilities.Collections;
 using System.Web;
+using MySqlX.XDevAPI;
 
 namespace LendasClassic.DAL
 {
@@ -80,21 +81,27 @@ namespace LendasClassic.DAL
             }
         }
 
+        //Read User logado
         public List<UsuarioDTO> ListarUserLogado()
         {
-            int idUsuario = Convert.ToInt32(HttpContext.Current.Session["idUsuario"]);
+          
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM usuario WHERE idUsuario = @idUsuario", conn);
-                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
+                cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario WHERE nomeUsuario = @nomeUsuario", conn);
+                //cmd = new MySqlCommand("SELECT * FROM usuario WHERE idUsuario = @idUsuario AND nomeUsuario = @nomeUsuario", conn);
+                //cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                //cmd.Parameters.AddWithValue("@nomeUsuario", HttpContext.Current.Session["Usuario"].ToString());
+                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+
                 dr = cmd.ExecuteReader();
                 List<UsuarioDTO> ListaUsuario = new List<UsuarioDTO>(); // criando lista vazia
 
                 while (dr.Read())
                 {
                     UsuarioDTO usuario = new UsuarioDTO();
-                    //usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
                     usuario.nomeUsuario = dr["nomeUsuario"].ToString();
                     //usuario.fkTpUsuario = Convert.ToInt32(dr["fkTpUsuario"]);
                     //usuario.statusUsuario = dr["statusUsuario"].ToString();
@@ -133,6 +140,35 @@ namespace LendasClassic.DAL
                 cmd.Parameters.AddWithValue("@nomeUsuario", objEdita.nomeUsuario);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objEdita.fkTpUsuario);
                 cmd.Parameters.AddWithValue("@statusUsuario", objEdita.statusUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", objEdita.emailUsuario);
+                cmd.Parameters.AddWithValue("@senhaUsuario", objEdita.senhaUsuario);
+                cmd.Parameters.AddWithValue("@cpfUsuario", objEdita.cpfUsuario);
+                cmd.Parameters.AddWithValue("@telefoneUsuario", objEdita.telefoneUsuario);
+                cmd.Parameters.AddWithValue("@idUsuario", objEdita.idUsuario);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao editar usuário !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        //Update User Logado
+
+        public void EditarUserLogado(UsuarioDTO objEdita)
+        {
+            try
+            {
+
+                Conectar();
+                cmd = new MySqlCommand("UPDATE usuario SET nomeUsuario=@nomeUsuario, emailUsuario=@emailUsuario, senhaUsuario=@senhaUsuario, cpfUsuario=@cpfUsuario, telefoneUsuario=@telefoneUsuario WHERE idUsuario=@idUsuario", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", objEdita.nomeUsuario);
                 cmd.Parameters.AddWithValue("@emailUsuario", objEdita.emailUsuario);
                 cmd.Parameters.AddWithValue("@senhaUsuario", objEdita.senhaUsuario);
                 cmd.Parameters.AddWithValue("@cpfUsuario", objEdita.cpfUsuario);

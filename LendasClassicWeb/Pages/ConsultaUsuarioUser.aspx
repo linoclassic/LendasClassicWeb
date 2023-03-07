@@ -6,7 +6,7 @@
 
     <asp:Label ID="lblSessionMsg" runat="server" Text="Label" CssClass="h4"/>
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" CssClass="table table-responsive table-striped mt-5">
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit"  OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped mt-5">
 
         <Columns>
 
@@ -20,55 +20,9 @@
                     <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("nomeUsuario") %>' />
                </EditItemTemplate>
 
-               <FooterTemplate>
-                      <asp:TextBox ID="txtNomeUsuarioFooter" runat="server" />
-               </FooterTemplate>
-
+     
 
            </asp:TemplateField>
-
-                        
-
-<%--          <asp:TemplateField HeaderText="Status">
-
-               <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("statusUsuario") %>' />
-               </ItemTemplate>
-              
-               <EditItemTemplate>
-                   <asp:RadioButtonList ID="rbl2" runat="server">
-                       <asp:ListItem Value="1" Text="ATIVO" />
-                       <asp:ListItem Value="2" Text="INATIVO" />
-                   </asp:RadioButtonList>
-               </EditItemTemplate>
-
-               <FooterTemplate>
-                      <asp:RadioButtonList ID="rbl2" runat="server">
-                       <asp:ListItem Value="1" Text="ATIVO" />
-                       <asp:ListItem Value="2" Text="INATIVO" />
-                   </asp:RadioButtonList>
-               </FooterTemplate>
-
-
-           </asp:TemplateField> --%>
-
-        <asp:TemplateField HeaderText="Status">
-
-               <ItemTemplate>
-                  <asp:Label runat="server" Text='<%#Eval("statusUsuario") %>' />
-               </ItemTemplate>
-              
-               <EditItemTemplate>
-                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="7" Text='<%#Eval("statusUsuario") %>' AutoPostBack="True" OnTextChanged="txtStatusUsuario_TextChanged"/>
-               </EditItemTemplate>
-
-               <FooterTemplate>
-                      <asp:TextBox ID="txtStatusUsuarioFooter" runat="server" MaxLength="7" AutoPostBack="True" OnTextChanged="txtStatusUsuarioFooter_TextChanged" />
-               </FooterTemplate>
-
-
-           </asp:TemplateField>
-
 
           <asp:TemplateField HeaderText="Email">
 
@@ -80,9 +34,7 @@
                     <asp:TextBox ID="txtEmailUsuario" runat="server" MaxLength="50" Text='<%#Eval("emailUsuario") %>' />
                </EditItemTemplate>
 
-               <FooterTemplate>
-                      <asp:TextBox ID="txtEmailUsuarioFooter"  runat="server" />
-               </FooterTemplate>
+             
 
 
            </asp:TemplateField>
@@ -97,9 +49,7 @@
                     <asp:TextBox ID="txtSenhaUsuario" runat="server" MaxLength="4" Text='<%#Eval("senhaUsuario") %>' />
                </EditItemTemplate>
 
-               <FooterTemplate>
-                      <asp:TextBox ID="txtSenhaUsuarioFooter" runat="server" MaxLength="4" />
-               </FooterTemplate>
+             
 
 
            </asp:TemplateField>
@@ -114,10 +64,7 @@
                     <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
                </EditItemTemplate>
 
-               <FooterTemplate>
-                      <asp:TextBox ID="txtCpfUsuarioFooter" runat="server"  MaxLength="14"/>
-               </FooterTemplate>
-
+         
 
            </asp:TemplateField>  
 
@@ -131,9 +78,7 @@
                     <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' />
                </EditItemTemplate>
 
-               <FooterTemplate>
-                      <asp:TextBox ID="txtTelefoneUsuarioFooter" runat="server" MaxLength="14"/>
-               </FooterTemplate>
+           
 
 
            </asp:TemplateField>  
@@ -142,8 +87,7 @@
           <asp:TemplateField HeaderText="Opções">
 
                <ItemTemplate>
-                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/>
-                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteUser60.png" ToolTip="Excluir" Width="40" Height="40" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro?'))return false"/>
+                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/> 
                </ItemTemplate>
               
                <EditItemTemplate>
@@ -152,7 +96,7 @@
                </EditItemTemplate>
 
                <FooterTemplate>
-                     <asp:ImageButton ID="btnAdicionar" runat="server" ImageUrl="~/Images/AddUser60.png" ToolTip="Adicionar" Width="40" Height="40" CommandName="Add"/>
+                    
                </FooterTemplate>
 
 
@@ -162,5 +106,7 @@
         </Columns>
 
         </asp:GridView>
+     <br />
+    <asp:Label ID="lblMessage" runat="server" Text="Label" />s
 
 </asp:Content>
