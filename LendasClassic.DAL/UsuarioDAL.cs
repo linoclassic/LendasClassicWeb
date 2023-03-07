@@ -142,7 +142,7 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT nomeUsuario, senhaUsuario, fkTpUsuario FROM usuario WHERE nomeUsuario=@nomeUsuario AND senhaUsuario=@senhaUsuario", conn);
+                cmd = new MySqlCommand("SELECT nomeUsuario, senhaUsuario, fkTpUsuario, statusUsuario FROM usuario WHERE nomeUsuario=@nomeUsuario AND senhaUsuario=@senhaUsuario AND statusUsuario='ATIVO'", conn);
                 cmd.Parameters.AddWithValue("@nomeUsuario", objNome);
                 cmd.Parameters.AddWithValue("@senhaUsuario", objSenha);
                 dr = cmd.ExecuteReader();
@@ -155,6 +155,7 @@ namespace LendasClassic.DAL
                     obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.senhaUsuario = dr["senhaUsuario"].ToString();
                     obj.fkTpUsuario = dr["fkTpUsuario"].ToString();
+                    obj.statusUsuario = dr["statusUsuario"].ToString();
 
                 }
                 return obj; 

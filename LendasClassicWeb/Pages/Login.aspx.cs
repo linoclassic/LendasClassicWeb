@@ -20,6 +20,7 @@ namespace LendasClassicWeb.Pages
         {
             string objNome = txtUsuario.Text.Trim();
             string objSenha = txtSenha.Text.Trim();
+            
 
             AutenticaUserDTO objModelo = new AutenticaUserDTO();
             UsuarioBLL ObjAutentica = new UsuarioBLL();
