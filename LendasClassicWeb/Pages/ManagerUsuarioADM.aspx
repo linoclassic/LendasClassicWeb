@@ -79,7 +79,7 @@
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="50" Text='<%#Eval("statusUsuario") %>' />
+                    <asp:TextBox ID="txtStatusUsuario" runat="server" MaxLength="7" Text='<%#Eval("statusUsuario") %>' AutoPostBack="True" OnTextChanged="txtStatusUsuario_TextChanged"/>
                </EditItemTemplate>
 
                <FooterTemplate>
@@ -114,7 +114,7 @@
                </ItemTemplate>
               
                <EditItemTemplate>
-                    <asp:TextBox ID="txtSenhaUsuario" runat="server" MaxLength="50" Text='<%#Eval("senhaUsuario") %>' />
+                    <asp:TextBox ID="txtSenhaUsuario" runat="server" MaxLength="4" Text='<%#Eval("senhaUsuario") %>' />
                </EditItemTemplate>
 
                <FooterTemplate>

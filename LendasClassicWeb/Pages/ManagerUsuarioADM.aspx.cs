@@ -22,12 +22,12 @@ namespace LendasClassicWeb.Pages
         }
 
         //messageBox
-         public void MsgBox(String ex, Page pg, Object obj)
-            {
-               string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
-             Type cstype = obj.GetType();
-           ClientScriptManager cs = pg.ClientScript;
-         cs.RegisterClientScriptBlock(cstype, s, s.ToString());
+        public void MsgBox(String ex, Page pg, Object obj)
+        {
+            string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
+            Type cstype = obj.GetType();
+            ClientScriptManager cs = pg.ClientScript;
+            cs.RegisterClientScriptBlock(cstype, s, s.ToString());
         }
 
         //validacao User
@@ -150,28 +150,29 @@ namespace LendasClassicWeb.Pages
 
         protected void gv1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-          
-                objModelo.nomeUsuario = (gv1.Rows[e.RowIndex].FindControl("txtNomeUsuario") as TextBox).Text.Trim();
 
-                objModelo.fkTpUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl1") as RadioButtonList).Text.Trim();
+            objModelo.nomeUsuario = (gv1.Rows[e.RowIndex].FindControl("txtNomeUsuario") as TextBox).Text.Trim();
 
-                objModelo.statusUsuario = (gv1.Rows[e.RowIndex].FindControl("txtStatusUsuario") as TextBox).Text.Trim();
+            objModelo.fkTpUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl1") as RadioButtonList).Text.Trim();
 
-                objModelo.emailUsuario = (gv1.Rows[e.RowIndex].FindControl("txtEmailUsuario") as TextBox).Text.Trim();
+            objModelo.statusUsuario = (gv1.Rows[e.RowIndex].FindControl("txtStatusUsuario") as TextBox).Text.Trim();
 
-                objModelo.senhaUsuario = (gv1.Rows[e.RowIndex].FindControl("txtSenhaUsuario") as TextBox).Text.Trim();
+            objModelo.emailUsuario = (gv1.Rows[e.RowIndex].FindControl("txtEmailUsuario") as TextBox).Text.Trim();
 
-                objModelo.cpfUsuario = (gv1.Rows[e.RowIndex].FindControl("txtCpfUsuario") as TextBox).Text.Trim();
+            objModelo.senhaUsuario = (gv1.Rows[e.RowIndex].FindControl("txtSenhaUsuario") as TextBox).Text.Trim();
 
-                objModelo.telefoneUsuario = (gv1.Rows[e.RowIndex].FindControl("txtTelefoneUsuario") as TextBox).Text.Trim();
+            objModelo.cpfUsuario = (gv1.Rows[e.RowIndex].FindControl("txtCpfUsuario") as TextBox).Text.Trim();
 
-                objModelo.idUsuario = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
+            objModelo.telefoneUsuario = (gv1.Rows[e.RowIndex].FindControl("txtTelefoneUsuario") as TextBox).Text.Trim();
 
-                objBLL.EditarUsuario(objModelo);
-                gv1.EditIndex = -1;
-                PopularGV();
-                lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!" + objModelo.idUsuario;
+            objModelo.idUsuario = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
+
+            objBLL.EditarUsuario(objModelo);
+            gv1.EditIndex = -1;
+            PopularGV();
+            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!" + objModelo.idUsuario;
         }
+
 
         protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -188,11 +189,22 @@ namespace LendasClassicWeb.Pages
             gv1.EditIndex = e.NewEditIndex;
             PopularGV();
         }
+    
 
         protected void gv1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gv1.EditIndex = -1;
             PopularGV();
         }
+
+        protected void txtStatusUsuario_TextChanged(object sender, EventArgs e)
+        {
+            // Código para converter para maiúsculo
+            TextBox txtStatusUsuario = (TextBox)sender;
+            txtStatusUsuario.Text = txtStatusUsuario.Text.ToUpper();
+        }
     }
+
+
+
 }

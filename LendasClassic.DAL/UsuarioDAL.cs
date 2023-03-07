@@ -9,7 +9,7 @@ using Org.BouncyCastle.Utilities.Collections;
 
 namespace LendasClassic.DAL
 {
-    public class UsuarioDAL:Conexao
+    public class UsuarioDAL : Conexao
     {
         //CRUD
 
@@ -27,8 +27,8 @@ namespace LendasClassic.DAL
                 cmd.Parameters.AddWithValue("@senhaUsuario", objCad.senhaUsuario);
                 cmd.Parameters.AddWithValue("@cpfUsuario", objCad.cpfUsuario);
                 cmd.Parameters.AddWithValue("@telefoneUsuario", objCad.telefoneUsuario);
-               
-           
+
+
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace LendasClassic.DAL
             {
                 Conectar();
                 cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, descricaoTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
-                dr= cmd.ExecuteReader();
+                dr = cmd.ExecuteReader();
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>(); // criando lista vazia
 
                 while (dr.Read())
@@ -66,7 +66,7 @@ namespace LendasClassic.DAL
                 }
                 return Lista;
 
-             
+
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace LendasClassic.DAL
             try
             {
 
-           //     UPDATE clienteweb SET nomeCliente = 'Eric', fkTpUsuario = 2, fkTpStatus = 1, emailCliente = 'eric@gmail.com', senhaCliente = '1111', cpfCliente = '412.403.258-78', telefoneCliente = '(11)95882-3482', cidadeCliente = 'São Paulo', estadoCliente = 'SP', bairroCliente = 'Vila Rosana', enderecoCliente = 'Rua Curupíra', numeroCliente = 12 WHERE idCliente = 1;
+                //     UPDATE clienteweb SET nomeCliente = 'Eric', fkTpUsuario = 2, fkTpStatus = 1, emailCliente = 'eric@gmail.com', senhaCliente = '1111', cpfCliente = '412.403.258-78', telefoneCliente = '(11)95882-3482', cidadeCliente = 'São Paulo', estadoCliente = 'SP', bairroCliente = 'Vila Rosana', enderecoCliente = 'Rua Curupíra', numeroCliente = 12 WHERE idCliente = 1;
 
 
 
@@ -150,7 +150,7 @@ namespace LendasClassic.DAL
                 AutenticaUserDTO obj = null;
                 if (dr.Read())
                 {
-                    
+
                     obj = new AutenticaUserDTO();
                     obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.senhaUsuario = dr["senhaUsuario"].ToString();
@@ -158,7 +158,7 @@ namespace LendasClassic.DAL
                     obj.statusUsuario = dr["statusUsuario"].ToString();
 
                 }
-                return obj; 
+                return obj;
             }
             catch (Exception ex)
             {
@@ -169,6 +169,8 @@ namespace LendasClassic.DAL
                 Desconectar();
             }
         }
+
+
 
     }
 }

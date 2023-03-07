@@ -20,12 +20,11 @@ namespace LendasClassicWeb.Pages
         {
             string objNome = txtUsuario.Text.Trim();
             string objSenha = txtSenha.Text.Trim();
-            
+
 
             AutenticaUserDTO objModelo = new AutenticaUserDTO();
             UsuarioBLL ObjAutentica = new UsuarioBLL();
             objModelo = ObjAutentica.AutenticarUser(objNome, objSenha);
-
             if (objModelo != null && objModelo.statusUsuario == "ATIVO")
             {
                 switch (objModelo.fkTpUsuario)
@@ -43,14 +42,14 @@ namespace LendasClassicWeb.Pages
             }
             else
             {
-                lblMensagem.Text = "Usuário não cadastrado ou inativo!";
+               
+                lblErro.Text = "Usuário ou senha incorretos. Por favor, tente novamente.";
             }
-
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
+            protected void btnCancelar_Click(object sender, EventArgs e)
+                {
 
+                }
+            }
         }
-    }
-}
