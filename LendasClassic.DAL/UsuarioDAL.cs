@@ -28,7 +28,7 @@ namespace LendasClassic.DAL
                 cmd.Parameters.AddWithValue("@cpfUsuario", objCad.cpfUsuario);
                 cmd.Parameters.AddWithValue("@telefoneUsuario", objCad.telefoneUsuario);
 
-
+                cmd.ExecuteNonQuery();  
             }
             catch (Exception ex)
             {
