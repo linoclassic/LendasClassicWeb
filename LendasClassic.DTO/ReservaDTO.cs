@@ -10,17 +10,12 @@ namespace LendasClassic.DTO
     {
         public int ÍdReserva { get; set; }
 
-        public string NumeroClienteReserva { get; set; }
-
-        public DateTime DataReserva { get; set; }
-
-        public TimeSpan HoraReserva { get; set; }
+        public DateTime dataReserva { get; set; }
 
         public string StatusReserva { get; set; }
 
-
         //Relacionamento
-        public string FkIdCliente { get; set; }
+        public int fkUsuario { get; set; }
 
     }
 }

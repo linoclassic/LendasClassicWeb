@@ -196,7 +196,7 @@ namespace LendasClassicWeb.Pages
             gv1.EditIndex = e.NewEditIndex;
             PopularGV();
         }
-    
+
 
         protected void gv1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
@@ -212,7 +212,7 @@ namespace LendasClassicWeb.Pages
         }
 
         protected void txtStatusUsuarioFooter_TextChanged(object sender, EventArgs e)
-        { 
+        {
             // Código para converter para maiúsculo
             TextBox txtStatusUsuario = (TextBox)sender;
             txtStatusUsuario.Text = txtStatusUsuario.Text.ToUpper();
@@ -220,7 +220,7 @@ namespace LendasClassicWeb.Pages
 
         protected void gv1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-           f
+
         }
     }
 

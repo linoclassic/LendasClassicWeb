@@ -24,6 +24,11 @@ namespace LendasClassic.BLL
             return objBLL.Listar();
         }
 
+        public List<UsuarioDTO> ListarUsLogado()
+        {
+            return objBLL.ListarUserLogado();
+        }
+
         //UPDATE
         public void EditarUsuario(UsuarioDTO objEdita)
         {

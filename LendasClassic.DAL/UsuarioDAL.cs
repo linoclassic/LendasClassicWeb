@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using LendasClassic.DTO;
 using Org.BouncyCastle.Utilities.Collections;
+using System.Web;
 
 namespace LendasClassic.DAL
 {
@@ -77,6 +78,44 @@ namespace LendasClassic.DAL
             {
                 Desconectar();
             }
+        }
+
+        public List<UsuarioDTO> ListarUserLogado()
+        {
+            int idUsuario = Convert.ToInt32(HttpContext.Current.Session["idUsuario"]);
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM usuario WHERE idUsuario = @idUsuario", conn);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                dr = cmd.ExecuteReader();
+                List<UsuarioDTO> ListaUsuario = new List<UsuarioDTO>(); // criando lista vazia
+
+                while (dr.Read())
+                {
+                    UsuarioDTO usuario = new UsuarioDTO();
+                    //usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    usuario.nomeUsuario = dr["nomeUsuario"].ToString();
+                    //usuario.fkTpUsuario = Convert.ToInt32(dr["fkTpUsuario"]);
+                    //usuario.statusUsuario = dr["statusUsuario"].ToString();
+                    usuario.emailUsuario = dr["emailUsuario"].ToString();
+                    usuario.senhaUsuario = dr["senhaUsuario"].ToString();
+                    usuario.cpfUsuario = dr["cpfUsuario"].ToString();
+                    usuario.telefoneUsuario = dr["telefoneUsuario"].ToString();
+                    ListaUsuario.Add(usuario);
+                }
+                return ListaUsuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao listar usuário logado !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+
         }
 
         //UPDATE

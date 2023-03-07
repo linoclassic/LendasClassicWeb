@@ -10,10 +10,12 @@ namespace LendasClassicWeb.Pages
 {
     public partial class ConsultaUser : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioBLL objBLL = new UsuarioBLL();
-            gv1.DataSource = objBLL.ListarUsuario();
+            gv1.DataSource = objBLL.ListarUsLogado();
             gv1.DataBind();
 
             //iniciando session

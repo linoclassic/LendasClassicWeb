@@ -17,7 +17,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Usuários Check</title>
+    <title>Usuário - Lendas Classic</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -34,8 +34,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 <%--        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
-        <a class="nav-link px-3" href="#">Usuários</a>
-        <a class="nav-link" href="#">Reserva</a>
+        <a class="nav-link px-3" href="ConsultaUsuarioUser.aspx">Usuários</a>
+        <a class="nav-link" href="ReservaUser.aspx">Reserva</a>
   
       </div>
     </div>
