@@ -136,7 +136,6 @@ namespace LendasClassic.DAL
 
 
         //Autentica User
-
         public AutenticaUserDTO Autenticar(string objNome, string objSenha)
         {
             try
@@ -171,6 +170,6 @@ namespace LendasClassic.DAL
         }
 
 
-
+      
     }
 }
