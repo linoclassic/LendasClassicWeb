@@ -5,81 +5,91 @@
 <html>
 <head runat="server">
 
-     <%-- metas --%>
+    <%-- metas --%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <%--links--%>
-     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <%--links--%>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link href="Content/Style.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Usuário - Lendas Classic</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div class="container-fluid bg-dark w-100" >
+        <form id="form1" runat="server">
 
-              <%--      navbar--%>
-            <nav class="navbar  bg-dark navbar-expand-lg bg-body-tertiary mb-4 mr-3" data-bs-theme="dark">
-  <div class="container-fluid px-3">
-    <a class="navbar-brand" href="#">LENDAS CLASSIC</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-<%--        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
-        <a class="nav-link px-3" href="ConsultaUsuarioUser.aspx">Usuário</a>
-        <a class="nav-link" href="ReservaUser.aspx">Reserva</a>
-  
-      </div>
+
+            <%--      navbar--%>
+            <nav class="navbar navbar-dark navbar-expand-lg mb-4  "style="background-color: #040303f2;"  data-bs-theme="dark">
+                <div class="container-fluid px-3">
+                    <a class="navbar-brand" href="#">LENDAS CLASSIC</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <%--        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
+                            <a class="nav-link px-3" href="ConsultaUsuarioUser.aspx">Usuário</a>
+                            <a class="nav-link" href="ReservaUser.aspx">Reserva</a>
+                            <a href="ConsultaUsuarioUser.aspx">
+                                <img src="Images/UserWhite.png" alt="Usuário">
+                            </a>
+
+                           
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container-fluid bg-dark" style="height:61vh">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
     </div>
-  </div>
-</nav>
 
+    <%--footer--%>
+    <footer class="bg-secondary text-white w-100">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-4 text-center pb-4">
+                    <h5 class="mb-3">Lendas Classic</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+                </div>
+                <div class="col-md-4 text-center align-content-center">
+                    <h5 class="mb-3">Redes Sociais</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-facebook-circle'></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-twitter'></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-instagram-alt'></i></a></li>
 
-        <div class="container-fluid">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="mb-3">Contato</h5>
+                    <p><i class='bx  bx-sm bxs-map'></i>Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
+                    <p><i class='bx bx-sm bxs-phone'></i>(11) 9727-6667</p>
+                </div>
+            </div>
         </div>
-    </form>
-
-      <%--footer--%>
-   <footer class="bg-dark text-white w-100">
-  <div class="container">
-    <div class="row pt-5">
-      <div class="col-md-4 text-center">
-        <h5 class="mb-3">Lendas Classic</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
-      </div>
-      <div class="col-md-4 text-center align-content-center">
-        <h5 class="mb-3">Redes Sociais</h5>
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-facebook-circle'></i></a></li>
-          <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-twitter' ></i></a></li>
-          <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-instagram-alt' ></i></a></li>
-  
-        </ul>
-      </div>
-      <div class="col-md-4 text-center">
-        <h5 class="mb-3">Contato</h5>
-        <p><i class='bx  bx-sm bxs-map' ></i> Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
-        <p><i class='bx bx-sm bxs-phone' ></i> (11) 9727-6667</p>
-      </div>
-    </div>
-  </div>
-  
-   <div class="fake-footer text-center pt-4 pb-3 h6"><small>© 2023 Lendas Classic. Todos os direitos reservados.</small></div>
-</footer>
+           <hr>
+        <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
+      </footer>
+   
 
 
 
-       <%--scripts--%>
+    <%--scripts--%>
     <script src="Scripts/Script.js"></script>
     <script src="Scripts/jquery-3.6.3.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>

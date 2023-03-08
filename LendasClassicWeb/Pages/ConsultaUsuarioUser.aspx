@@ -4,9 +4,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Label ID="lblSessionMsg" runat="server" Text="Label" CssClass="h4"/>
+    <asp:Label ID="lblSessionMsg" runat="server" Text="Label" CssClass="h4 text-light   "/>
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit"  OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped mt-5">
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit"  OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5">
 
         <Columns>
 
@@ -87,12 +87,12 @@
           <asp:TemplateField HeaderText="Opções">
 
                <ItemTemplate>
-                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/> 
+                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/EditarWhite.png" ToolTip="Editar" Width="41" Height="41" CommandName="Edit"/> 
                </ItemTemplate>
               
                <EditItemTemplate>
-                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/Salvar60.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Update"/>
-                      <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/Cancelar60.png" ToolTip="Cancelar" Width="40" Height="40" CommandName="Cancel"/>
+                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/UpdateWhite.png" ToolTip="Salvar" Width="30" Height="30" CommandName="Update"/>
+                      <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/CancelWhite.png" ToolTip="Cancelar" Width="30" Height="30" CommandName="Cancel"/>
                </EditItemTemplate>
 
                <FooterTemplate>

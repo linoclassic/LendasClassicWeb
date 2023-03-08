@@ -58,7 +58,7 @@ namespace LendasClassicWeb.Pages
             objBLL.EditarUsLogado(objModelo);
             gv1.EditIndex = -1;
             PopularGvUser();
-            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!";
+            lblMessage.Text = "Usuário editado com sucesso !!!";
         }
 
         protected void gv1_RowEditing(object sender, GridViewEditEventArgs e)
