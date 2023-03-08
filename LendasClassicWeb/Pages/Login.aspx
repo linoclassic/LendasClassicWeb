@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto text-light">
-                <h1 class="font-weight-light text-light mb-4 text-center">Fazer Login</h1>
+            <div class="col-md-6 mt-5 mx-auto text-light">
+                <h1 class="font-weight-light text-light  mt-5 mb-4 text-center">FAZER LOGIN</h1>
                 <asp:Label runat="server" Text="Nome de usuário" CssClass="lead" />
                 <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control" MaxLength="50" runat="server" />
                 <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
@@ -17,9 +17,14 @@
                 <br />
                   <asp:Label ID="lblErro" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>
                   <div class="d-flex justify-content-center mt-3">
-            <asp:Button ID="Button1" runat="server" Text="Entrar" CssClass="btn btn-secondary rounded" OnClick="btnEntrar_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />
+            <asp:Button ID="Button1" runat="server" Text="ENTRAR" CssClass="btn py-2 btn-lg w-50 btn-secondary rounded" OnClick="btnEntrar_Click" />
+                      
+        <%--    <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />--%>
         </div>
+                <div class="mt-4 text-center">
+                          <p>Não tem um cadastro? <a href="#" class="link-primary">Cadastrar</a>
+                          </p>
+                      </div>
             </div>
         </div>
     </div>
