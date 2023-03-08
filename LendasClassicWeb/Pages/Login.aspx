@@ -3,28 +3,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div class="formulario text-dark mb-4 mx-5" >
-        <br />
-        <h1 class="text-dark font-weight-light">Autenticação</h1>
-        <br />
-        <asp:Label runat="server" Text="Usuário" CssClass="lead" />
-        <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control ml-5" MaxLength="50" runat="server" Width="40%" />
-        <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario">
-        </asp:RequiredFieldValidator>
-        
-        <br />
-        <asp:Label runat="server" Text="Senha" CssClass="lead" />
-        <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" MaxLength="4" runat="server" Width="40%"
-            TextMode="Password" />
-        <asp:RequiredFieldValidator ID="RequiredSenha" runat="server" ErrorMessage="*Digite a Senha do usuário" ForeColor="Red" ControlToValidate="txtSenha">
-        </asp:RequiredFieldValidator>
-        <br />
-        <asp:Button ID="btnEntrar" runat="server" Text="Entrar" CssClass="btn btn-secondary rounded " OnClick="btnEntrar_Click"/>
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded"  type="reset" value="Reset" OnClick="btnCancelar_Click" />
-        <br />
-        <asp:Label ID="lblErro" runat="server"  CssClass="lead" ForeColor="Red"></asp:Label>
-        <asp:Label ID="lblMensagem" runat="server"  CssClass="lead" ForeColor="Red"></asp:Label>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-light">
+                <h1 class="font-weight-light text-light mb-4 text-center">Fazer Login</h1>
+                <asp:Label runat="server" Text="Nome de usuário" CssClass="lead" />
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control" MaxLength="50" runat="server" />
+                <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
+                <br />
+                <asp:Label runat="server" Text="Senha" CssClass="lead" />
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" MaxLength="4" runat="server" TextMode="Password" />
+                <asp:RequiredFieldValidator ID="RequiredSenha" runat="server" ErrorMessage="*Digite a Senha do usuário" ForeColor="Red" ControlToValidate="txtSenha" />
+                <br />
+                  <asp:Label ID="lblErro" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>
+                  <div class="d-flex justify-content-center mt-3">
+            <asp:Button ID="Button1" runat="server" Text="Entrar" CssClass="btn btn-secondary rounded" OnClick="btnEntrar_Click" />
+            <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />
+        </div>
+            </div>
+        </div>
     </div>
-
 </asp:Content>

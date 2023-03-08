@@ -51,7 +51,7 @@ namespace LendasClassicWeb.Pages
             else
             {
                 Limpar();
-                lblErro.Text = "Usuário ou senha incorretos. Por favor, tente novamente.";
+                lblErro.Text = "*Usuário ou senha incorretos. Por favor, tente novamente.";
             }
         }
 
