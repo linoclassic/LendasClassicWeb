@@ -5,7 +5,7 @@
 
     <asp:Label ID="lblSessionMsg" runat="server" CssClass="h4 text-light"/>
 
-   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" AllowSorting="true" AllowPaging="true" PageSize="10" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table  table-dark table-responsive table-striped mt-5">
+   <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" AllowSorting="true" AllowPaging="true" PageSize="10" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-dark table-responsive table-responsive-sm table-striped mt-5">
        <Columns>
           <asp:TemplateField HeaderText="Nome">
 
@@ -161,17 +161,17 @@
           <asp:TemplateField HeaderText="Opções">
 
                <ItemTemplate>
-                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/Editar60.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/>
-                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteUser60.png" ToolTip="Excluir" Width="40" Height="40" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro?'))return false"/>
+                   <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/EditarWhite.png" ToolTip="Editar" Width="40" Height="40" CommandName="Edit"/>
+                   <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteWhite.png" ToolTip="Excluir" Width="36" Height="36" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro?'))return false"/>
                </ItemTemplate>
               
                <EditItemTemplate>
-                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/Salvar60.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Update"/>
-                      <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/Cancelar60.png" ToolTip="Cancelar" Width="40" Height="40" CommandName="Cancel"/>
+                      <asp:ImageButton ID="btnSalvar" runat="server" ImageUrl="~/Images/UpdateWhite.png" ToolTip="Salvar" Width="40" Height="40" CommandName="Update"/>
+                      <asp:ImageButton ID="btnCancelar" runat="server" ImageUrl="~/Images/CancelWhite.png" ToolTip="Cancelar" Width="40" Height="40" CommandName="Cancel"/>
                </EditItemTemplate>
 
                <FooterTemplate>
-                     <asp:ImageButton ID="btnAdicionar" runat="server" ImageUrl="~/Images/AddUser60.png" ToolTip="Adicionar" Width="40" Height="40" CommandName="Add"/>
+                     <asp:ImageButton ID="btnAdicionar" runat="server" ImageUrl="~/Images/AddWhite.png" ToolTip="Adicionar" Width="35" Height="35" CommandName="Add"/>
                </FooterTemplate>
 
 
