@@ -169,6 +169,13 @@
     <Compile Include="DefaultUser.Master.designer.cs">
       <DependentUpon>DefaultUser.Master</DependentUpon>
     </Compile>
+    <Compile Include="DefaultLogin.Master.cs">
+      <DependentUpon>DefaultLogin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultLogin.Master.designer.cs">
+      <DependentUpon>DefaultLogin.Master</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConsultaUsuarioUser.aspx.cs">
       <DependentUpon>ConsultaUsuarioUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,6 +225,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="DefaultLogin.Master" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />

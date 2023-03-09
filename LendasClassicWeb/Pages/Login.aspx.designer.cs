@@ -11,7 +11,7 @@ namespace LendasClassicWeb.Pages
 {
 
 
-    public partial class Login
+    public partial class Loginn
     {
 
         /// <summary>

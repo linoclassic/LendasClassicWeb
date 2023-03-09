@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultLogin.Master.cs" Inherits="LendasClassicWeb.Login" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <%-- metas --%>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <%--links--%>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link href="Content/Style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+
+   
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Usuários</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<%--        <div class="container-fluid bg-black" >--%>
+ <%-- ... --%>
+<body>
+<%--    <div class="container-fluid bg-gradient bg-primary bg-dark">--%>
+   <%-- <div class="container-fluid bg-gradient-primary" style="height:92vh;">--%>
+        <form id="form1" runat="server">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #040303f2;">
+         
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-4" href="#">LENDAS CLASSIC</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-sm-1 fs-5">
+                            <li class="nav-item p-2 ms-2 mx-2 rounded">
+                                <a class="nav-link active " aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item p-2 mx-2 ">
+                                <a class="nav-link active" href="../html/academia.html">Academia</a>
+                            </li>
+                            <li class="nav-item p-2 mx-2 ">
+                                <a class="nav-link active" href="../html/agende.html">Agende um tour</a>
+                            </li>
+                            <li class="nav-item p-2 mx-2 ">
+                                <a class="nav-link active" href="../html/equipe.html">Equipe</a>
+                            </li>
+                            <li class="nav-item p-2 mx-2 ">
+                                <a class="nav-link active" href="../html/contato.html">Contato</a>
+                            </li>
+                        </ul>
+                        <a href="pagina_de_login.html" class="btn btn-primary mx-2">Login</a>
+                    </div>
+                </div>
+            </nav>
+<%--            <div class="container-fluid bg-gradient bg-primary bg-dark" style="height:92vh;">--%>
+               <div class="container-fluid bg-gradient bg-primary bg-dark" style="height:92vh;">
+
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+    <%-- ... --%>
+</body>
+
+  
+
+    <%--scripts--%>
+    <script src="Scripts/Script.js"></script>
+    <script src="Scripts/jquery-3.6.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+   
+  
+
+</body>
+</html>

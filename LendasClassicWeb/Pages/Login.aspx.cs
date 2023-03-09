@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace LendasClassicWeb.Pages
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Loginn : System.Web.UI.Page
     {
         public void Limpar()
         {

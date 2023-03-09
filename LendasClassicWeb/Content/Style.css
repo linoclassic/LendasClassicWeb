@@ -5,10 +5,7 @@
     padding: 0;
 }
 
-body {
-    background-color: #fefefe;
-    color: #010101;
-}
+
 
 a {
     text-decoration: none;
@@ -17,3 +14,4 @@ a {
 i{
     font-size: 30px;
 }
+
