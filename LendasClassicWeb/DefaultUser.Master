@@ -22,41 +22,53 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="container-fluid bg-dark w-100" >
+  
         <form id="form1" runat="server">
 
 
-            <%--      navbar--%>
-            <nav class="navbar navbar-dark navbar-expand-lg mb-4  "style="background-color: #040303f2;"  data-bs-theme="dark">
-                <div class="container-fluid px-3">
-                    <a class="navbar-brand" href="#">LENDAS CLASSIC</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <%--        <a class="nav-link active pl-4" aria-current="page" href="#">Home</a>--%>
-                            <a class="nav-link px-3" href="ConsultaUsuarioUser.aspx">Usuário</a>
-                            <a class="nav-link" href="ReservaUser.aspx">Reserva</a>
-                            <a href="ConsultaUsuarioUser.aspx">
-                                <img src="Images/UserWhite.png" alt="Usuário">
+       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #040303f2;">
+
+            <div class=" container-fluid">
+
+                <a class="navbar-brand fs-4" href="#">LENDAS CLASSIC</a>
+                <%--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>--%>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " <%--id="navbarSupportedContent">--%> id="navbarNavDropdown">
+                    <ul class="navbar-nav  me-auto  mb-2 mb-sm-1 fs-5  ">
+                       
+                        <li class="nav-item p-2 mx-2 ">
+                            <a class="nav-link active" href="ConsultaUsuarioUser.aspx">Usuários</a>
+                        </li>
+                        <li class="nav-item p-2 mx-2 ">
+                            <a class="nav-link px-3 active" href="ReservaUser.aspx">Reserva</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="Images/UserWhite.png" width="30" height="30" class="d-inline-block align-top" alt="">
                             </a>
-
-                           
-
-
-                        </div>
-                    </div>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-
+            </div>
+        </nav>
 
             <div class="container-fluid bg-dark" style="height:61vh">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
         </form>
-    </div>
+    
 
     <%--footer--%>
     <footer class="bg-secondary text-white w-100">

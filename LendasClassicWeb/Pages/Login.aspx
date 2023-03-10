@@ -23,7 +23,7 @@
         <%--    <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />--%>
         </div>
                 <div class="mt-4 text-center">
-                          <p>Não tem um cadastro? <a href="#" class="link-primary">Cadastrar</a>
+                          <p>Não tem um cadastro? <a href="CadastroUser.aspx" class="link-primary">Cadastrar</a>
                           </p>
                       </div>
             </div>

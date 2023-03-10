@@ -140,6 +140,7 @@
     <Content Include="Images\Salvar60.png" />
     <Content Include="Images\UpdateWhite.png" />
     <Content Include="Images\UserWhite.png" />
+    <Content Include="Pages\CadastroUser.aspx" />
     <Content Include="Pages\ConsultaUsuarioUser.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\ManagerUsuarioADM.aspx" />
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="DefaultLogin.Master.designer.cs">
       <DependentUpon>DefaultLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CadastroUser.aspx.cs">
+      <DependentUpon>CadastroUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CadastroUser.aspx.designer.cs">
+      <DependentUpon>CadastroUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ConsultaUsuarioUser.aspx.cs">
       <DependentUpon>ConsultaUsuarioUser.aspx</DependentUpon>
