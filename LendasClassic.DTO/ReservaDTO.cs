@@ -8,7 +8,7 @@ namespace LendasClassic.DTO
 {
     public class ReservaDTO
     {
-        public int ÍdReserva { get; set; }
+        public int idReserva { get; set; }
 
         public DateTime dataReserva { get; set; }
 
@@ -16,6 +16,16 @@ namespace LendasClassic.DTO
 
         //Relacionamento
         public int fkUsuario { get; set; }
+
+        public string nomeUsuario { get; set; }
+
+
+        public string emailUsuario { get; set; }
+
+
+        public string telefoneUsuario { get; set; }
+
+        public string cpfUsuario { get; set; }
 
     }
 }
