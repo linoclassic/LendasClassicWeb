@@ -257,6 +257,10 @@
       <Project>{68c7c484-17e3-4f13-893d-1219f50cfcbb}</Project>
       <Name>LendasClassic.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LendasClassic.DAL\LendasClassic.DAL.csproj">
+      <Project>{00907AF2-C5BB-49D6-B754-590157BA3678}</Project>
+      <Name>LendasClassic.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LendasClassic.DTO\LendasClassic.DTO.csproj">
       <Project>{a0ed2699-1343-453a-a642-e9b96a51d33b}</Project>
       <Name>LendasClassic.DTO</Name>

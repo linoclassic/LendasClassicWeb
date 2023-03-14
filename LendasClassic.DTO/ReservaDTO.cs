@@ -15,6 +15,7 @@ namespace LendasClassic.DTO
         public string StatusReserva { get; set; }
 
         //Relacionamento
+        public int idUsuario { get; set; }
         public int fkUsuario { get; set; }
 
         public string nomeUsuario { get; set; }

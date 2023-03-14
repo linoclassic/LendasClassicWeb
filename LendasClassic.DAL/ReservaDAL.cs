@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -11,6 +12,78 @@ namespace LendasClassic.DAL
 {
     public class ReservaDAL : Conexao
     {
+        //OBTER ID DO USUARIO LOGADO
+        public int ObterIdUsuarioLogado()
+        {
+            string nomeUsuario = HttpContext.Current.User.Identity.Name;
+            int idUsuario = 0;
+
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT idUsuario FROM Usuario WHERE nomeUsuario = @nomeUsuario", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null && resultado != DBNull.Value)
+                {
+                    idUsuario = Convert.ToInt32(resultado);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter ID do usuário logado: " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+
+            return idUsuario;
+        }
+
+
+        // VERIFICAR SE USUARIO JA POSSUI UMA RESERVA   
+        public bool UsuarioPossuiReserva(int idUsuario)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT COUNT(*) FROM reserva WHERE fkUsuario = @idUsuario AND statusReserva = 'ATIVO'", conn);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao verificar se o usuário possui reserva: " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        //Verificar se o usuario possui reserva se não o mesmo possa cadastrar uma nova reserva
+        public void CadastrarReserva(ReservaDTO reserva)
+        {
+            int idUsuario = ObterIdUsuarioLogado();
+
+            // verifica se o usuário já possui uma reserva ativa
+            if (UsuarioPossuiReserva(idUsuario))
+            {
+                throw new Exception("Usuário já possui uma reserva ativa.");
+            }
+
+            // se o usuário não possui uma reserva ativa, permite que ele crie uma nova reserva
+            reserva.fkUsuario = idUsuario;
+            Cadastrar(reserva);
+        }
+
+
         //CRUD
 
         //CREATE
@@ -41,15 +114,20 @@ namespace LendasClassic.DAL
         }
 
         //READ
+
+        //Listar Reserva User Logador
         public List<ReservaDTO> Listar()
         {
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM reservausuario;", conn);
+                string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
+                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum WHERE nomeUsuario = '@nomeUsuario';", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
                 dr = cmd.ExecuteReader();
                 List<ReservaDTO> Lista = new List<ReservaDTO>(); // criando lista vazia
 
+                dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     ReservaDTO obj = new ReservaDTO();
@@ -58,7 +136,9 @@ namespace LendasClassic.DAL
                     obj.emailUsuario = dr["emailUsuario"].ToString();
                     obj.telefoneUsuario = dr["telefoneUsuario"].ToString();
                     obj.cpfUsuario = dr["cpfUsuario"].ToString();
-                    obj.dataReserva = dr["cpfUsuario"].ToString();
+                    obj.idReserva = Convert.ToInt32(dr["idReserva"]);
+                    obj.dataReserva = DateTime.Parse(dr["dataReserva"].ToString());
+                    obj.StatusReserva = dr["statusReserva"].ToString();
                     
                     Lista.Add(obj);
                 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LendasClassic.BLL;
+using LendasClassic.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,29 +11,18 @@ namespace LendasClassicWeb.Pages
 {
     public partial class RservaUser : System.Web.UI.Page
     {
-        private bool UsuarioPossuiReserva(int idUsuario)
+
+        ReservaDTO objModelo = new ReservaDTO();
+        ReservaBLL objBLL = new ReservaBLL();
+
+
+        public void PopularGv()
         {
-            try
-            {
-                Conectar();
-                cmd = new MySqlCommand("SELECT COUNT(*) FROM reserva WHERE fkUsuario = @idUsuario", conn);
-                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
-
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                return count > 0;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao verificar se o usuário possui reserva !!! " + ex.Message);
-            }
-            finally
-            {
-                Desconectar();
-            }
+                int idUsuario = objBLL.ObterIdDoUsuarioLogado();
+                gv1.DataSource = objBLL.ListarUsLogado();
+                gv1.DataBind();
+            
         }
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
