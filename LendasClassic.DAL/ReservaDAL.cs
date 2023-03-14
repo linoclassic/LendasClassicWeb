@@ -118,38 +118,37 @@ namespace LendasClassic.DAL
         //Listar Reserva User Logador
         public List<ReservaDTO> Listar()
         {
+
             try
             {
+                // Obter o id do usuário logado
+                int idUsuario = ObterIdUsuarioLogado();
+
                 Conectar();
-                string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
-                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum WHERE nomeUsuario = '@nomeUsuario';", conn);
-                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum WHERE idUsuario = @idUsuario;", conn);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
                 dr = cmd.ExecuteReader();
                 List<ReservaDTO> Lista = new List<ReservaDTO>(); // criando lista vazia
 
-                dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     ReservaDTO obj = new ReservaDTO();
                     obj.idUsuario = Convert.ToInt32(dr["idUsuario"]);
-                    obj.nomeUsuario = dr["nomeUsuario"].ToString(); 
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.emailUsuario = dr["emailUsuario"].ToString();
                     obj.telefoneUsuario = dr["telefoneUsuario"].ToString();
                     obj.cpfUsuario = dr["cpfUsuario"].ToString();
                     obj.idReserva = Convert.ToInt32(dr["idReserva"]);
                     obj.dataReserva = DateTime.Parse(dr["dataReserva"].ToString());
                     obj.StatusReserva = dr["statusReserva"].ToString();
-                    
+
                     Lista.Add(obj);
                 }
                 return Lista;
-
-
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Erro ao listar Usuário !!! " + ex.Message);
+                throw new Exception("Erro ao listar as reservas do usuário logado: " + ex.Message);
             }
             finally
             {

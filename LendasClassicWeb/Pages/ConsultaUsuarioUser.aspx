@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultUser.Master" AutoEventWireup="true" CodeBehind="ConsultaUsuarioUser.aspx.cs" Inherits="LendasClassicWeb.Pages.ConsultaUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+</asp:Content>  
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -110,3 +110,7 @@
     <asp:Label ID="lblMessage" runat="server" Text="Label" />s
 
 </asp:Content>
+
+
+
+
