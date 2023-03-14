@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace LendasClassic.DAL
 {
@@ -20,10 +21,11 @@ namespace LendasClassic.DAL
                 Conectar();
                 cmd = new MySqlCommand("INSERT INTO reserva (dataReserva, statusReserva, fkUsuario) VALUES (@dataReserva, @statusReserva, @fkUsuario)", conn);
                 cmd.Parameters.AddWithValue("@dataReserva", objCad.dataReserva);
-                cmd.Parameters.AddWithValue("@statusReserva", objCad.StatusReserva);
-                cmd.Parameters.AddWithValue("@fkUsuario", objCad.fkUsuario);
+                cmd.Parameters.AddWithValue("@statusReserva", "ATIVO");
+                cmd.Parameters.AddWithValue("@fkUsuario", HttpContext.Current.Session["idUsuario"]);
 
                 cmd.ExecuteNonQuery();
+
 
 
             }
