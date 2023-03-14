@@ -9,6 +9,29 @@ namespace LendasClassicWeb.Pages
 {
     public partial class RservaUser : System.Web.UI.Page
     {
+        private bool UsuarioPossuiReserva(int idUsuario)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT COUNT(*) FROM reserva WHERE fkUsuario = @idUsuario", conn);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao verificar se o usuário possui reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
