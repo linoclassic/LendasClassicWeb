@@ -41,14 +41,22 @@ namespace LendasClassicWeb.Pages
                     {
                         // Exibe as informações da reserva
                         //lblMensagem.Visible = false;
+                        lblMensagem.Visible = true;
                         lblMensagem.Text = "Reserva de " + Session["Usuario"];
+                      
+                        gv1.Visible = true;
                         PopularGv();
                      
                     }
                     else
                     {
                         // Exibe mensagem informando que o usuário não possui uma reserva ativa
-                        lblMensagem.Text = "Você não possui uma reserva ativa.";
+                        lblNot.Visible = true;
+                        lblNot.Text = "VOCÊ NÃO POSSUI UMA RESERVA ATIVA !!!";
+                        lblPergunta.Visible = true;
+                        lblPergunta.Text = "Gostaria de realizar uma reserva para conhecer a academia Lendas Classic?";
+
+                        btnNovaReserva.Visible = true;
                     }
                 }
 
@@ -111,6 +119,13 @@ namespace LendasClassicWeb.Pages
         protected void gv1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
+        }
+
+       
+
+        protected void btnNovaReserva_Click(object sender, EventArgs e)
+        {
+            gv1.Visible = true;
         }
     }
 }

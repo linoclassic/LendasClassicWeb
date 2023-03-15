@@ -3,12 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+    <br />
+    <asp:Label ID="lblMensagem" runat="server" Text="Label" CssClass=" bg-dark text-center h4 text-light py-2" Visible="false"/>
+ 
+      <asp:Label ID="lblNot" runat="server" Text="Label" CssClass=" card bg-danger text-center h4 text-light py-2 my-5 " Visible="false" />
+           
+      <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h5 mx-2 text-light" Visible="false" />
+    <br />
+    <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-5 py-3 mx-3 mt-3" Visible="false" />
+    <br />
+    <br />
+    <%--  <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h5 mx-2 text-light" Visible="false" />
+    <br />
+    <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-5 py-3 mx-3 mt-3" Visible="false" />--%>
 
-    <asp:Label ID="lblMensagem" runat="server" Text="Label" CssClass="h4 text-light   " />
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5">
 
-        <Columns>
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5" Visible="false">
+
+        <Columns >
+
 
             <asp:TemplateField HeaderText="Nome">
 
@@ -36,6 +51,7 @@
 
             </asp:TemplateField>
 
+           
 
             <asp:TemplateField HeaderText="Telefone">
 
@@ -57,6 +73,7 @@
               <%--  <EditItemTemplate>
                     <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
                 </EditItemTemplate>--%>
+
 
             </asp:TemplateField>
 
@@ -111,5 +128,7 @@
 
     </asp:GridView>
 
+
+    
 
 </asp:Content>
