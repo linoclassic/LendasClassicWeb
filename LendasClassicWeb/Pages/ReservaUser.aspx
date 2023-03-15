@@ -16,9 +16,9 @@
                     <asp:Label runat="server" Text='<%#Eval("nomeUsuario") %>' />
                 </ItemTemplate>
 
-                <EditItemTemplate>
+               <%-- <EditItemTemplate>
                     <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("nomeUsuario") %>' />
-                </EditItemTemplate>
+                </EditItemTemplate>--%>
 
 
 
@@ -30,9 +30,9 @@
                     <asp:Label runat="server" Text='<%#Eval("emailUsuario") %>' />
                 </ItemTemplate>
 
-                <EditItemTemplate>
+<%--                <EditItemTemplate>
                     <asp:TextBox ID="txtEmailUsuario" runat="server" MaxLength="50" Text='<%#Eval("emailUsuario") %>' />
-                </EditItemTemplate>
+                </EditItemTemplate>--%>
 
             </asp:TemplateField>
 
@@ -43,9 +43,9 @@
                     <asp:Label runat="server" Text='<%#Eval("telefoneUsuario") %>' />
                 </ItemTemplate>
 
-                <EditItemTemplate>
+<%--                <EditItemTemplate>
                     <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' />
-                </EditItemTemplate>
+                </EditItemTemplate>--%>
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="Cpf">
@@ -54,9 +54,9 @@
                     <asp:Label runat="server" Text='<%#Eval("cpfUsuario") %>' />
                 </ItemTemplate>
 
-                <EditItemTemplate>
+              <%--  <EditItemTemplate>
                     <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
-                </EditItemTemplate>
+                </EditItemTemplate>--%>
 
             </asp:TemplateField>
 
@@ -75,6 +75,17 @@
                     <asp:TextBox ID="txtDataReservaFooter" runat="server" />
                 </FooterTemplate>
 
+            </asp:TemplateField>
+
+                <asp:TemplateField HeaderText="Status da Reserva">
+
+                <ItemTemplate>
+                    <asp:Label runat="server" Text='<%#Eval("statusReserva") %>' />
+                </ItemTemplate>
+
+               <%-- <EditItemTemplate>
+                    <asp:TextBox ID="txtStatusReserva" runat="server" MaxLength="50" Text='<%#Eval("statusReserva") %>' />
+                </EditItemTemplate>--%>
             </asp:TemplateField>
 
             <%--Opções--%>
