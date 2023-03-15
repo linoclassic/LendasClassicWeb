@@ -3,17 +3,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  
+
     <br />
-    <asp:Label ID="lblMensagem" runat="server" Text="Label" CssClass=" bg-dark text-center h4 text-light py-2" Visible="false"/>
- 
-      <asp:Label ID="lblNot" runat="server" Text="Label" CssClass=" card bg-danger text-center h4 text-light py-2 my-5 " Visible="false" />
-           
-      <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h5 mx-2 text-light" Visible="false" />
-    <br />
-    <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-5 py-3 mx-3 mt-3" Visible="false" />
-    <br />
-    <br />
+    <asp:Label ID="lblMensagem" runat="server" Text="Label" CssClass=" bg-dark text-center h4 text-light py-2" Visible="false" />
+      <br />
+      <br />  <br />   <br />     
+    <asp:Label ID="lblNot" runat="server" Text="Label" CssClass="  card bg-transparent border-0 text-center h2 text-light py-0 pb-4 my-5 mb-0 " Visible="false" />
+    <div class="container-fluid text-center">
+        <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h4 mx-2 text-light" Visible="false" />
+        <br />
+        <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-4 py-3 mt-3" Visible="false" />
+        <br />
+        <br />
+    </div>
+
     <%--  <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h5 mx-2 text-light" Visible="false" />
     <br />
     <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-5 py-3 mx-3 mt-3" Visible="false" />--%>
@@ -22,7 +25,7 @@
 
     <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5" Visible="false">
 
-        <Columns >
+        <Columns>
 
 
             <asp:TemplateField HeaderText="Nome">
@@ -31,7 +34,7 @@
                     <asp:Label runat="server" Text='<%#Eval("nomeUsuario") %>' />
                 </ItemTemplate>
 
-               <%-- <EditItemTemplate>
+                <%-- <EditItemTemplate>
                     <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("nomeUsuario") %>' />
                 </EditItemTemplate>--%>
 
@@ -45,13 +48,13 @@
                     <asp:Label runat="server" Text='<%#Eval("emailUsuario") %>' />
                 </ItemTemplate>
 
-<%--                <EditItemTemplate>
+                <%--                <EditItemTemplate>
                     <asp:TextBox ID="txtEmailUsuario" runat="server" MaxLength="50" Text='<%#Eval("emailUsuario") %>' />
                 </EditItemTemplate>--%>
 
             </asp:TemplateField>
 
-           
+
 
             <asp:TemplateField HeaderText="Telefone">
 
@@ -59,7 +62,7 @@
                     <asp:Label runat="server" Text='<%#Eval("telefoneUsuario") %>' />
                 </ItemTemplate>
 
-<%--                <EditItemTemplate>
+                <%--                <EditItemTemplate>
                     <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' />
                 </EditItemTemplate>--%>
             </asp:TemplateField>
@@ -70,7 +73,7 @@
                     <asp:Label runat="server" Text='<%#Eval("cpfUsuario") %>' />
                 </ItemTemplate>
 
-              <%--  <EditItemTemplate>
+                <%--  <EditItemTemplate>
                     <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
                 </EditItemTemplate>--%>
 
@@ -88,19 +91,19 @@
                     <asp:TextBox ID="txtDataReserva" runat="server" MaxLength="10" Text='<%#Eval("dataReserva", "{0:dd/MM/yyyy}") %>' />
                     <asp:Calendar ID="calDataReserva" runat="server" Visible="false" SelectionMode="Day" OnSelectionChanged="calDataReserva_SelectionChanged" />
                 </EditItemTemplate>
-                <FooterTemplate>
+                <%--  <FooterTemplate>
                     <asp:TextBox ID="txtDataReservaFooter" runat="server" />
-                </FooterTemplate>
+                </FooterTemplate>--%>
 
             </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Status da Reserva">
+            <asp:TemplateField HeaderText="Status da Reserva">
 
                 <ItemTemplate>
                     <asp:Label runat="server" Text='<%#Eval("statusReserva") %>' />
                 </ItemTemplate>
 
-               <%-- <EditItemTemplate>
+                <%-- <EditItemTemplate>
                     <asp:TextBox ID="txtStatusReserva" runat="server" MaxLength="50" Text='<%#Eval("statusReserva") %>' />
                 </EditItemTemplate>--%>
             </asp:TemplateField>
@@ -129,6 +132,6 @@
     </asp:GridView>
 
 
-    
+
 
 </asp:Content>

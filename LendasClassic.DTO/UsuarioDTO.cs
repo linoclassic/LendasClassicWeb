@@ -20,6 +20,15 @@ namespace LendasClassic.DTO
 
         public string statusUsuario { get; set; }
 
+        //private string _statusUsuario = "ATIVO";
+
+        //public string statusUsuario
+        //{
+        //    get { return _statusUsuario = "ATIVO"; }
+        //    set { _statusUsuario = value; }
+        //}
+
+
         public string emailUsuario { get; set; }
 
         public string senhaUsuario { get; set; }

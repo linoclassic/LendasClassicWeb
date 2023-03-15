@@ -20,7 +20,7 @@ namespace LendasClassicWeb.Pages
         {
             int idUsuario = objBLL.ObterIdDoUsuarioLogado();
 
-            gv1.DataSource = objBLL.ListarUsLogado();
+            gv1.DataSource = objBLL.ListarUsLogado  ();
                 gv1.DataBind();
 
         }
@@ -51,10 +51,11 @@ namespace LendasClassicWeb.Pages
                     else
                     {
                         // Exibe mensagem informando que o usuário não possui uma reserva ativa
+                    
                         lblNot.Visible = true;
-                        lblNot.Text = "VOCÊ NÃO POSSUI UMA RESERVA ATIVA !!!";
+                        lblNot.Text = "VOCÊ NÃO POSSUI UMA RESERVA ATIVA";
                         lblPergunta.Visible = true;
-                        lblPergunta.Text = "Gostaria de realizar uma reserva para conhecer a academia Lendas Classic?";
+                        lblPergunta.Text = "Gostaria de realizar uma reserva?";
 
                         btnNovaReserva.Visible = true;
                     }
