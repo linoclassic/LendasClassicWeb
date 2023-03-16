@@ -34,7 +34,7 @@ namespace LendasClassicWeb.Pages
                 {
                     Response.Redirect("Login.aspx");
                 }
-                lblSessionMsg.Text = "Seja bem vindo " + Session["Usuario"] + " ao Lendas Classic";
+                lblSessionMsg.Text = "Olá " + Session["Usuario"] + " , o que gostaria de fazer hoje?";
 
             }
 

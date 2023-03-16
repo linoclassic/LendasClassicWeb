@@ -10,13 +10,21 @@ namespace LendasClassic.BLL
 {
     public class UsuarioBLL
     {
-        UsuarioDAL objBLL = new UsuarioDAL();   
+        UsuarioDAL objBLL = new UsuarioDAL();
 
         //CREATE
         public void CadastraUsuario(UsuarioDTO objCad)
         {
             objBLL.Cadastrar(objCad);
         }
+
+        //Cadastrar Usuario na página de login
+        public void CadUser(CadUserDTO objCadUser)
+        {
+            objBLL.CadUser(objCadUser);
+        }
+
+
 
         //READ
         public List<UsuarioDTO> ListarUsuario()

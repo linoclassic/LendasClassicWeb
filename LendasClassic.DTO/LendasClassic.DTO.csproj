@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutenticaUserDTO.cs" />
+    <Compile Include="CadUserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaDTO.cs" />
     <Compile Include="TpUsuarioDTO.cs" />

@@ -120,7 +120,7 @@ namespace LendasClassicWeb.Pages
             {
                 Response.Redirect("Login.aspx");
             }
-            lblSessionMsg.Text = "Seja bem vindo " + Session["Usuario"] + " ao Lendas Classic";
+            lblSessionMsg.Text = "Lista de úsuarios cadastrados ";
         }
 
         protected void gv1_RowCommand(object sender, GridViewCommandEventArgs e)

@@ -41,35 +41,26 @@
                 <div class="collapse navbar-collapse " <%--id="navbarSupportedContent">--%> id="navbarNavDropdown">
                     <ul class="navbar-nav  me-auto  mb-2 mb-sm-1 fs-5  ">
                        
-                        <li class="nav-item p-2 mx-2 ">
-                            <a class="nav-link active" href="ConsultaUsuarioUser.aspx">Usuários</a>
+                     
+                    </ul>
+                    <ul class="navbar-nav fs-5 mb-sm-1">
+                           <li class="nav-item p-2 mx-1 ">
+                            <a class="nav-link active" href="ConsultaUsuarioUser.aspx">Usuário</a>
                         </li>
-                        <li class="nav-item p-2 mx-2 ">
+                        <li class="nav-item p-2 mx-1 ">
                             <a class="nav-link px-3 active" href="ReservaUser.aspx">Reserva</a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="Login.aspx" class="btn btn-primary mx-2">SAIR</a>
+                        <li class=" nav-item p-2 mx-2">
+                            <a href="Login.aspx" class="btn btn-primary mx-3 mnb-3">SAIR</a>
                            
-                               
-
                         </li>
-                   <%--     <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="Images/UserWhite.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Perfil</a>
-                                <a class="dropdown-item" href="#">Sair</a>
-                            </div>
-                        </li>--%>
+                 
                     </ul>
                 </div>
             </div>
         </nav>
 
-            <div class="container-fluid bg-dark" style="height:61vh">
+            <div class="container-fluid bg-dark" style="height:62vh">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
@@ -102,7 +93,9 @@
         </div>
            <hr>
         <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
+       
       </footer>
+   
    
 
 

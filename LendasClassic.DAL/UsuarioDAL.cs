@@ -24,13 +24,13 @@ namespace LendasClassic.DAL
                 cmd = new MySqlCommand("INSERT INTO usuario (nomeUsuario, fkTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario) VALUES (@nomeUsuario, @fkTpUsuario, @statusUsuario, @emailUsuario, @senhaUsuario,  @cpfUsuario, @telefoneUsuario)", conn);
                 cmd.Parameters.AddWithValue("@nomeUsuario", objCad.nomeUsuario);
                 cmd.Parameters.AddWithValue("@fkTpUsuario", objCad.fkTpUsuario);
-                cmd.Parameters.AddWithValue("@statusUsuario", objCad.statusUsuario);
+                cmd.Parameters.AddWithValue("@statusUsuario","ATIVO");
                 cmd.Parameters.AddWithValue("@emailUsuario", objCad.emailUsuario);
                 cmd.Parameters.AddWithValue("@senhaUsuario", objCad.senhaUsuario);
                 cmd.Parameters.AddWithValue("@cpfUsuario", objCad.cpfUsuario);
                 cmd.Parameters.AddWithValue("@telefoneUsuario", objCad.telefoneUsuario);
 
-                cmd.ExecuteNonQuery();  
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -42,6 +42,33 @@ namespace LendasClassic.DAL
                 Desconectar();
             }
         }
+
+        public void CadUser(CadUserDTO objCadUser)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("INSERT INTO usuario (nomeUsuario, fkTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario) VALUES (@nomeUsuario, @fkTpUsuario, @statusUsuario, @emailUsuario, @senhaUsuario,  @cpfUsuario, @telefoneUsuario)", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", objCadUser.nomeUsuario);
+                cmd.Parameters.AddWithValue("@fkTpUsuario", objCadUser.fkTpUsuario);
+                cmd.Parameters.AddWithValue("@statusUsuario", "ATIVO");
+                cmd.Parameters.AddWithValue("@emailUsuario", objCadUser.emailUsuario);
+                cmd.Parameters.AddWithValue("@senhaUsuario", objCadUser.senhaUsuario);
+                cmd.Parameters.AddWithValue("@cpfUsuario", objCadUser.cpfUsuario);
+                cmd.Parameters.AddWithValue("@telefoneUsuario", objCadUser.telefoneUsuario);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao cadastrar Usuário !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
 
         //READ
         public List<UsuarioDTO> Listar()

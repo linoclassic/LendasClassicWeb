@@ -69,7 +69,36 @@
             </div>
         </form>
     </div>
-    <%-- ... --%>
+    <%--footer--%>
+    <footer class="bg-secondary text-white w-100">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-4 text-center pb-4">
+                    <h5 class="mb-3">Lendas Classic</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+                </div>
+                <div class="col-md-4 text-center align-content-center">
+                    <h5 class="mb-3">Redes Sociais</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-facebook-circle'></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-twitter'></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-instagram-alt'></i></a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="mb-3">Contato</h5>
+                    <p><i class='bx  bx-sm bxs-map'></i>Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
+                    <p><i class='bx bx-sm bxs-phone'></i>(11) 9727-6667</p>
+                </div>
+            </div>
+        </div>
+           <hr>
+        <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
+       
+      </footer>
+   
+   
 </body>
 
   

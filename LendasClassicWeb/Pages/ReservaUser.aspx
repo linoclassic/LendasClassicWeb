@@ -23,24 +23,12 @@
 
 
 
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5" Visible="false">
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark" Visible="false">
 
         <Columns>
 
 
-            <asp:TemplateField HeaderText="Nome">
-
-                <ItemTemplate>
-                    <asp:Label runat="server" Text='<%#Eval("nomeUsuario") %>' />
-                </ItemTemplate>
-
-                <%-- <EditItemTemplate>
-                    <asp:TextBox ID="txtNomeUsuario" runat="server" MaxLength="50" Text='<%#Eval("nomeUsuario") %>' />
-                </EditItemTemplate>--%>
-
-
-
-            </asp:TemplateField>
+     
 
             <asp:TemplateField HeaderText="Email">
 
@@ -53,33 +41,6 @@
                 </EditItemTemplate>--%>
 
             </asp:TemplateField>
-
-
-
-            <asp:TemplateField HeaderText="Telefone">
-
-                <ItemTemplate>
-                    <asp:Label runat="server" Text='<%#Eval("telefoneUsuario") %>' />
-                </ItemTemplate>
-
-                <%--                <EditItemTemplate>
-                    <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' />
-                </EditItemTemplate>--%>
-            </asp:TemplateField>
-
-            <asp:TemplateField HeaderText="Cpf">
-
-                <ItemTemplate>
-                    <asp:Label runat="server" Text='<%#Eval("cpfUsuario") %>' />
-                </ItemTemplate>
-
-                <%--  <EditItemTemplate>
-                    <asp:TextBox ID="txtCpfUsuario" runat="server" MaxLength="14" Text='<%#Eval("cpfUsuario") %>' />
-                </EditItemTemplate>--%>
-
-
-            </asp:TemplateField>
-
 
             <asp:TemplateField HeaderText="Data Da Reserva">
 
