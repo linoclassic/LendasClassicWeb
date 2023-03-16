@@ -8,7 +8,7 @@ namespace LendasClassic.DTO
 {
     public class AutenticaUserDTO
     {
-        public string nomeUsuario { get; set; }
+        public string emailUsuario { get; set; }
 
         public string senhaUsuario { get; set; }
 

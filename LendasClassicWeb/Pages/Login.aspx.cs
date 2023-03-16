@@ -26,13 +26,13 @@ namespace LendasClassicWeb.Pages
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-            string objNome = txtUsuario.Text.Trim();
+            string objEmail = txtUsuario.Text.Trim();
             string objSenha = txtSenha.Text.Trim();
 
 
             AutenticaUserDTO objModelo = new AutenticaUserDTO();
             UsuarioBLL ObjAutentica = new UsuarioBLL();
-            objModelo = ObjAutentica.AutenticarUser(objNome, objSenha);
+            objModelo = ObjAutentica.AutenticarUser(objEmail, objSenha);
             if (objModelo != null && objModelo.statusUsuario == "ATIVO")
             {
                 switch (objModelo.fkTpUsuario)

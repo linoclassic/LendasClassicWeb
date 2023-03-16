@@ -15,13 +15,13 @@ namespace LendasClassic.DAL
         //OBTER ID DO USUARIO LOGADO
         public int ObterIdUsuarioLogado()
         {
-            string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
+            string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
 
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT idUsuario FROM usuario WHERE nomeUsuario = @nomeUsuario", conn);
-                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+                cmd = new MySqlCommand("SELECT idUsuario FROM usuario WHERE emailUsuario = @emailUsuario", conn);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
 
                 int idUsuario = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -176,12 +176,12 @@ namespace LendasClassic.DAL
                 //// Obter o id do usuário logado
                 //int idUsuario = ObterIdUsuarioLogado();
 
-                string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
+                string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
 
                 Conectar();
-                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum WHERE nomeUsuario = @nomeUsuario;", conn);
+                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum WHERE emailUsuario = @emailUsuario;", conn);
                 //cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
-                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
                 dr = cmd.ExecuteReader();
                 List<ReservaDTO> Lista = new List<ReservaDTO>(); // criando lista vazia
 

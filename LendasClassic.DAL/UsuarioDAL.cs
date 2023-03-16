@@ -115,12 +115,12 @@ namespace LendasClassic.DAL
             try
             {
                 Conectar();
-                string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
-                cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario WHERE nomeUsuario = @nomeUsuario", conn);
+                string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+                cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario WHERE emailUsuario = @emailUsuario", conn);
                 //cmd = new MySqlCommand("SELECT * FROM usuario WHERE idUsuario = @idUsuario AND nomeUsuario = @nomeUsuario", conn);
                 //cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
                 //cmd.Parameters.AddWithValue("@nomeUsuario", HttpContext.Current.Session["Usuario"].ToString());
-                cmd.Parameters.AddWithValue("@nomeUsuario", nomeUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
 
                 dr = cmd.ExecuteReader();
                 List<UsuarioDTO> ListaUsuario = new List<UsuarioDTO>(); // criando lista vazia
@@ -238,13 +238,13 @@ namespace LendasClassic.DAL
 
 
         //Autentica User
-        public AutenticaUserDTO Autenticar(string objNome, string objSenha)
+        public AutenticaUserDTO Autenticar(string objEmail, string objSenha)
         {
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT nomeUsuario, senhaUsuario, fkTpUsuario, statusUsuario FROM usuario WHERE nomeUsuario=@nomeUsuario AND senhaUsuario=@senhaUsuario AND statusUsuario='ATIVO'", conn);
-                cmd.Parameters.AddWithValue("@nomeUsuario", objNome);
+                cmd = new MySqlCommand("SELECT emailUsuario, senhaUsuario, fkTpUsuario, statusUsuario FROM usuario WHERE emailUsuario=@emailUsuario AND senhaUsuario=@senhaUsuario AND statusUsuario='ATIVO'", conn);
+                cmd.Parameters.AddWithValue("@emailUsuario", objEmail);
                 cmd.Parameters.AddWithValue("@senhaUsuario", objSenha);
                 dr = cmd.ExecuteReader();
 
@@ -253,7 +253,7 @@ namespace LendasClassic.DAL
                 {
 
                     obj = new AutenticaUserDTO();
-                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
+                    obj.emailUsuario = dr["emailUsuario"].ToString();
                     obj.senhaUsuario = dr["senhaUsuario"].ToString();
                     obj.fkTpUsuario = dr["fkTpUsuario"].ToString();
                     obj.statusUsuario = dr["statusUsuario"].ToString();

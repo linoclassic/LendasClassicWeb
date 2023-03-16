@@ -56,9 +56,9 @@ namespace LendasClassic.BLL
 
         //AUNTENTICACAO
 
-        public AutenticaUserDTO AutenticarUser(string objNome, string objSenha)
+        public AutenticaUserDTO AutenticarUser(string objEmail, string objSenha)
         {
-            return objBLL.Autenticar(objNome, objSenha);
+            return objBLL.Autenticar(objEmail, objSenha);
         }
 
     }

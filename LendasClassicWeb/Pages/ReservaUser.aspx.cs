@@ -42,7 +42,7 @@ namespace LendasClassicWeb.Pages
                         // Exibe as informações da reserva
                         //lblMensagem.Visible = false;
                         lblMensagem.Visible = true;
-                        lblMensagem.Text = "Reserva de " + Session["Usuario"];
+                        lblMensagem.Text = "Sua Reserva ";
                       
                         gv1.Visible = true;
                         PopularGv();

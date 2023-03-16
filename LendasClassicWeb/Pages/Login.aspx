@@ -13,11 +13,11 @@
                    <br />
                    <br />
                 <h1 class="font-weight-light text-light h3 mt-5 mb-4 text-center">FAZER LOGIN</h1>
-                <asp:Label runat="server" Text="Usuário" CssClass="lead"/>
-                <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control" MaxLength="50" runat="server"  placeholder="Nome do usuário"/>
+                <asp:Label runat="server" Text="" CssClass="lead"/>
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control" MaxLength="50" runat="server"  placeholder="E-mail"/>
                 <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
                 <br />
-                <asp:Label runat="server" Text="Senha" CssClass="lead" />
+                <asp:Label runat="server" Text="" CssClass="lead" />
                 <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" runat="server" TextMode="Password" placeholder="Senha"/>
                 <asp:RequiredFieldValidator ID="RequiredSenha" runat="server" ErrorMessage="*Digite a Senha do usuário" ForeColor="Red" ControlToValidate="txtSenha" />
                 <br />
