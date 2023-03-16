@@ -138,6 +138,7 @@
     <Content Include="Images\Salvar60.png" />
     <Content Include="Images\UpdateWhite.png" />
     <Content Include="Images\UserWhite.png" />
+    <Content Include="Pages\CadastroReserva.aspx" />
     <Content Include="Pages\CadastroUser.aspx" />
     <Content Include="Pages\ConsultaUsuarioUser.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -162,6 +163,13 @@
     <Compile Include="DefaultAdm.Master.designer.cs">
       <DependentUpon>DefaultAdm.Master</DependentUpon>
     </Compile>
+    <Compile Include="DefaultCadReserva.Master.cs">
+      <DependentUpon>DefaultCadReserva.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultCadReserva.Master.designer.cs">
+      <DependentUpon>DefaultCadReserva.Master</DependentUpon>
+    </Compile>
     <Compile Include="DefaultUser.Master.cs">
       <DependentUpon>DefaultUser.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,6 +183,13 @@
     </Compile>
     <Compile Include="DefaultLogin.Master.designer.cs">
       <DependentUpon>DefaultLogin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CadastroReserva.aspx.cs">
+      <DependentUpon>CadastroReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CadastroReserva.aspx.designer.cs">
+      <DependentUpon>CadastroReserva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\CadastroUser.aspx.cs">
       <DependentUpon>CadastroUser.aspx</DependentUpon>
@@ -239,6 +254,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="DefaultCadReserva.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

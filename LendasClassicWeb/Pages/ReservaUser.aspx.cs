@@ -51,13 +51,7 @@ namespace LendasClassicWeb.Pages
                     else
                     {
                         // Exibe mensagem informando que o usuário não possui uma reserva ativa
-                    
-                        lblNot.Visible = true;
-                        lblNot.Text = "VOCÊ NÃO POSSUI UMA RESERVA ATIVA";
-                        lblPergunta.Visible = true;
-                        lblPergunta.Text = "Gostaria de realizar uma reserva?";
-
-                        btnNovaReserva.Visible = true;
+                        Response.Redirect("CadastroReserva.aspx");
                     }
                 }
 

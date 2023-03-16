@@ -7,15 +7,8 @@
     <br />
     <asp:Label ID="lblMensagem" runat="server" Text="Label" CssClass=" bg-dark text-center h4 text-light py-2" Visible="false" />
       <br />
-      <br />  <br />   <br />     
-    <asp:Label ID="lblNot" runat="server" Text="Label" CssClass="  card bg-transparent border-0 text-center h2 text-light py-0 pb-4 my-5 mb-0 " Visible="false" />
-    <div class="container-fluid text-center">
-        <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h4 mx-2 text-light" Visible="false" />
-        <br />
-        <asp:Button ID="btnNovaReserva" runat="server" OnClick="btnNovaReserva_Click" Text="RESERVAR" CssClass="btn btn-primary px-4 py-3 mt-3" Visible="false" />
-        <br />
-        <br />
-    </div>
+             <br />
+   
 
     <%--  <asp:Label ID="lblPergunta" runat="server" Text="Label" CssClass=" h5 mx-2 text-light" Visible="false" />
     <br />
@@ -45,7 +38,7 @@
             <asp:TemplateField HeaderText="Data Da Reserva">
 
                 <ItemTemplate>
-                    <asp:Label runat="server" Text='<%#Eval("dataReserva") %>' />
+                    <asp:Label runat="server" Text='<%#Eval("dataReserva" , "{0:dd/MM/yyyy}") %>' />
                 </ItemTemplate>
 
                 <EditItemTemplate>

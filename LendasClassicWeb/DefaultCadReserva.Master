@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultUser.master.cs" Inherits="LendasClassicWeb.DefaultUser" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultCadReserva.master.cs" Inherits="LendasClassicWeb.DefaultCadReserva" %>
 
 <!DOCTYPE html>
 
@@ -60,7 +60,7 @@
             </div>
         </nav>
 
-            <div class="container-fluid bg-dark" style="height:62vh">
+            <div class="container-fluid bg-dark" style="height:80vh">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

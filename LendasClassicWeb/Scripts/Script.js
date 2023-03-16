@@ -4,6 +4,11 @@
 
 $(document).ready(function () {
     $("#txtCpf").mask("000.000.000-00");
+
+});
+
+$(document).ready(function () {
+    $("#txtDataReserva").mask("00/00/0000");
 });
 
 function ValidatePasswordLength(source, arguments) {

@@ -10,9 +10,11 @@ namespace LendasClassic.DTO
     {
         public int idReserva { get; set; }
 
-        public DateTime dataReserva { get; set; }
+       
 
-        public string StatusReserva { get; set; }
+        public DateTime dataReserva { get; set; } = DateTime.Today;
+
+        public string StatusReserva { get; set; } = "ATIVO";
 
         //Relacionamento
         public int idUsuario { get; set; }
