@@ -56,7 +56,14 @@
                                 <a class="nav-link active" href="../html/contato.html">Contato</a>
                             </li>
                         </ul>
-                        <a href="pagina_de_login.html" class="btn btn-primary mx-2">Login</a>
+                    
+                        <span class="text-light mx-5 ">Faça
+                            <a href="Login.aspx" class="fw-bolder text-light">LOGIN</a> ou 
+                            <br />
+                            crie seu 
+                             <a href="CadastroUser.aspx" class="fw-bold text-light">CADASTRO</a> 
+
+                        </span>
                     </div>
                 </div>
             </nav>

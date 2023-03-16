@@ -35,7 +35,7 @@
                 <br />
 
                 <asp:Label runat="server" Text="Telefone" CssClass="lead" />
-                <asp:TextBox AutoCompleteType="Disabled" ID="txtTelefone" CssClass="form-control" MaxLength="14" runat="server" data-mask="(00) 0000-0000" placeholder="Telefone Celular*" />
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtTelefone" CssClass="form-control mb-1" MaxLength="14" runat="server" data-mask="(00) 0000-0000" placeholder="Telefone Celular*" />
                 <asp:RequiredFieldValidator ID="RequiredTelefone" runat="server" ErrorMessage="*Digite o telefone" ForeColor="Red" ControlToValidate="txtTelefone" />
                 <asp:Label runat="server" Text="(*)Campos Obrigatórios" CssClass="" />
                 <asp:Label ID="lblErro" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>
@@ -43,7 +43,7 @@
                 <asp:Label ID="lblMsg" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>
 
                 <div class="d-flex justify-content-center mt-2">
-                    <asp:Button ID="btCadastrar" OnClick="btCadastrar_Click" runat="server" Text="CADASTRAR" CssClass="btn py-2 btn-lg w-50 btn-primary rounded" />
+                    <asp:Button ID="btCadastrar" OnClick="btCadastrar_Click" runat="server" Text="CADASTRAR" CssClass="btn py-2 btn-lg mt-4 w-50 btn-primary rounded" />
                     <%--   <asp:Button ID="Button1" runat="server" Text="CADASTRAR" CssClass="btn py-2 btn-lg w-50 btn-primary rounded" OnClick="btnEntrar_Click" />--%>
 
                     <%--    <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="btn btn-secondary rounded" type="reset" value="Reset" OnClick="btnCancelar_Click" />--%>
