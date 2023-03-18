@@ -26,6 +26,18 @@ namespace LendasClassic.BLL
             objBLL.CadastrarReserva(reserva);
         }
 
+        public void VerificarStatusReserva()
+        {
+
+            objBLL.VerificarStatusReserva();
+        }
+
+        public void InativarReserva(ReservaDTO reserva)
+        {
+
+            objBLL.InativarReserva(reserva);
+        }
+
         public int ObterIdDoUsuarioLogado()
         {
             //return objBLL.ObterIdUsuarioLogado();

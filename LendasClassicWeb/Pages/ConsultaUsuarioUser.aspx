@@ -5,8 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <asp:Label ID="lblSessionMsg" runat="server" Text="Label" CssClass="h4 text-light   "/>
-     <br />
-     <br />
+   
     <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowUpdating="gv1_RowUpdating" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit"  OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-responsive table-striped table-dark mt-5">
 
         <Columns>

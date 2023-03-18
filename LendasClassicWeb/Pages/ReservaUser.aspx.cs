@@ -28,8 +28,14 @@ namespace LendasClassicWeb.Pages
         {
             if (!IsPostBack)
             {
+
+
+                
+
+
+
                 // Verifica se o usuário está logado
-                if (HttpContext.Current.Session["Usuario"] != null)
+                 if (HttpContext.Current.Session["Usuario"] != null)
                 {
                     string nomeUsuario = HttpContext.Current.Session["Usuario"].ToString();
 
@@ -43,8 +49,11 @@ namespace LendasClassicWeb.Pages
                         //lblMensagem.Visible = false;
                         lblMensagem.Visible = true;
                         lblMensagem.Text = "Sua Reserva ";
-                      
+
+
+
                         gv1.Visible = true;
+                
                         PopularGv();
                      
                     }
@@ -55,13 +64,6 @@ namespace LendasClassicWeb.Pages
                     }
                 }
 
-                //// verifica se o usuário já possui uma reserva ativa
-                //if (!objBLL.UsuarioPossuiReserva())
-
-                //{
-                //    lblMensagem.Text = "Você não tem uma reserva ativa. Deseja realizar uma nova reserva?";
-
-                //}
 
             }
         }
@@ -121,6 +123,16 @@ namespace LendasClassicWeb.Pages
         protected void btnNovaReserva_Click(object sender, EventArgs e)
         {
             gv1.Visible = true;
+        }
+
+        protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+            objBLL.InativarReserva(objModelo);
+            PopularGv();
+            btnCadastrar.Visible = true;
+
+
         }
     }
 }

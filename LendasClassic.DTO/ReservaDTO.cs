@@ -15,6 +15,9 @@ namespace LendasClassic.DTO
         public DateTime dataReserva { get; set; } = DateTime.Today;
 
         public string StatusReserva { get; set; } = "ATIVO";
+        public string StatusCancelado { get; set; } = "CANCELADO";
+
+        public string novoStatus { get; set; }
 
         //Relacionamento
         public int idUsuario { get; set; }

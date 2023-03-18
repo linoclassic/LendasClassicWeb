@@ -10,8 +10,94 @@ using System.Web;
 
 namespace LendasClassic.DAL
 {
+  
     public class ReservaDAL : Conexao
     {
+
+        public void InativarReserva(ReservaDTO objEdita)
+        {
+            try
+            {
+                string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+
+                Conectar();
+                cmd = new MySqlCommand("UPDATE reservaUsuarioComum SET statusReserva=@statusReserva WHERE emailUsuario=@emailUsuario", conn);
+
+                cmd.Parameters.AddWithValue("@statusReserva", objEdita.StatusCancelado);
+                //cmd.Parameters.AddWithValue("@idReserva", idReserva);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao alterar status da reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public void VerificarStatusReserva()
+        {
+            // Obtém o email do usuário logado
+            string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+
+
+            // Obtém a lista de reservas
+            ReservaDAL objDAL = new ReservaDAL();
+            List<ReservaDTO> listaReservas = objDAL.Listar();
+
+            // Percorre a lista de reservas
+            foreach (ReservaDTO reserva in listaReservas)
+            {
+                // Verifica se a data da reserva é anterior ou igual à data atual
+                if (reserva.dataReserva.Date <= DateTime.Now.Date)
+                {
+                    // Altera o status da reserva para "INATIVO"
+                    reserva.novoStatus = "INATIVO";
+
+                    // Atualiza o registro no banco de dados
+                    AlterarStatus(reserva.idReserva, reserva.novoStatus);
+                }
+            }
+
+        }
+
+        //(ReservaDTO objEdita)
+        //objEdita.novoStatus);
+        //    objEdita.idReserva);
+        public void AlterarStatus(int idReserva, string novoStatus)
+        {
+            try
+            {
+                string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+
+                Conectar();
+                cmd = new MySqlCommand("UPDATE reservaUsuarioComum SET statusReserva=@statusReserva WHERE idReserva=@IdReserva AND emailUsuario=@emailUsuario", conn);
+             
+                cmd.Parameters.AddWithValue("@statusReserva", novoStatus);
+                cmd.Parameters.AddWithValue("@idReserva", idReserva);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
+               
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao alterar status da reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+
+
+
         //OBTER ID DO USUARIO LOGADO
         public int ObterIdUsuarioLogado()
         {
@@ -77,8 +163,9 @@ namespace LendasClassic.DAL
         {
             try
             {
+                //AND statusReserva = 'ATIVO'
                 Conectar();
-                cmd = new MySqlCommand("SELECT COUNT(*) FROM reserva WHERE fkUsuario = @idUsuario AND statusReserva = 'ATIVO'", conn);
+                cmd = new MySqlCommand("SELECT COUNT(*) FROM reserva WHERE fkUsuario = @idUsuario ", conn);
                 cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
 
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -173,8 +260,7 @@ namespace LendasClassic.DAL
 
             try
             {
-                //// Obter o id do usuário logado
-                //int idUsuario = ObterIdUsuarioLogado();
+               
 
                 string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
 
