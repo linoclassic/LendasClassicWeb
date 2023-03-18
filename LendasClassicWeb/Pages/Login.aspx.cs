@@ -44,7 +44,7 @@ namespace LendasClassicWeb.Pages
 
                     case "2":
                         Session["Usuario"] = txtUsuario.Text.Trim();
-                        Response.Redirect("ConsultaUsuarioUser.aspx");
+                        Response.Redirect("ReservaUser.aspx");
                         break;
                 }
             }
