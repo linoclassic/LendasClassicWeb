@@ -22,10 +22,10 @@
                 <asp:TextBox AutoCompleteType="Disabled" ID="txtEmail" CssClass="form-control" MaxLength="50" runat="server" placeholder="E-mail*"/>
                 <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="*Digite o email" ForeColor="Red" ControlToValidate="txtEmail" />
                 <br />
-                <asp:Label runat="server"  Text="Senha"  CssClass="lead"/>
-                <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" runat="server" minlength="8"  TextMode="Password" placeholder="Crie sua senha*"/>
+                <asp:Label runat="server"  Text="Senha (8 Caracteres)"  CssClass="lead"/>
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" runat="server" minlength="8" MaxLength="8"  TextMode="Password" placeholder="Crie sua senha*"/>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*Digite a senha" ForeColor="Red" ControlToValidate="txtSenha" />
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtSenha"  ValidationExpression="^[a-zA-Z0-9]{8,}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtSenha"  ValidationExpression="^[a-zA-Z0-9]{8,8}$" ForeColor="Red"></asp:RegularExpressionValidator>
                 <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="txtSenha" ErrorMessage="*A senha deve conter 8 dígitos" ClientValidationFunction="ValidatePasswordLength" ForeColor="Red"></asp:CustomValidator>
                 <br />
 

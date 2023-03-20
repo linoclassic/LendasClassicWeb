@@ -18,7 +18,7 @@
                 <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
                 <br />
                 <asp:Label runat="server" Text="" CssClass="lead" />
-                <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" runat="server" TextMode="Password" placeholder="Senha"/>
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" MaxLength="8" runat="server" TextMode="Password" placeholder="Senha"/>
                 <asp:RequiredFieldValidator ID="RequiredSenha" runat="server" ErrorMessage="*Digite a Senha do usuário" ForeColor="Red" ControlToValidate="txtSenha" />
                 <br />
                   <asp:Label ID="lblErro" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>

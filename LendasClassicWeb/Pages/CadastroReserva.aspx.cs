@@ -54,9 +54,9 @@ namespace LendasClassicWeb.Pages
 
 
             // Consulta no banco de dados para buscar informações do usuário
-            List<UsuarioDTO> listaUsuario = objBLLUsuario.ListarUsuario();
+            List<UsuarioDTO> listaUsuario = objBLLUsuario.ListarUsLogado();
 
-            // Encontra o usuário logado na lista de usuários
+            // Encontra o usuário logado na lista de usuário
             UsuarioDTO objUsuario = listaUsuario.Find(u => u.emailUsuario == emailUsuario);
 
             // Criação do objeto de reserva com as informações do usuário e a data da reserva
