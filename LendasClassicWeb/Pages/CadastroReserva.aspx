@@ -13,12 +13,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 mt-0 mx-auto text-light">
-            <asp:TextBox AutoCompleteType="Disabled" ID="tipoUsuario" CssClass="form-control" MaxLength="50" Visible="false" runat="server" />
+            
             <asp:Label runat="server" Text="Data da reserva:" CssClass="lead"  Visible="false"/>
             <asp:Calendar ID="calDataReserva" OnDayRender="calDataReserva_DayRender" CssClass="bg-light text-black calendar-hide" Width="100%" Height="100%" runat="server"  Visible="false" SelectionMode="Day" VisibleDate='<%# DateTime.Today.AddDays(1) %>'></asp:Calendar>
             <div class="d-flex justify-content-center mt-2">
                 <asp:Button ID="btnCadastrar" OnClick="btnCadastrar_Click" runat="server"  Visible="false" Text="RESERVAR" CssClass="btn py-2 btn-lg mt-3 mx-3 btn-primary rounded" />
                 <asp:Button ID="btnCancelar" runat="server" Text="CANCELAR" CssClass="btn btn-danger px-4 py-3 mt-3" Visible="false" OnClick="btnCancelar_Click" />
+                  <asp:Label ID="lblMsg" runat="server" Text="" CssClass="lead"  Visible="false"/>
 
             </div>
         </div>

@@ -13,6 +13,9 @@ namespace LendasClassic.DAL
 {
     public class UsuarioDAL : Conexao
     {
+      
+
+
         //CRUD
 
         //CREATE
@@ -130,8 +133,6 @@ namespace LendasClassic.DAL
                     UsuarioDTO usuario = new UsuarioDTO();
                     usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
                     usuario.nomeUsuario = dr["nomeUsuario"].ToString();
-                    //usuario.fkTpUsuario = Convert.ToInt32(dr["fkTpUsuario"]);
-                    //usuario.statusUsuario = dr["statusUsuario"].ToString();
                     usuario.emailUsuario = dr["emailUsuario"].ToString();
                     usuario.senhaUsuario = dr["senhaUsuario"].ToString();
                     usuario.cpfUsuario = dr["cpfUsuario"].ToString();

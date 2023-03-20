@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LendasClassic.BLL;
+using LendasClassic.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,10 @@ namespace LendasClassicWeb.Pages
 {
     public partial class CadastroReservaa : System.Web.UI.Page
     {
+        UsuarioBLL objBLLUsuario = new UsuarioBLL();
+        UsuarioDTO objDTOUsuario = new UsuarioDTO();   
+        ReservaBLL objBLLReserva = new ReservaBLL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
                 calDataReserva.Attributes["min"] = DateTime.Now.AddDays(1).ToString("yyyy-MM-dd");
@@ -43,7 +49,31 @@ namespace LendasClassicWeb.Pages
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
         {
+            string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+            DateTime dataReserva = calDataReserva.SelectedDate;
 
+
+            // Consulta no banco de dados para buscar informações do usuário
+            List<UsuarioDTO> listaUsuario = objBLLUsuario.ListarUsuario();
+
+            // Encontra o usuário logado na lista de usuários
+            UsuarioDTO objUsuario = listaUsuario.Find(u => u.emailUsuario == emailUsuario);
+
+            // Criação do objeto de reserva com as informações do usuário e a data da reserva
+            ReservaDTO objReserva = new ReservaDTO();
+            objReserva.nomeUsuario = objUsuario.nomeUsuario;
+            objReserva.emailUsuario = objUsuario.emailUsuario;
+            objReserva.telefoneUsuario = objUsuario.telefoneUsuario;
+            objReserva.cpfUsuario = objUsuario.cpfUsuario;
+            objReserva.dataReserva = dataReserva;
+            objReserva.StatusReserva = "ATIVO";
+
+            // Chama o método para cadastrar a reserva
+            objBLLReserva.CadastrarReservaa(objReserva);
+
+            lblMsg.Visible = true;
+            lblMsg.Text = "Usuário cadastrado com sucesso!";
+            Response.Redirect("ReservaUser.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

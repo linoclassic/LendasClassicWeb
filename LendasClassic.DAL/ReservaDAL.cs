@@ -1,5 +1,6 @@
 ﻿using LendasClassic.DTO;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,59 @@ namespace LendasClassic.DAL
   
     public class ReservaDAL : Conexao
     {
+        public void CadastrarReserva(ReservaDTO objCad)
+        {
+            try
+            {
+                string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+                Conectar();
+                cmd = new MySqlCommand("INSERT INTO reservausuariocomum (nomeUsuario, emailUsuario, telefoneUsuario, cpfUsuario, dataReserva, statusReserva) VALUES (@nomeUsuario, @emailUsuario, @telefoneUsuario, @cpfUsuario, @dataReserva, @statusReserva)", conn);
+                cmd.Parameters.AddWithValue("@nomeUsuario", objCad.nomeUsuario);
+                cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
+                cmd.Parameters.AddWithValue("@telefoneUsuario", objCad.telefoneUsuario);
+                cmd.Parameters.AddWithValue("@cpfUsuario", objCad.cpfUsuario);
+                cmd.Parameters.AddWithValue("@dataReserva", objCad.dataReserva);
+                cmd.Parameters.AddWithValue("@statusReserva", objCad.StatusReserva);
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao cadastrar reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public void CadastrarReservaa(ReservaDTO objCad)
+        {
+            try
+            {
+              
+                int idUsuario = ObterIdUsuarioLogado();
+                Conectar();
+                cmd = new MySqlCommand("INSERT INTO reserva (dataReserva, statusReserva, fkUsuario) VALUES (@dataReserva, @statusReserva, @fkUsuario)", conn);
+                cmd.Parameters.AddWithValue("@dataReserva", objCad.dataReserva);
+                cmd.Parameters.AddWithValue("@statusReserva", objCad.StatusReserva);
+                cmd.Parameters.AddWithValue("@fkUsuario", idUsuario);
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao cadastrar reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
 
         public void InativarReserva(ReservaDTO objEdita)
         {
@@ -207,7 +261,7 @@ namespace LendasClassic.DAL
         //}
 
         //Verificar se o usuario possui reserva se não o mesmo possa cadastrar uma nova reserva
-        public void CadastrarReserva(ReservaDTO reserva)
+        public void CadastrarReservaEin(ReservaDTO reserva)
         {
             int idUsuario = ObterIdUsuarioLogado();
 
