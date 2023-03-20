@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- basic infos -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link css -->
+    <!-- Bootstrap -->
+    <!--<link href="../css/bootstrap.min.css  " rel="stylesheet">-->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <link href="../Content/StyleWeb.min.css" rel="stylesheet" />
+
+    <!-- link favicon  -->
+    <link rel="shortcut icon" href="../favicon/fav32.png" type="image/x-icon">
+    <link rel="shortcut icon" src="../favicon/fav32.png" type="image/x-icon">
+
+    <!-- tile -->
+    <title>Lendas Classic</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #040303f2;">
+
+    <div class=" container-fluid">
+
+      <a class="navbar-brand fs-4" href="#">LENDAS CLASSIC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav  me-auto  mb-2 mb-sm-1 fs-5  ">
+              <li class="nav-item p-2  ms-2 mx-2 ">
+                  <a class="nav-link active " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item p-2 mx-2 ">
+                  <a class="nav-link active" href="../Pages/academia.html">Academia</a>
+              </li>
+              <!--<li class="nav-item p-2 mx-2 ">
+                  <a class="nav-link active" href="../Pages/agende.html">Agende um tour</a>
+              </li>-->
+              <li class="nav-item p-2 mx-2 ">
+                  <a class="nav-link active" href="../Pages/equipe.html">Equipe</a>
+              </li>
+              <!--<li class="nav-item p-2 mx-2 ">
+                  <a class="nav-link active" href="../Pages/contato.html">Contato</a>
+              </li>-->
+
+          </ul>
+          <span class="text-light mx-5 ">
+              Faça
+              <a href="Login.aspx" class="fw-bolder text-light">LOGIN</a> ou
+              <br />
+              crie seu
+              <a href="CadastroUser.aspx" class="fw-bold text-light">CADASTRO</a>
+
+          </span>
+
+      </div>
+
+  </nav>
+
+
+  <div class="home d-flex align-items-center  flex-column justify-content-center ">
+    <div class="homeI text-light text-sm-center px-5" style="width: 100%;">
+      <h1 class="fw-bolder  big medium small smaller">Construa o seu amanhã</h1>
+      <h3 class="my-3">Junte-se ao Lendas Classic</span> e vire um deus grego</h3>
+      <a href="../Pages/CadastroUser.aspx"><button type="button" class="btn btn-primary btn-md py-3 px-5 my-1 rounded-pill fs-7">Começe hoje</button></a>
+    </div>
+
+    <a class="seta d-flex justify-content-end mt-5" u href="#services"><i class='bx bx-down-arrow-alt'></i></a>
+  </div>
+
+
+  <div class="container text-light">
+
+    <section id="services">
+
+      <div class="servicos  text-center pt-5 text-light  ">
+        <h1 class="text-uppercase pt-5 pb-3 fw-bold"> <hr> Como se tornar uma lenda?
+          <hr>
+        </h1>
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3500">
+                  <img src="../Images/serv001.jpg" class="d-block w-100" alt="...">
+                  
+                  <div class="carousel-caption d-none d-md-block">
+                      <h2>AGENDE UM TOUR</h2>
+                      <h4>Tenha a sensação de treinar como uma lenda.</h4>
+                      <a href="../html/agende.html"><button type="button" class="btn btn-primary mt-2 btn-lg px-4">Ver mais</button></a>
+                  </div>
+              </div>
+            <div class="carousel-item" data-bs-interval="3800">
+                <img src="../Images/serv02.jpg" class="d-block w-100" alt="...">
+               
+              <div class="carousel-caption d-none d-md-block">
+                <h2>CONHEÇA A NOSSA EQUIPE</h2>
+                <h4>Saiba mais sobre a melhor equipe de treinamento de São Paulo.</h4>
+                <a href="../html/equipe.html"><button type="button" class="btn btn-primary mt-2 btn-lg px-4">Ver mais</button></a>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3800">
+                <img src="../Images/serv003.jpg" class="d-block w-100" alt="...">
+              
+              <div class="carousel-caption d-none d-md-block">
+                <h2>ACADEMIA OLD SCHOOL</h2>
+                <h4>Conheça a nossa academia e seus beneficios.</h4>
+                <a href="../html/academia.html"><button type="button" class="btn btn-primary mt-2 btn-lg px-4">Ver mais</button></a>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hype py-5 text-center text-light">
+      
+      <h1 class="fw-bold pt-3 pb-3 text-light"><hr> A TRIBO MAIS TEMIDA DE SÃO PAULO <hr></h1>
+      <p class=" fs-5 ">Na Lendas Classic você define sua linha e nós lhe damos tudo o que temos para ajudá-lo a
+        atravessá-la. Descubra a experiência de fitness de próximo nível que se recusa a cortar custos quando se trata
+        de qualidade, atmosfera e vibração. Bem-vindo à nossa tribo, estamos muito felizes por você estar aqui.</p>
+
+      <img src="../Images/hype02.jpg" class="img-fluid border border-5 border-dark rounded my-4" alt="">
+       
+      <ul class=" listSt">
+        <li>
+          <h1 class="pt-4 pb-3 fw-bold"><hr> NOSSOS CONCEITOS <hr></h1>
+        </li>
+        <li>
+          <p class="fs-5 pb-4 text-center">Oferecemos 7 conceitos sagrados contagiantes divididos em 2 clubes.
+            Inspirados no boxe, spinning e bootcamp, concebemos 3 treinos HIIT: Holy Shred, Holy Ride e Holy Box. Quer
+            construir músculos e aumentar a força? Experimente o nosso Holy Build & treino badass Holy Booty. O Personal
+            Training ou Open Gym é mais a sua praia? Estamos protegendo você.</p>
+        </li>
+
+        <li>
+          <img src="../Images/hype03.jpg" class="img-fluid border border-5 border-dark rounded my-3" alt="">
+           
+
+        </li>
+
+<!-- 
+        <li> <button type="button" class="btn btn-primary mt-2 btn-lg px-5 py-4 rounded-pill">Junte-se agora</button> -->
+        </li>
+
+
+      </ul>
+      <hr>
+
+    </div>
+
+    <div class="gallery ">
+      <h1>Galeria Academia </h1>
+
+      <!-- Swiper -->
+      <div #swiperRef="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!--<div class="swiper-slide"><img src="../img/gal01.jpg" alt=""></div>-->
+            <div class="swiper-slide">  <img src="../Images/gal01.jpg" /></div>
+        
+          <div class="swiper-slide"><img src="../Images/gal02.jpg" alt=""></div>
+           
+          <div class="swiper-slide"><img src="../Images/gal03.jpg" alt=""></div>
+
+          <div class="swiper-slide"><img src="../Images/gal04.jpg" alt=""></div>
+
+          <div class="swiper-slide"><img src="../Images/gal05.jpg" alt=""></div>
+
+          <div class="swiper-slide"><img src="../Images/gal06.jpg" alt=""></div>
+
+          <div class="swiper-slide"><img src="../Images/gal07.jpg" alt=""></div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <a href="../html/academia.html#galeriaAcademia"><button type="button" class="btn btn-primary btn-sm  mb-4 py-3 my-1 p-4 fs-6 rounded-pill">ver mais</button></a>
+    </div>
+
+  </div>
+
+  <div class="container-fluid ">
+
+      <div class="news fw-bolder pt-2 pb-1" style="background-color: black;">
+          <ul class="listSt  newsC d-flex align-items-center justify-content-around py-2">
+              <li>
+                  <h2 class="fontMed fontSm">Assine nossa newslatter</h2>
+              </li>
+              <li>
+                  <input type="email" placeholder=" email@example.com" class="py-3 px-5 me-4 rounded">
+                  <button type="button text-uppercase"
+                          class="btn btn-secondary px-5 text-uppercase fw-bold py-3">
+                      CADASTRAR
+                  </button>
+
+              </li>
+
+          </ul>
+      </div>
+
+      <!--<footer class="text-light me-auto" style="background-color: #565c64;">
+          <ul class="d-flex  footerAll flex-row justify-content-evenly py-5 align-items-center px-auto">
+              <ul class="d-flex  about flex-column align-items-center fs-5">-->
+                  <!--<li class="pb-2 ">
+                  <h5 class="fs-4">SOBRE NÓS</h5>
+                </li>
+                <li class="pb-2">
+                  <a class="linkRest text-dark fw-bolder " href="../Pages/contato.html">CONTATO</a>
+                </li>-->
+                  <!--<li class="pb-2">
+                      <a class="linkRest text-dark fw-bolder" href="../Pages/contato.html">EQUIPE</a>
+                  </li>
+                  <li class="pb-2">
+                      <a class="linkRest text-dark fw-bolder" href="../Pages/academia.html">ACADEMIA</a>
+                  </li>
+              </ul>
+
+              <ul class="socials d-flex text-center">
+                  <li class="px-3 text-center">
+                      <a href=""><i class='bx bxl-instagram-alt'></i></a>
+                  </li>
+                  <li class="px-3 text-center">
+                      <a href=""><i class='bx bxl-facebook-circle'></i></a>
+                  </li>
+                  <li class="px-3">
+                      <a href=""><i class='bx bxl-twitter'></i></a>
+                  </li>
+                  <li class="px-3">
+                      <a href=""><i class='bx bxl-tiktok'></i></a>
+                      <a href="">
+                  </li></a>
+              </ul>
+
+              <ul class="d-flex  join flex-column text-center fs-6" style="width: 20%;">
+                  <li class="text-center">
+                      <h4 class="text-info fs-3">Junte se a nossa tribo!</h4>
+                  </li>
+                  <li class="text-center">
+                      <p class="fw-bold text-light">
+                          Você ainda não é um membro da Lendas Classic, por favor,
+                          registre-se rapidamente!
+                      </p>
+                  </li>
+                  <li class="">
+                      <a href="../Pages/CadastroUser.aspx">
+                          <button type="button" class="btn btn-primary fs-5 mt-2 btn-lg px-3 py-3 rounded-pill">
+                              Junte-se
+                              agora
+                          </button>
+                      </a>
+                  </li>
+              </ul>
+
+          </ul>
+          <hr>
+          <p class="text-uppercase smaller superSmall superSmaller text-center">Copyright&copy; todos os direitos reservados 2022 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</p>
+          <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i> Topo</button>
+      </footer>-->
+
+      
+      <footer class=" text-white w-100" style="background-color: #565c64;">
+          <div class="container">
+              <div class="row pt-5">
+                  <div class="col-md-4 text-center">
+                      <h5 class="mb-3 h3">Contato</h5>
+                      <p><i class='bx  bx-sm bxs-map'></i>Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
+                      <p><i class='bx bx-sm bxs-phone'></i>(11) 9727-6667</p>
+                  </div>
+                  <div class="col-md-4 text-center align-content-center">
+                      <h5 class="mb-3 h3">Redes Sociais</h5>
+                      <ul class="socials d-flex justify-content-center">
+                          <li class="px-2">
+                              <a href=""><i class='bx bxl-instagram-alt'></i></a>
+                          </li>
+                          <li class="px-2">
+                              <a href=""><i class='bx bxl-facebook-circle'></i></a>
+                          </li>
+                          <li class="px-2">
+                              <a href=""><i class='bx bxl-twitter'></i></a>
+                          </li>
+                          <li class="px-2">
+                              <a href=""><i class='bx bxl-tiktok'></i></a>
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div class="d-flex col-md-4 join flex-column text-center fs-6">
+                      <ul>
+                          <li class="text-center">
+                              <h4 class="text-info fs-3">Junte se a nossa tribo!</h4>
+                          </li>
+                          <li class="text-center">
+                              <p class="fw-bold text-light">
+                                  Você ainda não é um membro da Lendas Classic, por favor,
+                                  registre-se rapidamente!
+                              </p>
+                          </li>
+                          <li class="">
+                              <a href="../Pages/CadastroUser.aspx">
+                                  <button type="button" class="btn btn-primary fs-5 mt-2 btn-lg px-2 py-2 rounded-pill">
+                                      Junte-se
+                                      agora
+                                  </button>
+                              </a>
+                          </li>
+                      </ul>
+
+
+                  </div>
+
+              </div>
+          </div>
+          <hr>
+          <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
+          <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt'></i> Topo</button>
+      </footer>
+
+
+  </div>
+
+
+  <!-- script -->
+
+  <!--<script src="../js/bootstrap.min.js"></script>-->
+  <script src="../Scripts/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--<script src="../js/script.js"></script>-->
+  <script src="../Scripts/scriptWeb.js"></script>
+</body>
+
+</html>

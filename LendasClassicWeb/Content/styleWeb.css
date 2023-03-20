@@ -1,0 +1,698 @@
+body,
+html {
+  /* background-color: rgb(22, 18, 18); */
+  background-color: rgb(33, 37, 41);
+  color: white !important;
+
+}
+
+.colorWhite {
+  color: rgba(255, 255, 255, 0.896);
+}
+
+.listSt {
+  list-style: none !important;
+}
+
+footer ul {
+  list-style: none !important;
+}
+
+.linkRe {
+  text-decoration: none !important;
+  color: black;
+
+}
+
+nav {
+  top: 0 !important;
+
+}
+
+/* #region PartePrincipal */
+
+/* #region home */
+
+.home {
+    /* position: relative;
+    height: 80% */
+
+    /*background-image: url('../img/4430976.jpg');*/
+    background-image: url('../images/4430976.jpg');
+    /* The image used */
+    height: 92vh;
+    /* You must set a specified height */
+    width: 100%;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    margin-top: 5.1em;
+}
+
+
+
+@media (min-width: 860px) {
+
+  .big {
+    font-size: 4.2em !important;
+
+  }
+
+}
+
+@media (max-width: 859px) {
+  .medium {
+    font-size: 3em !important;
+  }
+}
+
+@media (max-width:660px) {
+  .small {
+    font-size: 2.5em !important;
+  }
+}
+
+@media (max-width:575px) {
+  .smaller {
+    font-size: 2.2em !important;
+  }
+}
+
+.seta {
+  font-size: 5em;
+  color: rgb(0, 0, 255);
+  text-decoration: none !important;
+}
+
+/* #endregion home */
+
+/* #region gallery */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+#myBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* position: sticky; */
+  /* Fixed/sticky position  */
+
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: rgb(0, 0, 0);
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 10px 30px;
+  /* Some padding */
+  margin-left: 1em;
+  border-radius: 20px;
+  /* Rounded corners */
+  font-size: 1.3em;
+  /* Increase font size */
+}
+
+#myBtn:hover {
+  opacity: calc(75%);
+  /* Add a dark-grey background on hover */
+}
+
+#myBtn i {
+  font-size: 2em;
+}
+
+
+/* #endregion gallery */
+
+/* #region news */
+
+@media (max-width:940px) {
+  .newsC {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .fontMed {
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+  }
+
+
+}
+
+@media (max-width:766px) {
+
+  .fontSm {
+    font-size: 2.2em;
+  }
+
+
+}
+
+/* #endregion news */
+
+/* #region footer */
+
+.linkRest {
+  text-decoration: none !important;
+}
+
+.linkRest:hover {
+  text-decoration: underline !important;
+}
+
+.socials li i {
+  font-size: 2.4em;
+  color: black;
+  opacity: calc(100%);
+}
+
+.socials li i:hover {
+  opacity: calc(60%);
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+@media (max-width: 990px) {
+  .footerAll {
+    display: flex;
+    font-size: 1em !important;
+
+
+  }
+}
+
+@media (max-width: 895px) {
+
+  .footerAll {
+    display: flex;
+    text-align: end !important;
+  }
+
+  .join {
+    display: none !important;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .about {
+    font-size: 1em !important;
+  }
+
+  .socials li a i {
+    font-size: 2em !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .superSmall {
+    font-size: 0.7em !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .superSmaller {
+    font-size: 0.6em !important;
+  }
+
+  .socials li a {
+    font-size: 0.9em !important;
+  }
+}
+
+
+
+
+/* #endregion footer */
+
+/* #endregion PartePrincipal */
+
+/* #region ParteAcademia */
+
+/* #region homeAcademia */
+
+.homeAcademia {
+    /* position: relative;
+    height: 80% */
+    background-image: url('../images/academia04.jpg');
+    background-image: url('../Images/academia04.jpg');
+    /* The image used */
+    height: 75vh;
+    /* You must set a specified height */
+    width: 100%;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    margin-top: 5.3em;
+}
+
+/* #region galeria Academia */
+
+
+.lightbox-gallery {
+  background-repeat: no-repeat;
+  overflow-x: hidden
+}
+
+.lightbox-gallery p {
+  color: #fff
+}
+
+.lightbox-gallery h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: #fff
+}
+
+@media (max-width:767px) {
+  .lightbox-gallery h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px
+  }
+}
+
+.lightbox-gallery .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 40px
+}
+
+.lightbox-gallery .intro p {
+  margin-bottom: 0
+}
+
+.lightbox-gallery .photos {
+  padding-bottom: 20px
+}
+
+.lightbox-gallery .item {
+  padding-bottom: 30px
+}
+
+/* #endregion galeria Academia */
+
+@media (min-width: 860px) {
+
+  .big {
+    font-size: 4.2em !important;
+
+  }
+
+}
+
+@media (max-width: 859px) {
+  .medium {
+    font-size: 3em !important;
+  }
+}
+
+@media (max-width:660px) {
+  .small {
+    font-size: 2.5em !important;
+  }
+}
+
+@media (max-width:575px) {
+  .smaller {
+    font-size: 2.2em !important;
+  }
+}
+
+.seta {
+  font-size: 5em;
+  color: rgb(0, 0, 255);
+  text-decoration: none !important;
+}
+
+/* #endregion home */
+
+
+/* #endregion homeAcademia */
+
+/* #endregion ParteAcademia */
+
+/*#region agende*/
+.agende {
+  background: url('../img/agende1.jpg');
+  width: 100%;
+  height: 88.8vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.agende h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 6.5em;
+  color: rgba(255, 255, 255, 0.925);
+  text-shadow: 0 0 1em black;
+  padding: 2em 0 0 0;
+}
+
+#agendeform {
+  /* background-image: linear-gradient(to right top, rgb(0, 0, 0), rgb(104, 104, 104)); */
+  background-color: rgb(33, 37, 41);
+  color: white;
+  box-shadow: 0 0 1em black;
+}
+
+.form {
+  padding: 2em 0 0 0;
+}
+
+.form h2 {
+  text-align: center;
+  font-size: 3.5em;
+}
+
+.form h5 {
+  font-size: 2em;
+}
+
+.form ul {
+  margin-top: 2em;
+  list-style: none;
+  text-align: center;
+}
+
+.form li {
+  padding: 1em 0;
+}
+
+.form input {
+  width: 30em;
+  border-radius: 10px;
+  height: 3em;
+}
+
+.form textarea {
+  border-radius: 12px;
+}
+
+.form input[type=submit] {
+  width: 8em;
+  align-items: center;
+  transition: .4s;
+}
+
+.form input[type=submit]:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+/*#endregion agende*/
+
+/*#region contato*/
+
+.colorWhite {
+  color: rgba(255, 255, 255, 0.896);
+}
+
+.contato {
+  width: 100%;
+  height: 88.8vh;
+  background-image: url('../img/contato1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contato h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 6.5em;
+  color: rgba(255, 255, 255, 0.925);
+  text-shadow: 0 0 1em black;
+  padding: 2.8em 0 0 0;
+}
+
+#contatoform {
+  /* background-image: linear-gradient(to right top, rgb(0, 0, 0), rgb(104, 104, 104)); */
+  background-color: rgb(33, 37, 41);
+  color: white;
+  box-shadow: 0 0 1em black;
+}
+
+.formcontato {
+  padding: 2em 0 0 0;
+}
+
+.formcontato h2 {
+  text-align: center;
+  font-size: 3.5em;
+}
+
+.formcontato h5 {
+  font-size: 2.5em;
+}
+
+.formcontato ul {
+  margin-top: 2em;
+  margin-left: 7em;
+  list-style: none;
+  /* text-align: center; */
+}
+
+.formcontato li {
+  padding: 1em 0;
+}
+
+.formcontato input {
+  color: white;
+  background-color: rgb(33, 37, 41);
+  border: none;
+  width: 50em;
+  border-radius: 10px;
+  height: 3em;
+}
+
+.formcontato li::after {
+  content: '';
+  background-color: rgb(25, 0, 255);
+  height: 0.1em;
+  width: 50em;
+  line-height: 1em;
+  display: block;
+}
+
+.formcontato textarea {
+  border-radius: 12px;
+  background-color: rgb(33, 37, 41);
+  width: 50em;
+  border: none;
+  color: white;
+}
+
+.formcontato a {
+  background-color: white;
+  color: black;
+  margin-left: 6em;
+  width: 8em;
+  transition: .4s;
+  text-decoration: none;
+  list-style: none;
+  border-radius: 10px;
+  font-size: 1.4em;
+  padding: 0.5em 1em;
+}
+
+.formcontato a:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+/*#region contato*/
+
+/*#region equipe*/
+.colorWhite {
+  color: rgba(255, 255, 255, 0.896);
+}
+
+.equipe {
+  width: 100%;
+  height: 88.8vh;
+  background-image: url('../img/equipe1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.equipe h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 6.5em;
+  color: rgba(255, 255, 255, 0.925);
+  text-shadow: 0 0 1em black;
+  padding: 2.8em 0 0 0;
+}
+
+.equipeInfo {
+  text-align: center;
+  padding: 8em 0 0 0;
+  /* background-image: linear-gradient(to right top, rgb(0, 0, 0), rgb(104, 104, 104)); */
+  color: white;
+}
+
+.equipeInfo h1 {
+  font-weight: bold;
+  padding: 0 0 1em 0;
+}
+
+.equipeInfo h5 {
+  padding: 0 20em;
+}
+
+.titulosecun {
+  margin-top: 2em;
+}
+
+/*#endregion equipe*/
+
+
+.colorWhite {
+  color: rgba(255, 255, 255, 0.896);
+}
+
+/*#region login*/
+#login {
+  background-image: linear-gradient(to left top, rgb(0, 1, 53), rgb(0, 0, 0));
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 10em 0 0 0;
+}
+
+#login h4 {
+  padding: 0 0 20px 0;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.loginC ul {
+  list-style: none;
+}
+
+.loginC li {
+  padding: 0.8em;
+  text-align: center;
+}
+
+.loginC input {
+  width: 30em;
+  height: 3em;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.loginC input[type=submit] {
+  width: 10em;
+  transition: .4s;
+}
+
+.loginC input[type=submit]:hover {
+  transition: .4s;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.loginC a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+}
+
+.loginC span {
+  color: rgba(0, 119, 255, 0.801);
+  text-decoration: underline;
+  transition: .4s;
+}
+
+.loginC span:hover {
+  transition: .4s;
+  font-size: 1.10em;
+}
+
+/*#endregion LOGIN*/

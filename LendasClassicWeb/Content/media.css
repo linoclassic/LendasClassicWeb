@@ -1,0 +1,432 @@
+/*#region agende*/
+@media screen and (max-width:1024px){
+    .agende h1{
+        font-size: 4em;
+        padding: 4em 0 0 0;
+    }
+}
+
+@media screen and (max-width:768px){
+    .agende h1{
+        font-size: 4em;
+        padding: 4em 0 0 0;
+    }
+}
+
+@media screen and (max-width:480px){
+    .agende h1{
+        font-size: 3em;
+        padding: 3em 0 0 0;
+    }
+
+    .agende{
+        height: 30em;
+    }
+
+    .form h2{
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .form input{
+        text-align: center;
+        width: 20em;
+        border-radius: 10px;
+        height: 2.5em;
+    }
+
+    .form textarea{
+        width: 20em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width:360px){
+    .agende{
+        background: url('../Images/agende1.jpg');
+        width: 100%;
+        height: 25em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .agende h1{
+        font-size: 2em;
+        padding: 4em 0 0 0;
+    }
+
+    .form h2{
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .form h5{
+        font-size: 1.5em;
+    }
+
+    .form input{
+        text-align: center;
+        width: 15em;
+        border-radius: 10px;
+        height: 2.5em;
+    }
+
+    .form textarea{
+        width: 15em;
+        height: 15em;
+    }
+}
+/*#endregion agende*/
+
+
+/*#region cadastro*/
+@media screen and (max-width:1024px){
+    .cadastro h1{
+        padding: 3.2em 0 0 0;
+        font-size: 3.5em;
+    }
+
+    .cadastro{
+        height: 40em;
+    }
+
+    .formcadastro li::after {
+        margin-left: 4.5em;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .cadastro h1{
+        font-size: 3em;
+    }
+
+    .cadastro{
+        height: 30em;
+    }
+
+    .formcadastro li::after {
+        margin-left: 8em;
+    }
+
+    .formcadastro h2{
+        text-align: center;
+    }
+
+    .formcadastro h5{
+        font-size: 2em;
+    }
+
+    .formcadastro input{
+        text-align: center;
+        width: 30em;
+    }
+
+    .formcadastro li::after{
+        width: 30em;
+    }
+    
+    .formcadastro textarea{
+        width: 30em;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .formcadastro li::after {
+        margin-left: 4em;
+    }
+
+    .formcadastro h2{
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .formcadastro h5{
+        font-size: 1.8em;
+    }
+
+    .formcadastro input{
+        text-align: center;
+        width: 20em;
+    }
+
+    .formcadastro li::after{
+        width: 20em;
+    }
+    
+    .formcadastro textarea{
+        width: 20em;
+    }
+
+    .cadastro h1{
+        font-size: 3em;
+        padding: 3em 0 0 0;
+    }
+
+    .cadastro{
+        height: 30em;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .cadastro h1{
+        font-size: 3em;
+    }
+
+    .formcadastro li::after {
+        margin-left: 1em;
+    }
+
+    .cadastro{
+        height: 25em;
+    }
+
+    .formcadastro h2{
+        text-align: center;
+        font-size: 1.5  em;
+    }
+
+    .formcadastro h5{
+        font-size: 1.5em;
+    }
+
+    .formcadastro input{
+        text-align: center;
+        width: 18em;
+    }
+
+    .formcadastro li::after{
+        width: 18em;
+    }
+    
+    .formcadastro textarea{
+        width: 18em;
+    }
+
+    .cadastro h1{
+        font-size: 2em;
+        padding: 2em 0 0 0;
+    }
+
+    .cadastro{
+        height: 15em;
+    }
+}
+/*#endregion cadastro*/
+
+
+/*#region contato*/
+@media screen and (max-width:1024px){
+    .contato h1{
+        padding: 3.2em 0 0 0;
+        font-size: 4em;
+    }
+
+    .contato{
+        height: 40em;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .contato h1{
+        font-size: 4em;
+    }
+
+    .contato{
+        width: 100%;
+        height: 30em;
+    }
+
+    .formcontato h2{
+        text-align: center;
+    }
+
+    .formcontato h5{
+        font-size: 2em;
+    }
+
+    .formcontato input{
+        text-align: center;
+        width: 30em;
+    }
+
+    .formcontato li::after{
+        width: 30em;
+    }
+    
+    .formcontato textarea{
+        width: 30em;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .formcontato h2{
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    .formcontato h5{
+        font-size: 1.8em;
+    }
+
+    .formcontato ul{
+        margin-left: 4em;
+    }
+
+    .formcontato input{
+        text-align: center;
+        width: 20em;
+    }
+
+    .formcontato li::after{
+        width: 20em;
+    }
+    
+    .formcontato textarea{
+        width: 20em;
+    }
+
+    .contato h1{
+        font-size: 3em;
+        padding: 3em 0 0 0;
+    }
+
+    .contato{
+        height: 30em;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .contato h1{
+        font-size: 3em;
+    }
+
+    .contato{
+        width: 100%;
+        height: 25em;
+    }
+
+    .formcontato h2{
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .formcontato h5{
+        font-size: 1.5em;
+    }
+    
+    .formcontato ul{
+        margin-left: 0em;
+    }
+
+    .formcontato input{
+        text-align: center;
+        width: 18em;
+    }
+
+    .formcontato li::after{
+        width: 18em;
+    }
+    
+    .formcontato textarea{
+        width: 18em;
+    }
+
+    .contato h1{
+        font-size: 2em;
+        padding: 2em 0 0 0;
+    }
+
+    .contato{
+        height: 15em;
+    }
+}
+/*#endregion contato*/
+
+
+/*#region equipe*/
+@media screen and (max-width:1024px){
+    .equipeInfo h5{
+        padding: 0 5em;
+    }
+}
+
+@media screen and (max-width:768px){
+    .equipe h1{
+        font-size: 4em;
+        padding: 4em 0 0 0;
+    }
+
+    .equipe{
+     height: 40em;
+    }
+}
+
+@media screen and (max-width:480px){
+    .equipe h1{
+        font-size: 3em;
+        padding: 4em 0 0 0;
+    }
+
+    .equipeInfo h5{
+        padding: 0 3em;
+    }
+
+    .equipe h1{
+        font-size: 3.5em;
+    }
+
+    .equipe{
+        height: 30em;
+    }
+}
+
+@media screen and (max-width:360px){
+    .equipeInfo h5{
+        padding: 0 2em;
+    }
+
+    .equipe h1{
+        font-size: 2.5em;
+        padding: 3em 0 0 0;
+    }
+
+    .equipe{
+        height: 20em;
+    }
+}
+/*#endregion equipe*/
+
+
+/*#region login*/
+@media screen and (max-width:1024px){
+
+}
+
+@media screen and (max-width:768px) {
+    
+}
+
+@media screen and (max-width:480px) {
+    #login h4{
+        font-size: 4em;
+    }
+
+    .loginC input{
+        width: 20em;
+    }
+}
+
+@media screen and (max-width:360px) {
+    @media screen and (max-width:480px) {
+        #login h4{
+            font-size: 3em;
+        }
+    
+        .loginC input{
+            width: 15em;
+        }
+    }
+}
+/*#endregion login*/

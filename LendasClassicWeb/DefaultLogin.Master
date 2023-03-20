@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
      <%--links--%>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link href="Content/Style.css" rel="stylesheet" />
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    
 
 
    
@@ -41,10 +42,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-sm-1 fs-5">
                             <li class="nav-item p-2 ms-2 mx-2 rounded">
-                                <a class="nav-link active " aria-current="page" href="#">Home</a>
+                                <a class="nav-link active " aria-current="page" href="../Pages/index.html">Home</a>
                             </li>
                             <li class="nav-item p-2 mx-2 ">
-                                <a class="nav-link active" href="../html/academia.html">Academia</a>
+                                <a class="nav-link active" href="../Pages/academia.html">Academia</a>
                             </li>
                             <li class="nav-item p-2 mx-2 ">
                                 <a class="nav-link active" href="../html/agende.html">Agende um tour</a>

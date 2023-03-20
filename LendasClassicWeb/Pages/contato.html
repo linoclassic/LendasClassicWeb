@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- basic infos -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/styleWeb.css">
+    <link rel="stylesheet" href="../Content/media.min.css">
+
+    <!-- link favicon  -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+     <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- tile -->
+    <title>Lendas Classic</title>
+
+</head>
+
+<body>
+
+    <div class="container-fluid p-0">
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #040303f2;">
+
+            <div class=" container-fluid">
+        
+              <a class="navbar-brand fs-4" href="../html/index.html">LENDAS CLASSIC</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav  me-auto  mb-2 mb-sm-1 fs-5  ">
+                  <li class="nav-item p-2  ms-2 mx-2 ">
+                    <a class="nav-link active " aria-current="page" href="../Pages/index.html">Home</a>
+                  </li>
+                  <li class="nav-item p-2 mx-2 ">
+                    <a class="nav-link active" href="../Pages/academia.html">Academia</a>
+                  </li>
+                  <!--<li class="nav-item p-2 mx-2 ">
+                    <a class="nav-link active" href="../html/agende.html">Agende um tour</a>
+                  </li>-->
+                  <li class="nav-item p-2 mx-2 ">
+                    <a class="nav-link active" href="../Pages/equipe.html">Equipe</a>
+                  </li>
+                  <!--<li class="nav-item p-2 mx-2 ">
+                    <a class="nav-link active" href="../html/contato.html">Contato</a>
+                  </li>-->
+                 
+                </ul>
+        
+              </div>
+        
+          </nav>
+    </div>
+
+    
+    <section id="contato">
+        <div class="contato">
+            <h1>Alguma Dúvida?<br>Entre em Contato Conosco</h1>
+        </div>
+    </section>
+
+    <section id="contatoform">
+        <div class="formcontato">
+            <h2>Entre em Contato</h2>
+
+            <form>
+                <ul>
+                    <li>
+                        <h5>Nome</h5>
+                        <input type="text" placeholder="Ex: Jenny">
+                    </li>
+                    <li>
+                        <h5>Sobrenome</h5>
+                        <input type="text" placeholder="Ex: Petrova">
+                    </li>
+                    <li>
+                        <h5>E-mail</h5>
+                        <input type="email" placeholder="Ex: jennypetrova@gmail.com">
+                    </li>
+                    <li>
+                      <h5>Celular (com DDD)</h5>
+                      <input type="text" id="celular" placeholder="Ex: 11 90225-9658" maxlength="13" onkeyup="mascara_celular()">
+                    </li>
+                    <li>
+                        <h5>Localização (Cidade)</h5>
+                        <input type="text" placeholder="Ex: São Paulo">
+                    </li>
+                    <li>
+                        <h5>Observação</h5>
+                        <textarea cols="60" rows="15" placeholder="Ex: Gostaria que fosse no periodo da manhã, pois a tarde já tenho compromisso, e não conseguirei comparecer..."></textarea>
+                    </li>
+                </ul>
+                <a href="#">Enviar</a>
+            </form>
+        </div>
+    </section>
+
+    <div class="container-fluid pt-3">
+
+  
+      <footer class="text-light me-auto" style="background-color: #565c64;">
+        <ul class="d-flex  footerAll flex-row justify-content-evenly py-5 align-items-center px-auto">
+          <ul class="d-flex  about flex-column align-items-center fs-5">
+            <li class="pb-2 ">
+              <h5 class="fs-4">SOBRE NÓS</h5>
+            </li>
+            <li class="pb-2">
+              <a class="linkRest text-dark fw-bolder " href="../html/contato.html">CONTATO</a>
+            </li>
+            <li class="pb-2">
+              <a class="linkRest text-dark fw-bolder" href="../html/contato.html">EQUIPE</a>
+            </li>
+            <li class="pb-2">
+              <a class="linkRest text-dark fw-bolder" href="../html/academia.html">ACADEMIA</a>
+            </li>
+          </ul>
+  
+          <ul class="socials d-flex text-center">
+            <li class="px-3 text-center">
+              <a href=""><i class='bx bxl-instagram-alt'></i></a>
+            </li>
+            <li class="px-3 text-center">
+              <a href=""><i class='bx bxl-facebook-circle'></i></a>
+            </li>
+            <li class="px-3">
+              <a href=""><i class='bx bxl-twitter'></i></a>
+            </li>
+            <li class="px-3">
+              <a href=""><i class='bx bxl-tiktok'></i></a>
+              <a href="">
+            </li></a>
+          </ul>
+  
+          <ul class="d-flex  join flex-column text-center fs-6" style="width: 20%;">
+            <li class="text-center">
+              <h4 class="text-info fs-3">Junte se a nossa tribo!</h4>
+            </li>
+            <li class="text-center">
+              <p class="fw-bold text-light">Você ainda não é um membro da Lendas Classic, por favor,
+                registre-se rapidamente!</p>
+            </li>
+            <li class="">
+              <a href="../html/login.html">
+                <button type="button" class="btn btn-primary fs-5 mt-2 btn-lg px-3 py-3 rounded-pill">Junte-se
+                  agora</button>
+              </a>
+              </li>
+          </ul>
+        
+        </ul>
+        <hr>
+        <p class="text-uppercase smaller superSmall superSmaller text-center">Copyright&copy; todos os direitos reservados 2022 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</p>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bx-up-arrow-alt' ></i> Topo</button>
+      </footer>
+    </div>
+
+        <!-- script -->
+
+        <script src="../js/bootstrap.min.js"></script>
+
+        <script src="../js/script.js"></script>
+
+    </body>
+
+    </html>
