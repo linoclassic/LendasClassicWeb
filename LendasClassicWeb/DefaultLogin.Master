@@ -4,35 +4,31 @@
 
 <html>
 <head runat="server">
-   <%-- metas --%>
+    <%-- metas --%>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <%--links--%>
+    <%--links--%>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <link href="Content/Style.css" rel="stylesheet" />
-    
 
 
-   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-    <title>Usuários</title>
+    <title>Lendas Classic</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<%--        <div class="container-fluid bg-black" >--%>
- <%-- ... --%>
-<body>
-<%--    <div class="container-fluid bg-gradient bg-primary bg-dark">--%>
-   <%-- <div class="container-fluid bg-gradient-primary" style="height:92vh;">--%>
+    <%--        <div class="container-fluid bg-black" >--%>
+    <%-- ... --%>
+    <body>
+        <%--    <div class="container-fluid bg-gradient bg-primary bg-dark">--%>
+        <%-- <div class="container-fluid bg-gradient-primary" style="height:92vh;">--%>
         <form id="form1" runat="server">
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #040303f2;">
-         
+
                 <div class="container-fluid">
                     <a class="navbar-brand fs-4" href="#">LENDAS CLASSIC</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -57,70 +53,74 @@
                                 <a class="nav-link active" href="../html/contato.html">Contato</a>
                             </li>
                         </ul>
-                    
+
                         <span class="text-light mx-5 ">Faça
                             <a href="Login.aspx" class="fw-bolder text-light">LOGIN</a> ou 
                             <br />
                             crie seu 
-                             <a href="CadastroUser.aspx" class="fw-bold text-light">CADASTRO</a> 
+                             <a href="CadastroUser.aspx" class="fw-bold text-light">CADASTRO</a>
 
                         </span>
                     </div>
                 </div>
             </nav>
-<%--            <div class="container-fluid bg-gradient bg-primary bg-dark" style="height:92vh;">--%>
-               <div class="container-fluid bg-gradient bg-primary bg-dark" style="height:92vh;">
+            <%--            <div class="container-fluid bg-gradient bg-primary bg-dark" style="height:92vh;">--%>
+            <div class="container-fluid bg-gradient bg-primary bg-dark" style="height: 92vh;">
 
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
         </form>
-    </div>
+        </div>
     <%--footer--%>
-    <footer class="bg-secondary text-white w-100">
-        <div class="container">
-            <div class="row pt-5">
-                <div class="col-md-4 text-center pb-4">
-                    <h5 class="mb-3">Lendas Classic</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
-                </div>
-                <div class="col-md-4 text-center align-content-center">
-                    <h5 class="mb-3">Redes Sociais</h5>
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-facebook-circle'></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-twitter'></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-instagram-alt'></i></a></li>
+        <footer class="bg-secondary text-white w-100">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-md-4 text-center pb-4">
+                        <h5 class="mb-3">Lendas Classic</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+                    </div>
+                    <div class="col-md-4 text-center align-content-center">
+                        <h5 class="mb-3">Redes Sociais</h5>
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-facebook-circle'></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-twitter'></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class='bx  bx-sm bxl-instagram-alt'></i></a></li>
 
-                    </ul>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h5 class="mb-3">Contato</h5>
-                    <p><i class='bx  bx-sm bxs-map'></i>Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
-                    <p><i class='bx bx-sm bxs-phone'></i>(11) 9727-6667</p>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h5 class="mb-3">Contato</h5>
+                        <p><i class='bx  bx-sm bxs-map'></i>Rua Jenny Petrova Roosevelt, nº 727,  São Paulo - SP</p>
+                        <p><i class='bx bx-sm bxs-phone'></i>(11) 9727-6667</p>
+                    </div>
                 </div>
             </div>
-        </div>
-           <hr>
-        <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63 <br> Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303 <br>As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
-       
-      </footer>
-   
-   
-</body>
+            <hr>
+            <div class="fake-footer text-center  pb-4 h6"><small>Copyright&copy; todos os direitos reservados 2023 | Cnpj: 14.359.193/3051-63
+                <br>
+                Endereço: Avenida Jenny Petrova Rooselvelt Amorin, 69 - São Paulo -SP - CEP: 03010-303
+                <br>
+                As fotos, textos e layout aqui veiculados são de propriedade da Lendas Classic. É proibida a utilização total ou parcial sem prévia autorização.</small></div>
 
-  
+        </footer>
+
+
+    </body>
+
+
 
     <%--scripts--%>
-<!-- Incluindo o jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Incluindo o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
     <script src="Scripts/bootstrap.min.js"></script>
-        <script src="Scripts/Script.js"></script>
-   
-  
+    <script src="Scripts/Script.js"></script>
+
+
 
 </body>
 </html>
