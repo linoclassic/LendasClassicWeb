@@ -94,6 +94,29 @@ namespace LendasClassic.DAL
             }
         }
 
+        public void InativarReservaADM(ReservaDTO objEdita)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("UPDATE reservaUsuarioComum SET statusReserva=@statusReserva WHERE idReserva=@idReserva", conn);
+
+                cmd.Parameters.AddWithValue("@statusReserva", objEdita.StatusCancelado);
+                cmd.Parameters.AddWithValue("@idReserva", objEdita.idReserva);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao alterar status da reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
         public void VerificarStatusReserva()
         {
             // Obtém o email do usuário logado

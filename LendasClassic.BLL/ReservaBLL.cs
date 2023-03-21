@@ -49,6 +49,12 @@ namespace LendasClassic.BLL
             objBLL.InativarReserva(reserva);
         }
 
+        public void InativarReservaADM(ReservaDTO reserva)
+        {
+
+            objBLL.InativarReservaADM(reserva);
+        }
+
         public int ObterIdDoUsuarioLogado()
         {
             //return objBLL.ObterIdUsuarioLogado();
