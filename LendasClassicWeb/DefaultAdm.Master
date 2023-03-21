@@ -44,10 +44,10 @@
                     </ul>
                <ul class="navbar-nav fs-5 mb-sm-1">
                            <li class="nav-item p-2 mx-1 ">
-                            <a class="nav-link active" href="ConsultaUsuarioUser.aspx">Usuário</a>
+                            <a class="nav-link active" href="ManagerUsuarioADM.aspx">Usuários</a>
                         </li>
                         <li class="nav-item p-2 mx-1 ">
-                            <a class="nav-link px-3 active" href="ReservaUser.aspx">Reserva</a>
+                            <a class="nav-link px-3 active" href="ReservaUserADM.aspx">Reservas</a>
                         </li>
                         <li class=" nav-item p-2 mx-0">
                             <a href="Login.aspx" class="btn btn-primary mx-4 mnb-3">SAIR</a>

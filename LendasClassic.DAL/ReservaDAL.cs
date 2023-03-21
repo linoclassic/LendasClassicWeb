@@ -11,7 +11,7 @@ using System.Web;
 
 namespace LendasClassic.DAL
 {
-  
+
     public class ReservaDAL : Conexao
     {
         public void CadastrarReserva(ReservaDTO objCad)
@@ -46,7 +46,7 @@ namespace LendasClassic.DAL
         {
             try
             {
-              
+
                 int idUsuario = ObterIdUsuarioLogado();
                 Conectar();
                 cmd = new MySqlCommand("INSERT INTO reserva (dataReserva, statusReserva, fkUsuario) VALUES (@dataReserva, @statusReserva, @fkUsuario)", conn);
@@ -131,11 +131,11 @@ namespace LendasClassic.DAL
 
                 Conectar();
                 cmd = new MySqlCommand("UPDATE reservaUsuarioComum SET statusReserva=@statusReserva WHERE idReserva=@IdReserva AND emailUsuario=@emailUsuario", conn);
-             
+
                 cmd.Parameters.AddWithValue("@statusReserva", novoStatus);
                 cmd.Parameters.AddWithValue("@idReserva", idReserva);
                 cmd.Parameters.AddWithValue("@emailUsuario", emailUsuario);
-               
+
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -314,7 +314,7 @@ namespace LendasClassic.DAL
 
             try
             {
-               
+
 
                 string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
 
@@ -344,6 +344,45 @@ namespace LendasClassic.DAL
             catch (Exception ex)
             {
                 throw new Exception("Erro ao listar as reservas do usuário logado: " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        //Listar Reserva de todos (ADM)
+        public List<ReservaDTO> ListarReservas()
+        {
+
+            try
+            {
+
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM reservaUsuarioComum;", conn);
+                //cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                dr = cmd.ExecuteReader();
+                List<ReservaDTO> Lista = new List<ReservaDTO>(); // criando lista vazia
+
+                while (dr.Read())
+                {
+                    ReservaDTO obj = new ReservaDTO();
+                    //obj.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
+                    obj.emailUsuario = dr["emailUsuario"].ToString();
+                    obj.telefoneUsuario = dr["telefoneUsuario"].ToString();
+                    obj.cpfUsuario = dr["cpfUsuario"].ToString();
+                    obj.idReserva = Convert.ToInt32(dr["idReserva"]);
+                    obj.dataReserva = DateTime.Parse(dr["dataReserva"].ToString());
+                    obj.StatusReserva = dr["statusReserva"].ToString();
+
+                    Lista.Add(obj);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar as reservas dos usuários: " + ex.Message);
             }
             finally
             {

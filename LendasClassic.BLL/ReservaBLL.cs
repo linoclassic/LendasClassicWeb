@@ -60,6 +60,11 @@ namespace LendasClassic.BLL
             return objBLL.Listar();
         }
 
+        public List<ReservaDTO> ListarReservas()
+        {
+            return objBLL.ListarReservas();
+        }
+
 
     }
 }

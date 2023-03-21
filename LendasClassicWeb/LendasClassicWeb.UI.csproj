@@ -184,6 +184,7 @@
     <Content Include="Pages\login.html" />
     <Content Include="Pages\ManagerUsuarioADM.aspx" />
     <Content Include="Pages\ReservaUser.aspx" />
+    <Content Include="Pages\ReservaUserADM.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -266,6 +267,13 @@
     </Compile>
     <Compile Include="Pages\ReservaUser.aspx.designer.cs">
       <DependentUpon>ReservaUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReservaUserADM.aspx.cs">
+      <DependentUpon>ReservaUserADM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReservaUserADM.aspx.designer.cs">
+      <DependentUpon>ReservaUserADM.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
