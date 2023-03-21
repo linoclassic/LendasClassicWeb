@@ -114,7 +114,7 @@ namespace LendasClassic.DAL
         //Read User logado
         public List<UsuarioDTO> ListarUserLogado()
         {
-          
+
             try
             {
                 Conectar();
@@ -152,6 +152,33 @@ namespace LendasClassic.DAL
             }
 
         }
+
+        public void AlterarStatus(UsuarioDTO objEdita)
+        {
+            try
+            {
+                //string emailUsuario = HttpContext.Current.Session["Usuario"].ToString();
+
+                Conectar();
+                cmd = new MySqlCommand("UPDATE usuario SET statusUsuario=@statusUsuario WHERE idUsuario=@idUsuario ", conn);
+
+                cmd.Parameters.AddWithValue("@statusUsuario", "INATIVO");
+                cmd.Parameters.AddWithValue("@idUsuario", objEdita.idUsuario);
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao alterar status da reserva !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
 
         //UPDATE
         public void Editar(UsuarioDTO objEdita)
@@ -272,7 +299,43 @@ namespace LendasClassic.DAL
             }
         }
 
+        //FILTRAR
+        public List<FiltroUsuarioDTO> Filtrar()
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT idUsuario, nomeUsuario, descricaoTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario JOIN tpUsuario ON fkTpUsuario=idTpUsuario;", conn);
+                dr = cmd.ExecuteReader();
+                List<FiltroUsuarioDTO> Lista = new List<FiltroUsuarioDTO>(); // criando lista vazia
 
-      
+                while (dr.Read())
+                {
+                    FiltroUsuarioDTO obj = new FiltroUsuarioDTO();
+                    obj.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
+                    obj.descricaoTpUsuario = dr["descricaoTpUsuario"].ToString();
+                    obj.statusUsuario = dr["statusUsuario"].ToString();
+                    obj.emailUsuario = dr["emailUsuario"].ToString();
+                    obj.senhaUsuario = dr["senhaUsuario"].ToString();
+                    obj.cpfUsuario = dr["cpfUsuario"].ToString();
+                    obj.telefoneUsuario = dr["telefoneUsuario"].ToString();
+                    Lista.Add(obj);
+                }
+                return Lista;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao filtrar Usuário !!! " + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
     }
 }

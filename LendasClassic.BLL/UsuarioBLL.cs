@@ -32,11 +32,22 @@ namespace LendasClassic.BLL
             return objBLL.Listar();
         }
 
+        //FILTRAR
+        public List<FiltroUsuarioDTO> FiltrarUsuario()
+        {
+            return objBLL.Filtrar();
+        }
+
+
         public List<UsuarioDTO> ListarUsLogado()
         {
             return objBLL.ListarUserLogado();
         }
 
+        public void InativarStatus(UsuarioDTO objEdita)
+        {
+            objBLL.AlterarStatus(objEdita);
+        }
 
 
 

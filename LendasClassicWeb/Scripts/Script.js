@@ -3,9 +3,29 @@
 });
 
 $(document).ready(function () {
+    $("#txtTelefoneUsuarioFooter").mask("(00) 0000-0000");
+});
+
+$(document).ready(function () {
+    $("#txtTelefoneUsuario").mask("(00) 0000-0000");
+});
+
+
+$(document).ready(function () {
     $("#txtCpf").mask("000.000.000-00");
 
 });
+
+$(document).ready(function () {
+    $("#txtCpfUsuarioFooter").mask("000.000.000-00");
+
+});
+
+$(document).ready(function () {
+    $("#txtCpfUsuario").mask("000.000.000-00");
+
+});
+
 
 $(document).ready(function () {
     $("#txtDataReserva").mask("00/00/0000");

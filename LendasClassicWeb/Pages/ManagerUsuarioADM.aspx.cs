@@ -1,7 +1,10 @@
 ﻿using LendasClassic.BLL;
 using LendasClassic.DTO;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -14,6 +17,7 @@ namespace LendasClassicWeb.Pages
     {
         UsuarioDTO objModelo = new UsuarioDTO();
         UsuarioBLL objBLL = new UsuarioBLL();
+        DataTable dt = new DataTable();
 
         public void PopularGV()
         {
@@ -65,14 +69,21 @@ namespace LendasClassicWeb.Pages
                 PageValido = false;
             }
 
+            //else if ((gv1.FooterRow.FindControl("rbl2") as RadioButtonList).SelectedIndex < 0)
+            //{
+            //    MsgBox("Escolha uma das opções!", this.Page, this);
+            //    (gv1.FooterRow.FindControl("rbl2") as RadioButtonList).Focus();
+            //    PageValido = false;
+            //}
 
 
-            else if (string.IsNullOrEmpty((gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Text.Trim()))
-            {
-                MsgBox("Digite o status do usuário!", this.Page, this);
-                (gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Focus();
-                PageValido = false;
-            }
+
+            //else if (string.IsNullOrEmpty((gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Text.Trim()))
+            //{
+            //    MsgBox("Digite o status do usuário!", this.Page, this);
+            //    (gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Focus();
+            //    PageValido = false;
+            //}
             else if (string.IsNullOrEmpty((gv1.FooterRow.FindControl("txtEmailUsuarioFooter") as TextBox).Text.Trim()))
             {
                 MsgBox("Digita o email do usuário!", this.Page, this);
@@ -120,7 +131,7 @@ namespace LendasClassicWeb.Pages
             {
                 Response.Redirect("Login.aspx");
             }
-            lblSessionMsg.Text = "Lista de úsuarios cadastrados ";
+            lblSessionMsg.Text = "Usuários cadastrados ";
         }
 
         protected void gv1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -134,7 +145,9 @@ namespace LendasClassicWeb.Pages
 
                     objModelo.fkTpUsuario = (gv1.FooterRow.FindControl("rbl1") as RadioButtonList).Text.Trim();
 
-                    objModelo.statusUsuario = (gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Text.Trim();
+                    //objModelo.statusUsuario = (gv1.FooterRow.FindControl("rbl2") as RadioButtonList).Text.Trim();
+
+                    //objModelo.statusUsuario = (gv1.FooterRow.FindControl("txtStatusUsuarioFooter") as TextBox).Text.Trim();
 
                     objModelo.emailUsuario = (gv1.FooterRow.FindControl("txtEmailUsuarioFooter") as TextBox).Text.Trim();
 
@@ -162,7 +175,9 @@ namespace LendasClassicWeb.Pages
 
             objModelo.fkTpUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl1") as RadioButtonList).Text.Trim();
 
-            objModelo.statusUsuario = (gv1.Rows[e.RowIndex].FindControl("txtStatusUsuario") as TextBox).Text.Trim();
+            objModelo.statusUsuario = (gv1.Rows[e.RowIndex].FindControl("rbl2") as RadioButtonList).Text.Trim();
+
+            //objModelo.statusUsuario = (gv1.Rows[e.RowIndex].FindControl("txtStatusUsuario") as TextBox).Text.Trim();
 
             objModelo.emailUsuario = (gv1.Rows[e.RowIndex].FindControl("txtEmailUsuario") as TextBox).Text.Trim();
 
@@ -186,7 +201,8 @@ namespace LendasClassicWeb.Pages
 
             objModelo.idUsuario = Convert.ToInt32(gv1.DataKeys[e.RowIndex].Value.ToString());
 
-            objBLL.ExcluirUsuario(objModelo.idUsuario);
+            //objBLL.ExcluirUsuario(objModelo.idUsuario);
+            objBLL.InativarStatus(objModelo);
             PopularGV();
             lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " eliminado com sucesso !!!";
         }
@@ -222,8 +238,29 @@ namespace LendasClassicWeb.Pages
         {
 
         }
+
+        protected void ddl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["LendasClassicConnectionString"].ConnectionString))
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                    using (MySqlDataAdapter da = new MySqlDataAdapter("SELECT idUsuario, nomeUsuario, fkTpUsuario, statusUsuario, emailUsuario, senhaUsuario, cpfUsuario, telefoneUsuario FROM usuario JOIN tpUsuario ON fkTpUsuario=idTpUsuario WHERE statusUsuario='" + ddl1.SelectedItem.ToString() + "'", conn))
+                    {
+                        da.Fill(dt);
+                    }
+                    gv1.DataSource = dt; 
+                    gv1.DataBind();
+                }
+            }
+
+        }
+
+        protected void btnLimpaFiltro_Click(object sender, EventArgs e)
+        {
+            PopularGV();
+        }
     }
-
-
-
 }
+    

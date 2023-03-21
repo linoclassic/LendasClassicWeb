@@ -66,8 +66,8 @@
                     <asp:TemplateField HeaderText="OPÇÕES">
 
                         <ItemTemplate>
-                            <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/EditarWhite.png" ToolTip="Editar" Width="41" Height="41" CommandName="Edit" />
-                            <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteWhite.png" ToolTip="CANCELAR" Width="36" Height="36" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente cancelar esta reserva?'))return false" />
+<%--                            <asp:ImageButton ID="btnEditar" runat="server" ImageUrl="~/Images/EditarWhite.png" ToolTip="Editar" Width="41" Height="41" CommandName="Edit" />--%>
+                            <asp:ImageButton ID="btnExcluir" runat="server" ImageUrl="~/Images/DeleteWhite.png" ToolTip="CANCELAR" Width="36" Height="36" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente cancelar esta reserva?? Não será possivel reverter ação!!!'))return false" />
                         </ItemTemplate>
 
                         <EditItemTemplate>

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LendasClassic.DTO
 {
-    public class UsuarioDTO
+    public class FiltroUsuarioDTO
     {
-
-
         public int idUsuario { get; set; }
 
         public string nomeUsuario { get; set; }
@@ -26,7 +24,6 @@ namespace LendasClassic.DTO
         public string cpfUsuario { get; set; }
 
         //Relacionamento
-        public string fkTpUsuario { get; set; }
-
+        public string descricaoTpUsuario { get; set; }
     }
 }

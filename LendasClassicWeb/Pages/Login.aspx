@@ -15,7 +15,7 @@
                 <h1 class="font-weight-light text-light h3 mt-5 mb-4 text-center">FAZER LOGIN</h1>
                 <asp:Label runat="server" Text="" CssClass="lead"/>
                 <asp:TextBox AutoCompleteType="Disabled" ID="txtUsuario" CssClass="form-control" MaxLength="50" runat="server"  placeholder="E-mail"/>
-                <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o nome do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
+                <asp:RequiredFieldValidator ID="RequiredNome" runat="server" ErrorMessage="*Digite o email do usuário" ForeColor="Red" ControlToValidate="txtUsuario" />
                 <br />
                 <asp:Label runat="server" Text="" CssClass="lead" />
                 <asp:TextBox AutoCompleteType="Disabled" ID="txtSenha" CssClass="form-control" MaxLength="8" runat="server" TextMode="Password" placeholder="Senha"/>

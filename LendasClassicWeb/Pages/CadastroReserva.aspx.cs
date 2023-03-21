@@ -61,10 +61,10 @@ namespace LendasClassicWeb.Pages
 
             // Criação do objeto de reserva com as informações do usuário e a data da reserva
             ReservaDTO objReserva = new ReservaDTO();
-            objReserva.nomeUsuario = objUsuario.nomeUsuario;
-            objReserva.emailUsuario = objUsuario.emailUsuario;
-            objReserva.telefoneUsuario = objUsuario.telefoneUsuario;
-            objReserva.cpfUsuario = objUsuario.cpfUsuario;
+            //objReserva.nomeUsuario = objUsuario.nomeUsuario;
+            //objReserva.emailUsuario = objUsuario.emailUsuario;
+            //objReserva.telefoneUsuario = objUsuario.telefoneUsuario;
+            //objReserva.cpfUsuario = objUsuario.cpfUsuario;
             objReserva.dataReserva = dataReserva;
             objReserva.StatusReserva = "ATIVO";
 
