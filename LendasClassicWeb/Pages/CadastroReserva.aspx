@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-center mt-2">
                 <asp:Button ID="btnCadastrar" OnClick="btnCadastrar_Click" runat="server"  Visible="false" Text="RESERVAR" CssClass="btn py-2 btn-lg mt-3 mx-3 btn-primary rounded" />
                 <asp:Button ID="btnCancelar" runat="server" Text="CANCELAR" CssClass="btn btn-danger px-4 py-3 mt-3" Visible="false" OnClick="btnCancelar_Click" />
-                  <asp:Label ID="lblMsg" runat="server" Text="" CssClass="lead"  Visible="false"/>
+                  <asp:Label ID="lblMsg" runat="server" Text="" CssClass="lead"  Visible="false "/>
 
             </div>
         </div>
