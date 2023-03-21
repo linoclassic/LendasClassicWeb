@@ -160,7 +160,7 @@ namespace LendasClassicWeb.Pages
                     objBLL.CadastraUsuario(objModelo);
                     PopularGV();
                     (gv1.FooterRow.FindControl("txtNomeUsuarioFooter") as TextBox).Focus();
-                    lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " cadastrado com sucesso !!!";
+                    //lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " cadastrado com sucesso !!!";
 
                 }
 
@@ -192,7 +192,7 @@ namespace LendasClassicWeb.Pages
             objBLL.EditarUsuario(objModelo);
             gv1.EditIndex = -1;
             PopularGV();
-            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!";
+            //lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " editado com sucesso !!!";
         }
 
 
@@ -204,7 +204,7 @@ namespace LendasClassicWeb.Pages
             //objBLL.ExcluirUsuario(objModelo.idUsuario);
             objBLL.InativarStatus(objModelo);
             PopularGV();
-            lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " eliminado com sucesso !!!";
+            //lblMessage.Text = "Usuário " + objModelo.nomeUsuario + " eliminado com sucesso !!!";
         }
 
         protected void gv1_RowEditing(object sender, GridViewEditEventArgs e)

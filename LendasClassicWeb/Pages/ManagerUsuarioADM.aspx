@@ -10,16 +10,20 @@
 
     </div>
     <br />
-    <asp:Label runat="server" Text="Selecione a opção desejada:" CssClass="text-light" /> |
+    <asp:Label runat="server" Text="Selecione a opção desejada:" CssClass="text-light" />
+    |
         <asp:DropDownList ID="ddl1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl1_SelectedIndexChanged" CssClass="dropdown dropdown-menu-dark" Width="200">
-           <%-- <asp:ListItem Text="ADMINISTRADOR" Value="1" />
+            <%-- <asp:ListItem Text="ADMINISTRADOR" Value="1" />
             <asp:ListItem Text="OUTROS" Value="2" />--%>
-            <asp:ListItem Text=""  />
+            <asp:ListItem Text="" />
             <asp:ListItem Text="ATIVO" Value="ATIVO" />
             <asp:ListItem Text="INATIVO" Value="INATIVO" />
-        </asp:DropDownList> |
-    <asp:Button runat="server" Text="Limpar Filtro" ID="btnLimpaFiltro" OnClick="btnLimpaFiltro_Click" CssClass="btn btn-sm btn-primary" /> |
-    <br /><hr />
+        </asp:DropDownList>
+    |
+    <asp:Button runat="server" Text="Limpar Filtro" ID="btnLimpaFiltro" OnClick="btnLimpaFiltro_Click" CssClass="btn btn-sm btn-primary" />
+    |
+    <br />
+    <hr />
     <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" AllowSorting="true" AllowPaging="true" PageSize="10" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-dark table-responsive table-responsive-sm table-striped mt-0">
         <Columns>
             <asp:TemplateField HeaderText="NOME">
@@ -101,14 +105,14 @@
                 </EditItemTemplate>
 
                 <FooterTemplate>
-                    <asp:Label ID="txtStatus" runat="server" text="ATIVO" CssClass=" text-light" />
-                <%--       <asp:TextBox ID="txtStatusUsuario" Text="ATIVO"  runat="server" />--%>
+                    <asp:Label ID="txtStatus" runat="server" Text="ATIVO" CssClass=" text-light" />
+                    <%--       <asp:TextBox ID="txtStatusUsuario" Text="ATIVO"  runat="server" />--%>
 
-<%--                    <asp:RadioButtonList ID="rbl2" runat="server">--%>
-                        <%-- <asp:ListItem Value="ATIVO" Text="ATIVO" />
+                    <%--                    <asp:RadioButtonList ID="rbl2" runat="server">--%>
+                    <%-- <asp:ListItem Value="ATIVO" Text="ATIVO" />
                        <asp:ListItem Value="INATIVO" Text="INATIVO" />--%>
-                      <%--  <asp:TextBox ID="txtStatus" runat="server" />--%>
-                   <%-- </asp:RadioButtonList>--%>
+                    <%--  <asp:TextBox ID="txtStatus" runat="server" />--%>
+                    <%-- </asp:RadioButtonList>--%>
                 </FooterTemplate>
 
 
@@ -164,7 +168,7 @@
 
                 <FooterTemplate>
                     <asp:TextBox ID="txtSenhaUsuarioFooter" runat="server" MaxLength="8" />
-             
+
                 </FooterTemplate>
 
 
@@ -194,11 +198,11 @@
                 </ItemTemplate>
 
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtTelefoneUsuario" runat="server"  MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' data-mask="(00) 0000-0000"/>
+                    <asp:TextBox ID="txtTelefoneUsuario" runat="server" MaxLength="50" Text='<%#Eval("telefoneUsuario") %>' data-mask="(00) 0000-0000" />
                 </EditItemTemplate>
 
                 <FooterTemplate>
-                    <asp:TextBox ID="txtTelefoneUsuarioFooter"  runat="server" MaxLength="14" data-mask="(00) 0000-0000"/>
+                    <asp:TextBox ID="txtTelefoneUsuarioFooter" runat="server" MaxLength="14" data-mask="(00) 0000-0000" />
                 </FooterTemplate>
 
 
@@ -228,5 +232,5 @@
 
     </asp:GridView>
     <br />
-    <asp:Label ID="lblMessage" runat="server" Text="Label" />
+    <%-- <asp:Label ID="lblMessage" runat="server" Text="Label" />--%>
 </asp:Content>

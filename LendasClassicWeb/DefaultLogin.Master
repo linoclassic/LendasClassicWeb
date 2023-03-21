@@ -43,15 +43,11 @@
                             <li class="nav-item p-2 mx-2 ">
                                 <a class="nav-link active" href="../Pages/academia.html">Academia</a>
                             </li>
+                           
                             <li class="nav-item p-2 mx-2 ">
-                                <a class="nav-link active" href="../html/agende.html">Agende um tour</a>
+                                <a class="nav-link active" href="../Pages/equipe.html">Equipe</a>
                             </li>
-                            <li class="nav-item p-2 mx-2 ">
-                                <a class="nav-link active" href="../html/equipe.html">Equipe</a>
-                            </li>
-                            <li class="nav-item p-2 mx-2 ">
-                                <a class="nav-link active" href="../html/contato.html">Contato</a>
-                            </li>
+                          
                         </ul>
 
                         <span class="text-light mx-5 ">Faça

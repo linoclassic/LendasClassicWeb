@@ -30,8 +30,7 @@ namespace LendasClassicWeb.Pages
             {
 
 
-                
-
+               
 
 
                 // Verifica se o usuário está logado
@@ -50,10 +49,14 @@ namespace LendasClassicWeb.Pages
                         lblMensagem.Visible = true;
                         lblMensagem.Text = "Sua Reserva ";
 
-
+                        //if (objModelo.StatusReserva == "INATIVO")
+                        //{
+                        //    btnExcluir.Visible = false;
+                        //}
+                     
 
                         gv1.Visible = true;
-                
+                        objBLL.VerificarStatusReserva();
                         PopularGv();
                      
                     }
@@ -130,7 +133,7 @@ namespace LendasClassicWeb.Pages
 
             objBLL.InativarReserva(objModelo);
             PopularGv();
-            btnCadastrar.Visible = true;
+            //btnCadastrar.Visible = true;
 
 
         }
