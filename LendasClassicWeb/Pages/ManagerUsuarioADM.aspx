@@ -24,7 +24,7 @@
     |
     <br />
     <hr />
-    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" AllowSorting="true" AllowPaging="true" PageSize="9" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-dark table-responsive table-responsive-sm table-striped mt-0">
+    <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="gv1_RowCommand" OnRowUpdating="gv1_RowUpdating" OnRowDeleting="gv1_RowDeleting" OnRowEditing="gv1_RowEditing" OnRowCancelingEdit="gv1_RowCancelingEdit" AllowSorting="true" OnPageIndexChanging="gv1_PageIndexChanging" CssClass="table table-dark table-responsive table-responsive-sm table-striped mt-0">
         <Columns>
             <asp:TemplateField HeaderText="NOME">
 
