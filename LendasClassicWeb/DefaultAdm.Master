@@ -78,7 +78,7 @@
 </nav>--%>
 
 
-        <div class="container-fluid bg-dark" style="height: 80vh">
+        <div class="container-fluid bg-dark" style="height: 90vh">
 
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

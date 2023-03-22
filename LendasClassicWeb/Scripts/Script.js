@@ -1,13 +1,13 @@
 ﻿$(document).ready(function () {
-    $("#txtTelefone").mask("(00) 0000-0000");
+    $("#txtTelefone").mask("(00)00000-0000");
 });
 
 $(document).ready(function () {
-    $("#txtTelefoneUsuarioFooter").mask("(00) 0000-0000");
+    $("#txtTelefoneUsuarioFooter").mask("(00)00000-0000");
 });
 
 $(document).ready(function () {
-    $("#txtTelefoneUsuario").mask("(00) 0000-0000");
+    $("#txtTelefoneUsuario").mask("(00)00000-0000");
 });
 
 

@@ -35,7 +35,7 @@
                 <br />
 
                 <asp:Label runat="server" Text="Telefone" CssClass="lead" />
-                <asp:TextBox AutoCompleteType="Disabled" ID="txtTelefone" CssClass="form-control mb-1" MaxLength="14" runat="server" data-mask="(00) 0000-0000" placeholder="Telefone Celular*" />
+                <asp:TextBox AutoCompleteType="Disabled" ID="txtTelefone" CssClass="form-control mb-1" MaxLength="14" runat="server" data-mask="(00)00000-0000" placeholder="Telefone Celular*" />
                 <asp:RequiredFieldValidator ID="RequiredTelefone" runat="server" ErrorMessage="*Digite o telefone" ForeColor="Red" ControlToValidate="txtTelefone" />
                 <asp:Label runat="server" Text="(*)Campos Obrigatórios" CssClass="" />
                 <asp:Label ID="lblErro" runat="server" CssClass="lead" ForeColor="Red"></asp:Label>
